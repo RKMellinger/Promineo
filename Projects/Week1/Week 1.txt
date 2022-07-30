@@ -1,0 +1,25 @@
+Variables
+
+var = first part of a variable code
+firstSecondThird = next line of variable information.
+= variable information = can be text or numerical. Name, decimal, qty, etc.
+
+Boolean - true or false
+
+Number - numeric values
+
+String - text values
+
+"x" 'x' = Double quotes is a string and connected, either works.
+
+Boolean data type - In computer science, the Boolean (sometimes shortened to Bool) is 
+a data type that has one of two possible values (usually denoted true and false)
+
+CamelCase - is a way to separate the words in a phrase by making the first letter of each 
+word capitalized and not using spaces.
+
+		
+Operations
+
+console.log() used for most operations, messages, math, etc.
+== Equality signifier - 5 = 5, e = e, etc.
