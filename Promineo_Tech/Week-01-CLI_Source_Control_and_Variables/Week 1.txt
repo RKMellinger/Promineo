@@ -20,6 +20,40 @@ word capitalized and not using spaces.
 
 		
 Operations
+Concatenation - process of combining Strings using the + operator called
 
 console.log() used for most operations, messages, math, etc.
 == Equality signifier - 5 = 5, e = e, etc.
+
+in arithmatic, creating sums of multiple equasions can be simplified, ((num1 + num2)/5) 
+Division would be processed first so should be separated from the addition.
+Division for a Quotent is signified with /
+Subtraction is a -, pay attention to what sum is where...
+addition is +
+Multiplication or "Product of" is *
+
+More Operators can be found here -> https://www.tutorialsteacher.com/javascript/javascript-operators#:~:text=JavaScript%20includes%20operators%20same%20as,2%20is%20right%20side%20operand.
+
+~~~~
+Week1 research quiz.
+What is git? Why is it useful? What is the git workflow?
+
+Research points: Google
+Git is a DevOps tool used for source code management. It is a free and open-source version control system used to handle small to very large projects efficiently. Git is used to tracking changes in the source code, enabling multiple developers to work together on non-linear development.
+At its core, Git is a version control tool for software developers who work in a distributed development environment that allows multiple developers to work on a single project without stepping on each other's code. The web developers at eXcelisys use it precisely for that purpose.
+The normal workflow is to develop and check in on a branch, then once everything is happy, merge the branch back into the master. The local repository consists of three "trees" maintained by git. The first one is your Working Directory which holds the actual files.
+
+Answer: 
+	Git is an opensource tool used by programmers, engineers, and anyone who needs to store code or data easily. It can also be used to store multiple projects large or small in a way that allows multiple users to work and update data at the same time limiting the risk of overwriting or losing blocks of code which was common before systems like Git. The most common Git workflow is a "Centralized Workflow" which involves a Central Repository (Main) and a Local Repository which is located on the user’s local device (MAC, PC, ETC). The Local user can "Git Clone" the main or "Git Pull" data from the main to get the most current version of the file/data they are working with. After making any changes to include new files for the main, they can then run "Git add '. or x'" (x = file name or . for everything), "Git Commit -am "update notes", and then "Git push" to update everything. Assuming they are the only one with access to said files. If there are multiple people working on the file, they may need to repull the file and rebase their code or abort until their code can be added.  
+
+
+~~~~
+What data types do we have access to in JavaScript? What makes them each unique? What values can they hold?
+
+Research ponts:Google
+In Javascript, there are five basic, or primitive, types of data. The five most basic types of data are strings, numbers, booleans, undefined, and null. We refer to these as primitive data types. A single variable can only store a single type of data.
+Data Types in JavaScript - Object, Array, and Function (which are all types of objects) are composite data types. Whereas Undefined and Null are special data types. Primitive data types can hold only one value at a time, whereas composite data types can hold collections of values and more complex entities.
+
+Answer:
+	There are five basic/primitive data types as well as multiple composite data types. The basic/primitive hold one value at a time while composite can have multiple bits and more complex collections of data. Basic/primitive functions are: Strings which are composed of alphanumeric data, they represent textual data and are created by enclosing the data in single or double quotation marks. Numbers will be represented by a numerical value, positive or negative, algebraic equations, with or without decimal, etc. Booleans which will have one of 2 values, True/false, yes/no/, on/off, etc. The other two basic/primitive values are also known as special data types which are Undefined and Null, both of which are no specific value other than Undefined or Null. some major composite types are Array, Object, and Function. Object Data can store multiple points of basic information in one collection including other complex types. Array uses multiple values in a single variable. Function is an object which will run a code based on the variables written into the code.
+	
