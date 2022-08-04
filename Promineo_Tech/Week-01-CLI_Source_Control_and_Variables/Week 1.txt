@@ -50,6 +50,7 @@ Multiplication or "Product of" is *
 
 More Operators can be found here -> https://www.tutorialsteacher.com/javascript/javascript-operators#:~:text=JavaScript%20includes%20operators%20same%20as,2%20is%20right%20side%20operand.
 
+In console.log, you can use `` (the ~ key) = console.log(`Notes for the function ${Sctipt you are logging}`;
 ~~~~
 Week1 research quiz.
 What is git? Why is it useful? What is the git workflow?
