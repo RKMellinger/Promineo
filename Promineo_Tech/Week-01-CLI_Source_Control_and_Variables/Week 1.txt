@@ -1,5 +1,7 @@
 Variables
 
+variable is a storage point, this line can be reused multiple times and be reconfigured as needed throughout the code.
+
 var = first part of a variable code
 firstSecondThird = next line of variable information.
 = variable information = can be text or numerical. Name, decimal, qty, etc.
@@ -18,11 +20,25 @@ a data type that has one of two possible values (usually denoted true and false)
 CamelCase - is a way to separate the words in a phrase by making the first letter of each 
 word capitalized and not using spaces.
 
-		
-Operations
 Concatenation - process of combining Strings using the + operator called
 
-console.log() used for most operations, messages, math, etc.
+A variable can be written in 2 ways, harder and a short.
+
+var stuff
+stuff = something
+or
+var stuff = something
+
+Var - is not used much - it is a too unpredictable.
+
+Let - is used it can be changed but more predictable.
+
+Const - is a set in stone and cannot be changed later.
+		
+Operations
+
+
+console.log() used for most operations, messages, math, etc. to output to the browser console.
 == Equality signifier - 5 = 5, e = e, etc.
 
 in arithmatic, creating sums of multiple equasions can be simplified, ((num1 + num2)/5) 
