@@ -11,7 +11,7 @@ if(money >= coffeeCost){
     console.log('make it at home')
 }
 
-let grade = "No";
+let grade = 52;
 let letterGrade;
 
 switch(true){
