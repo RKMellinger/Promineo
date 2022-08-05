@@ -2,7 +2,7 @@ Class notes
 DRY principle - Don't Repeat Yourself
 Boolean - True/false, yes/no, up/down, 0/1, etc. it is a 2 answer operation.
 
-
+% - Modu
 == - Equal to
 >= - Greater than
 <= - Less than
