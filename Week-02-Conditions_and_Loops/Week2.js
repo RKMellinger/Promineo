@@ -38,3 +38,11 @@ switch(true){
 }
 
 console.log(letterGrade)
+
+let i = 1
+let uninterestingShow = 10 
+do {
+ i = i + 1;
+} while (i <= uninterestingShow);
+console.log(i)
+
