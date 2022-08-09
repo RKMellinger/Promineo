@@ -86,4 +86,33 @@
 //let y = 65;
 //let z = 75;
 
-console.log (true && (false||true))
+
+
+//var num = 4;
+
+//Write your code here
+
+//for (let multiplier = 1; multiplier <= 10; multiplier++) {
+//    var result = multiplier * num;
+//   console.log(num + ' x ' + multiplier + ' = ' + result);
+//}
+let i = 0
+let x = 1
+do {
+    console.log (i)
+    i = i + 1
+}while ( i < x )
+console.log (i)
+
+
+
+// do{    
+// currentCupsOfRice = currentCupsOfRice + 1 
+// console.log("The bowl contains " + currentCupsOfRice + " cups of rice.")
+//} while (currentCupsOfRice < requiredCupsOfRice)
+//console.log("We have enough rice!")
+
+//do {
+//    console.log("The bowl contains " + currentCupsOfRice + " cups of rice.")
+//} while (currentCupsOfRice !== requiredCupsOfRice)
+//console.log("We have enough rice!")
