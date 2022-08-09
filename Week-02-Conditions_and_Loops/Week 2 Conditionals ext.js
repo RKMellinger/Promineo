@@ -81,3 +81,9 @@
 //if (money >= costOfSoda){
 //    console.log("I can buy a soda")
 //  }  else {}
+
+//let x = 45;
+//let y = 65;
+//let z = 75;
+
+console.log (true && (false||true))
