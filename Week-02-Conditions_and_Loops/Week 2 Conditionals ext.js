@@ -96,13 +96,15 @@
 //    var result = multiplier * num;
 //   console.log(num + ' x ' + multiplier + ' = ' + result);
 //}
-let i = 0
-let x = 1
-do {
-    console.log (i)
-    i = i + 1
-}while ( i < x )
-console.log (i)
+
+
+//let i = 0
+//let x = 1
+//do {
+//    console.log (i)
+//    i = i + 1
+//}while ( i < x )
+//console.log (i)
 
 
 
@@ -116,3 +118,6 @@ console.log (i)
 //    console.log("The bowl contains " + currentCupsOfRice + " cups of rice.")
 //} while (currentCupsOfRice !== requiredCupsOfRice)
 //console.log("We have enough rice!")
+
+
+//console.log ("one" == 1)
