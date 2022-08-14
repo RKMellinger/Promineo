@@ -1,0 +1,47 @@
+Notes for week 3
+
+Arrays: Use the [] to create the array. Items are 0 based, (All lists start at 0 not 1).
+	Arrays can also use loops to list the information as long as the 0 index is remembered.
+
+	var varTitle = [];  
+	    varTitle.push("array information");
+	    console.log(varTitle[1]); 
+
+
+Intermediate Array: Types of Arrays are - Map, Reduce, For Each, filter, Splice. See MDN for full listing.
+	Using an Array of names: 
+	Maps can create a function for say, length of the information in the array, so, 5 names of 		various length will return 5 numbers counting the letters in the names. Map will 		store the information.
+	Reduce uses another function and will accumulate all of the previous executed information, 		so it would add the valuss of the previous 5 numbers of leters in the names. 
+	For Each is similar to the Maps, for the list of names example will list the names.
+	Filter will create a Boolean method to bring the data requested, Names with 3 letters will 		return x number of names with 3 letters. As any other name wouldn't be 3 letters it 		would be false and not shown.
+	Splice can be used to nodify an array at a later point of the code. Say, remove one of the 		5 names. 
+
+Functions: Reusable code, instructions which can be reused anytime. the Perameters can be multiple uses but should only be one with multiple functions doing other actions. Return statement will return a concatinated string using the console.log vs what is below and will add information "Welcome, Tom Sawyer or such. Functions should be discriptive verbs for readability.
+
+	function createFullName(firstName, lastName) {
+ 	   code can be what ever is needed to repeat later, for loop, etc.(){
+	}    console.log(firstName + ' ' + lastName);
+        }
+
+	createFullName('Tom', 'Sawyer');
+
+		Should return Tom Sawyer.
+
+Objects: Logical structure of data. DVD player: height, width, DVD in tray, etc, 
+	var dvdPlayer = {
+		height: 3, 
+		width: 18,
+		depth: 12,
+		weight: 7,
+		color: 'black'
+		dvdName: 'Hackers'
+	printDVDName: function(){
+			console.log(this.dvdName)
+	}
+
+	console.log(dvdPlayer.object attributelike depth)
+
+Equality vs Identity: 
+	= assignment operator, I = 2, x = 'happy'. You are this.
+	== Equality operator, 2 = 'two', 100 = 'one hundred'. same = close enough.
+	=== Identity opreatoy, 2 = 2, 3 =3, 2 is not = 'two'. Strict same = same. 
