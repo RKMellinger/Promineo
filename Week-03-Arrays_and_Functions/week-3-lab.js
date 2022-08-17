@@ -64,8 +64,6 @@ function reverse(i) {
   }
 }
 
-//reverse();
-
 // create a function called addingMachine that will add all passed numbers and return the total
 // Note: you don't know how many numbers will be passed
 function addingMachine() {
