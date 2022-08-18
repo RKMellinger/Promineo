@@ -53,7 +53,6 @@ function reverse(i) {
   if (typeof i === "boolean") {
     console.log(!i);
   } else if (typeof i === "number" || typeof i === "string") {
-    //  return i.split("").reverse().join("");
     let digits = ("" + i).split("");
     digits.reverse();
     console.log(digits.join(""));
