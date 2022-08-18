@@ -1,4 +1,4 @@
-let array1 = [1, 5, 6, 9, 10, 14];
+/*let array1 = [1, 5, 6, 9, 10, 14];
 
 // print the 3rd element in array1
 console.log(array1[2]);
@@ -81,3 +81,21 @@ console.log(addingMachine(1, 2, 3, 4, 5, 6, 7, 7, 9, 4, 2344, 112, 34343, 234));
 // 40% on all profits above $1,000,000
 // create a function that will allow you to check how much of a bonus you make
 // the function should take in two variables as arguments, grossInvoiced and profitMargin
+//
+//
+//
+
+function returnSum(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+console.log(returnSum(5, 6));
+//
+function speakFriend(a) {
+  if ((a = mellon)) {
+    console.log("Enter");
+  } else {
+    console.log("Access Denied");
+  }
+}
+(a) => "Your number is " + a;
+*/

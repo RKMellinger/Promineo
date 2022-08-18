@@ -48,3 +48,35 @@ Equality vs Identity:
 	= assignment operator, I = 2, x = 'happy'. You are this.
 	== Equality operator, 2 = 'two', 100 = 'one hundred'. same = close enough.
 	=== Identity opreatoy, 2 = 2, 3 =3, 2 is not = 'two'. Strict same = same. 
+
+
+
+week 3 quiz sheet.
+Select five methods that can be used on an Array and describe the following for each: 1) what the method signature is, 2) what the method does, and 3) why would this method be useful (how could you use it)?
+
+What is the difference between == and ===?
+
+What is a closure and how does it work? Provide an example.
+
+
+Select five methods that can be used on an Array and describe the following for each: 1) what the method signature is, 2) what the method does, and 3) why would this method be useful (how could you use it)?
+
+While ther are many different array types, I chose the following for this topic: 
+.every(), .filer(), .includes(), .map(), .some(). 
+.every() will run a test on all objects within the array and return a boolean value as related to the parameters, if you have a variable of 20 and an array with 10 numbers all below 20, the array.every() could be used to confirm all the numbers are below 20 and return a true value, or if asked if the numbers are greater than 20 return as false. It is useful in multiple ways, one of which being checking an array of ages for persons over/under a specific age for gaming, drinking, or any other state age regulated reasons.
+.filter() is a method which will pull elements of an array as per the arguments given. So if the array of names has 3 names composed of 3 letters, and those peramiters are added into the function, you will get the 3 names (Tom, Sam, Pat). Fileter can be used to find a specific account name, or even see if there are multiple same entries when there should be single entries  
+.includes() function will take a provided parameter and return a boolean responce if the value is inside a given array. If the array is names and you run the .includes() looking for "Jerry" it should return as true, assuming Tom didn't remove Jerry's name from the array. This method can be used to confirm if an array is all like data or if there is something that shouldn't be there, like a list of animals with a car in it.
+.map() array can be used to create new arrays from data in existing arrays, commonly used when an array (array1 [1,4,9]) needs to remain the same while adding something to it, say you need a new array with the square roots of array1. .map() would be used to make array2[1,2,3]. 
+.some() is a method which tests that at least one item in the array will pass a given parameter. So when run on an array made of numbers [1,2,4,6,8,9] looking for say, prime numbers, it will return as true because at least one number is a prime. If you have an array with multiple objects added into it (Name, age, etc.) you can confiem if at least one of the entries are present. 
+
+Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+
+What is the difference between == and ===?
+
+The == is a "loosely equal to" operator it will compare the 2 operands separated by the == operator and return a boolean value if the "loosely" match. So for this example, 2 == "two", 100 =='one hundred' or even (6+1) == (4+3). As long as the operands surrounding the == operator the result will be returned as true. The === on the other hand is a "strict equal to" operator and will only return a valuse of true when the operands are the same. This means the operands can only be of the same type and value, 2 === 2,  "two" === "two" will return true while 2 === "two" would return false as they are not the same type of data even if they are the same value.  
+
+Ref:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
+https://tc39.es/ecma262/#sec-islooselyequal
+https://tc39.es/ecma262/#sec-isstrictlyequal
