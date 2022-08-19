@@ -30,6 +30,10 @@ console.log('names array: "' + names + '"');
 console.log(
   "Use a loop to iterate through the array and calculate the average number of letters per name. Print the result to the console."
 );
+let letterCount;
+for (i = 0; i > names.length; i++) {
+  letterCount = 0;
+}
 
 console.log(
   "Use a loop to iterate through the array again and concatenate all the names together, separated by spaces, and print the result to the console."
