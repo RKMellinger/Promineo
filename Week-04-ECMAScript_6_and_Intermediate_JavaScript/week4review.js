@@ -98,7 +98,7 @@ const customers = [
   },
   //more customers with the same schema
 ];
-let total = "";
+let total = [];
 
 function customerSearch(data) {
   for (let i = 0; i < data.length; i++) {
