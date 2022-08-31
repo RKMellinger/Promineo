@@ -8,26 +8,36 @@ b.	Use at least two classes.
 c.	Your menu should have the options to create, view, and delete elements.
 
 `);
-//
 
-class Casino { //Format for Casino storage
-  constructor(name) {
-    this.casinoName = [name];
+console.log(`
+The menu application is based on Casinos. When used it should allow the user to add/view/remove Casino information. 
+The "View Casino" option should also allow a sub menu for the selected casino see any features that are added into 
+the system.
+`)
+
+class Casino { //Main menu option for Casinos database
+  constructor(PropertyName) {
+    this.casinoName = [PropertyName];
   }
-
   introduce() {
     console.log(`${this.casinoName}.`);
   }
 }
-// let casino1 = new Casino("MGM"); // for testing 
-// casino1.introduce(); //Shows MGM
 
+let casino1 = new Casino('MGM'); // for testing 
+console.log(casino1.casinoName); //Shows MGM
+
+class Features{ // Casino features to be added
+  constructor(casinoFeature){
+  this.feature =[casinoFeature]
+  }
+}
 
 class Menu { //Main menu details and operations
   constructor() {
-    this.casino = ['mgm', 'harrahs'];
+    this.casino = [];
     this.selectedCasino = null;
-    console.log(this.casino)
+//    console.log(this.casino)
   }
 
 
