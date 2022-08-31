@@ -25,9 +25,11 @@ class Casino { //Format for Casino storage
 
 class Menu { //Main menu details and operations
   constructor() {
-    this.casino = [];
+    this.casino = ['mgm', 'harrahs'];
     this.selectedCasino = null;
+    console.log(this.casino)
   }
+
 
   start() { //Menu options
     let selection = this.menuOptions();
@@ -68,7 +70,7 @@ class Menu { //Main menu details and operations
   displayCasino() { //menu functions
     let casinoList = "";
     for (let i = 0; i < this.casino.length; i++) {
-      casinoList = casinoList[i] + ") " + this.casinoName[i].name + "\n";
+      casinoList = casinoList[i] + ") " + this.casino[i].name + "\n";
     }
 
     alert(casinoList);
@@ -85,8 +87,8 @@ class Menu { //Main menu details and operations
       this.selectedCasino = this.casino[index];
       let description = "Casino Name:" + this.selectedCasino.name + "\n";
 
-      for (let i = 0; i < this.selectedCasino.casinoName.length; i++) {
-        description = description +(i + 1) +") " + this.selectedCasino.casinoName[i].name + "\n";
+      for (let i = 0; i < this.selectedCasino.casino.name.length; i++) {
+        description = description +(i + 1) +") " + this.selectedCasino.casino[i].name + "\n";
       }
     }
   }
