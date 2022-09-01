@@ -1,5 +1,5 @@
 //console.log ('Hello World')
-// Workspace for week 5 labs and other work.
+// Workspace for week 5and other work.
 console.log("Week 5 Object orientated coding assignment");
 console.log(`1.	Create a menu app as seen in this week's video. 
 What you create is up to you as long as it meets the following requirements.
@@ -51,7 +51,7 @@ class Menu {     //Starting menu for selections
     while (selection != 0) {
       switch (selection) {
         case '1':
-          this.chooseGame();
+          this.addGame();
           break;
         case '2':
           this.displayGame();
@@ -75,7 +75,7 @@ class Menu {     //Starting menu for selections
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Greetings Traveler!!
         0) Exit
-        1) Choose your game
+        1) Add your game
         2) Display Games
         3) View a game
         4) Remove a game
@@ -92,8 +92,8 @@ class Menu {     //Starting menu for selections
     ${gameInfo}
     `)
   }
-chooseGame(){  //Choose or create the game of choice
-    let name = prompt(`What game do you choose?`)
+  addGame(){  //Choose or create the game of choice
+    let name = prompt(`Enter the game do you want to play.`)
     this.game.push(new Game(name))
   }
  
@@ -106,18 +106,20 @@ chooseGame(){  //Choose or create the game of choice
   }
   
   createCharacter(){ // To create your player and their class
-    let characterName = prompt(`Enter this champion's name.`)
-    let characterClass = prompt(`Please enter this champion's class.`)
+    let characterName = prompt(`What is your champion's name.`)
+    let characterClass = prompt(`What is the champion's class.`)
     this.selectedGame.character.push(new Character(characterName, characterClass))
   }
   viewGame(){ // Displays the selected game and it's sub menu
-    let index = prompt(`Enter the index for your game of choice.`)
+    let index = prompt(`What is the index of your game.`)
     if(index > -1 && index < this.game.length){
         this.selectedGame = this.game[index]
-        let description = `Game of choice is: ${this.selectedGame.name}.`
-        '\n'
+        let description = `Your game of choice is: ${this.selectedGame.name}.        
+        `
+        
+        
         for (let i = 0; i < this.selectedGame.character.length; i++){
-            description += `${i}) Your champion's is: ${this.selectedGame.player[i].characterName} the ${this.selectedGame.character[i].characterClass}.'\n'`
+            description += `\n ${i}) Your champion's is: ${this.selectedGame.character[i].characterName} the ${this.selectedGame.character[i].characterClass}.`
         }
         let selection = this.gamesMenuOptions(description) // Sub menu options
         switch (selection){
