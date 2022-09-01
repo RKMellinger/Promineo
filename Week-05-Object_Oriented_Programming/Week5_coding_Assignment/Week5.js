@@ -10,127 +10,125 @@ c.	Your menu should have the options to create, view, and delete elements.
 `);
 
 console.log(`
-The menu application is based on Casinos. When used it should allow the user to add/view/remove Casino information. 
-The "View Casino" option should also allow a sub menu for the selected casino see any features that are added into 
-the system.
+The menu application is based on Casinos. When used it should allow the user to add/view/remove 
+the Parent corporation and the submenus should be the related casinos and their locations.
 `)
 
-class Casino { //Main menu option for Casinos database
-  constructor(PropertyName) {
-    this.casinoName = [PropertyName];
-  }
-  introduce() {
-    console.log(`${this.casinoName}.`);
-  }
+class Casino {
+    constructor(casinoName, location){
+        this.casinoName = casinoName
+        this.location = location
+    }
+
+    describe(){
+        return `${this.casinoName} plays ${this.location}`
+    }
 }
-class Features{ // Casino features to be added
-  constructor(casinoFeature){
-  this.feature =[casinoFeature]
-  }
+class Parent {
+    constructor(parentCorp){
+        this.parentCorp = parentCorp
+    this.casinos = []
+    }
+
+    addPlayer(casinos){
+        if(casinos instanceof Casino) {
+            this.casinoName.push(casinos)
+        }else {
+            throw new Error(`Invalid Entry`)
+        }
+    }
+    describe(){
+        return `${this.parentCorp} has ${this.casinos.length} locations.`
+    }
 }
 
-class Menu { //Main menu details and operations
+class Menu { 
   constructor() {
-    this.casino = [];
-    this.selectedCasino = null;
-//    console.log(this.casino)
-    // this.casino.push(new Casino("MGM"))
+    this.parent = [];
+    this.selectedParent = null;
   }
 
-
-  start() { //Menu options
-    let selection = this.menuOptions();
+  start() {
+    let selection = this.mainMenuOptions();
     while (selection != 0) {
       switch (selection) {
-        case "1":
-          this.addCasino();
+        case '1':
+          this.addParent();
           break;
-        case "2":
-          this.displayCasino();
+        case '2':
+          this.displayParent();
           break;
-        case "3":
-          this.viewCasino();
+        case '3':
+          this.viewParent();
           break;
-        case "4":
-          this.deleteCasino();
+        case '4':
+          this.removeParent();
           break;
         default:
           selection = 0;
       }
-      selection = this.menuOptions();
+      selection = this.mainMenuOptions();
     }
     alert("Thank you, goodbye");
   }
 
-  menuOptions() {
+  mainMenuOptions() {
     return prompt(`
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         0) Exit
-        1) Add Casino
-        2) Display Casino Listing
-        3) View Casino Details
-        4) Remove Casino
+        1) Add Parent Corporation
+        2) Display Parent Corporation
+        3) View Parent Corporation
+        4) Remove Parent Corporation
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         `);
   }
-
-  addCasino() {
-    let name = prompt("Enter Casino name");
-    this.casino.push(new Casino(name));
+  casinoMenuOptions(casinoInfo){
+    return prompt(`
+    ~~~~~~~~~~~~~~~~~~~
+    0) Back
+    1) Add Casino
+    2) Delete Casino
+    ~~~~~~~~~~~~~~~~~~~
+    ${casinoInfo}
+    `)
   }
-
-  displayCasino() { //menu functions
+ addParent(){
+      let name = prompt(`Enter new Casino name`)
+    this.parent.push(new Casino(name))
+  }
+  displayParent(){
     let casinoList = "";
-    for (let i = 0; i < this.casino.length; i++) {
-      casinoList = casinoList[i] + ") " + this.casino[i].name + "\n";
+    for (let i = 0; i < this.parent.length; i++){
+    casinoList += (1 + i) + ') ' + this.parent[i].name + '\n';
     }
-  
-    alert(casinoList);
+    alert (casinoList);
   }
+ 
+  viewParent(){
+    let index = prompt(`Enter the Corporate index.`)
+    if(index > -1 && index < this.parent.length){
+        this.selectedParent = this.parent[index]
+        let description = 'Corporate Name: ' + this.selectedParent.name + '\n'
 
-  viewCasino() {
-    let index = prompt("Please enter casino index.");
-    if (index > -1 && index < this.casino.length) {
-      this.selectedCasino = (new Casino(this.casino[index]));
-      let description = "Casino Name:" + this.selectedCasino.name + "\n";
-
-      for (let i = 0; i < this.selectedCasino.casino.name.length; i++) {
-        description = description +[i] +") " + this.selectedCasino.casino[i].name + "\n";
-      }
+        for (let i = 0; i < this.selectedParent.casinos.length; i++){
+            description += (1 + i) + ') ' + this.selectedParent.casinos[i].name 
+            + ' - ' + this.selectedParent.casinos[i].location + '\n'
+        }
+        let selection = this.casinoMenuOptions(description)
+        switch (selection){
+            case '1':
+                this.createCasino()
+                break
+            case '2':
+                this.deleteCasino()
+        }
     }
   }
-  deleteCasino(){
-      let index = prompt('Please enter Casino index for removal.')
-      if (index > -1 && index < this.casino.length){
-        this.casino.splice[index, 1]
-      }  
-    }
-  
-//Sub menu functions
-
-  //   casinoMenu(casinoInformation) { 
-  //     return prompt(`
-  //     ~~~~~~~~~~~~~~~~~
-  //     0) Back
-  //     1) Create New Feature
-  //     2) Delete Feature
-  //     ~~~~~~~~~~~~~~~~~`);
-  //   }
-  
-  // let selection = this.casinoMenu(description);
-    // switch (selection) {
-    //   case "1":
-    //     this.addFeature();
-    //     break;
-    //   case "2":
-    //     this.deleteFeature();
-    // }
 }
 
-console.log(new Menu(this.casino)); //
+let menu = new Menu()
+menu.start()
 
-
-let menu = new Menu();
-menu.start();
 
 
