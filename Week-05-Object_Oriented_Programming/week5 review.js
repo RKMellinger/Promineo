@@ -13,17 +13,6 @@ class Team {
         this.name = name
     this.player = []
     }
-
-    addPlayer(player){
-        if(player instanceof Player) {
-            this.players.push(player)
-        }else {
-            throw new Error(`Invalid Entry`)
-        }
-    }
-    describe(){
-        return `${this.name} has ${this.players.length} players`
-    }
 }
 
 class Menu { 
@@ -81,13 +70,19 @@ class Menu {
   displayTeam(){
     let teamString = '';
     for (let i = 0; i < this.teams.length; i++){
-    teamString += (1 + i) + ') ' + this.teams[i].name + '\n';
+    teamString += i + ') ' + this.teams[i].name + '\n';
     }
     alert (teamString);
   }
   createTeam(){
-      let name = prompt(`Enter new team name`)
+    let name = prompt(`Enter new team name`)
     this.teams.push(new Team(name))
+  }
+
+  createPlayer(){
+    let name = prompt('Enter name for new player.')
+    let position = prompt('Please enter position for new player.')
+    this.selectedTeam.player.push(new Player(name, position))
   }
   viewTeam(){
     let index = prompt(`Enter the index of the team.`)
@@ -96,8 +91,8 @@ class Menu {
         let description = 'Team Name: ' + this.selectedTeam.name + '\n'
 
         for (let i = 0; i < this.selectedTeam.player.length; i++){
-            description += i + ') ' + this.selectedTeam.players[i].name 
-            + ' - ' + this.selectedTeam.players[i].position + '\n'
+            description += i + ') ' + this.selectedTeam.player[i].name 
+            + ' - ' + this.selectedTeam.player[i].position + '\n'
         }
         let selection = this.showTeamMenuOptions(description)
         switch (selection){
@@ -106,7 +101,20 @@ class Menu {
                 break
             case '2':
                 this.deletePlayer()
-        }
+        }4
+    }
+  }
+  deleteTeam(){
+    let index = prompt('Enter the index of Team to delete')
+    if (index > -1 && index < this.teams.length){
+      this.teams.splice(index, 1)
+    }
+   }
+  
+  deletePlayer(){
+    let index = prompt('Enter the index of player to delete')
+    if (index > -1 && index < this.selectedTeam.player.length){
+      this.selectedTeam.player.splice(index, 1)
     }
   }
 }

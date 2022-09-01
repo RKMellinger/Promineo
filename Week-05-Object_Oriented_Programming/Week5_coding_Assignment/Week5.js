@@ -9,60 +9,58 @@ c.	Your menu should have the options to create, view, and delete elements.
 
 `);
 
-console.log(`
-The menu application is based on Casinos. When used it should allow the user to add/view/remove 
-the Parent corporation and the submenus should be the related casinos and their locations.
+console.log(`Let's play a game... No really, I'm a big fan of tabletop gaming so what are we playing? D'n'D, Rifts, Eclipse Phase or even Warhammer 30/40k? 
+The prompt should let you enter your game type, DND, WH40K, etc. then the view game will allow you to enter your name and class. Good luck traveler.
 `)
 
-class Casino {
-    constructor(casinoName, location){
-        this.casinoName = casinoName
-        this.location = location
+// class Character{}//Pick your character name and class
+
+// class Game{} //What table top game are we playing?
+
+// class Menu{}//Starting menu for selections
+
+class Character {   //Pick your character name and class
+    constructor(characterName, characterClass){
+        this.characterName = characterName
+        this.characterClass = characterClass
     }
 
     describe(){
-        return `${this.casinoName} plays ${this.location}`
+        return `Your champion's name is ${this.characterName} the ${this.characterClass}.`
     }
 }
-class Parent {
-    constructor(parentCorp){
-        this.parentCorp = parentCorp
-    this.casinos = []
-    }
+console.log(new Character("Bjorn", "Rune Priest"))
+//
+//
 
-    addPlayer(casinos){
-        if(casinos instanceof Casino) {
-            this.casinoName.push(casinos)
-        }else {
-            throw new Error(`Invalid Entry`)
-        }
-    }
-    describe(){
-        return `${this.parentCorp} has ${this.casinos.length} locations.`
+class Game {     //What table top game are we playing?
+    constructor(name){
+        this.name = name
+    this.character = []
     }
 }
-
-class Menu { 
+//
+class Menu {     //Starting menu for selections
   constructor() {
-    this.parent = [];
-    this.selectedParent = null;
+    this.game = [];
+    this.selectedGame = null;
   }
-
-  start() {
+//
+  start() {  //Starts the menu process and it's selections
     let selection = this.mainMenuOptions();
     while (selection != 0) {
       switch (selection) {
         case '1':
-          this.addParent();
+          this.chooseGame();
           break;
         case '2':
-          this.displayParent();
+          this.displayGame();
           break;
         case '3':
-          this.viewParent();
+          this.viewGame();
           break;
         case '4':
-          this.removeParent();
+          this.removeGame();
           break;
         default:
           selection = 0;
@@ -72,63 +70,79 @@ class Menu {
     alert("Thank you, goodbye");
   }
 
-  mainMenuOptions() {
+  mainMenuOptions() {   //Menu option text
     return prompt(`
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Greetings Traveler!!
         0) Exit
-        1) Add Parent Corporation
-        2) Display Parent Corporation
-        3) View Parent Corporation
-        4) Remove Parent Corporation
+        1) Choose your game
+        2) Display Games
+        3) View a game
+        4) Remove a game
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         `);
   }
-  casinoMenuOptions(casinoInfo){
+  gamesMenuOptions(gameInfo){  //Sub-menu options
     return prompt(`
     ~~~~~~~~~~~~~~~~~~~
     0) Back
-    1) Add Casino
-    2) Delete Casino
+    1) Create Character
+    2) Delete Character
     ~~~~~~~~~~~~~~~~~~~
-    ${casinoInfo}
+    ${gameInfo}
     `)
   }
- addParent(){
-      let name = prompt(`Enter new Casino name`)
-    this.parent.push(new Casino(name))
-  }
-  displayParent(){
-    let casinoList = "";
-    for (let i = 0; i < this.parent.length; i++){
-    casinoList += (1 + i) + ') ' + this.parent[i].name + '\n';
-    }
-    alert (casinoList);
+chooseGame(){  //Choose or create the game of choice
+    let name = prompt(`What game do you choose?`)
+    this.game.push(new Game(name))
   }
  
-  viewParent(){
-    let index = prompt(`Enter the Corporate index.`)
-    if(index > -1 && index < this.parent.length){
-        this.selectedParent = this.parent[index]
-        let description = 'Corporate Name: ' + this.selectedParent.name + '\n'
-
-        for (let i = 0; i < this.selectedParent.casinos.length; i++){
-            description += (1 + i) + ') ' + this.selectedParent.casinos[i].name 
-            + ' - ' + this.selectedParent.casinos[i].location + '\n'
+  displayGame(){ //Will display your selection
+    let gameString = '';
+    for (let i = 0; i < this.game.length; i++){
+    gameString += i + ') ' + this.game[i].name + '\n';
+   }
+     alert (gameString);
+  }
+  
+  createCharacter(){ // To create your player and their class
+    let characterName = prompt(`Enter this champion's name.`)
+    let characterClass = prompt(`Please enter this champion's class.`)
+    this.selectedGame.character.push(new Character(characterName, characterClass))
+  }
+  viewGame(){ // Displays the selected game and it's sub menu
+    let index = prompt(`Enter the index for your game of choice.`)
+    if(index > -1 && index < this.game.length){
+        this.selectedGame = this.game[index]
+        let description = `Game of choice is: ${this.selectedGame.name}.`
+        '\n'
+        for (let i = 0; i < this.selectedGame.character.length; i++){
+            description += `${i}) Your champion's is: ${this.selectedGame.player[i].characterName} the ${this.selectedGame.character[i].characterClass}.'\n'`
         }
-        let selection = this.casinoMenuOptions(description)
+        let selection = this.gamesMenuOptions(description) // Sub menu options
         switch (selection){
             case '1':
-                this.createCasino()
+                this.createCharacter()
                 break
             case '2':
-                this.deleteCasino()
+                this.deleteCharacter()
         }
+    }
+  }
+  removeGame(){ // Removes a game you don't want
+    let index = prompt('Enter the game number to be removed')
+    if (index > -1 && index < this.game.length){
+      this.game.splice(index, 1)
+    }
+   }
+  
+  deleteCharacter(){ // Removes the player
+    let index = prompt('Choose the number of the defeated champion.')
+    if (index > -1 && index < this.selectedGame.character.length){
+      this.selectedGame.character.splice(index, 1)
     }
   }
 }
 
-let menu = new Menu()
+let menu = new Menu() //Starts the prompts rolling
 menu.start()
-
-
-
