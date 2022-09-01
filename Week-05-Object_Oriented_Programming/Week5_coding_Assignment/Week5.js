@@ -23,10 +23,6 @@ class Casino { //Main menu option for Casinos database
     console.log(`${this.casinoName}.`);
   }
 }
-
-let casino1 = new Casino('MGM'); // for testing 
-console.log(casino1.casinoName); //Shows MGM
-
 class Features{ // Casino features to be added
   constructor(casinoFeature){
   this.feature =[casinoFeature]
@@ -38,6 +34,7 @@ class Menu { //Main menu details and operations
     this.casino = [];
     this.selectedCasino = null;
 //    console.log(this.casino)
+    // this.casino.push(new Casino("MGM"))
   }
 
 
@@ -49,13 +46,13 @@ class Menu { //Main menu details and operations
           this.addCasino();
           break;
         case "2":
-          this.viewCasino();
+          this.displayCasino();
           break;
         case "3":
-          this.deleteCasino();
+          this.viewCasino();
           break;
         case "4":
-          this.displayCasino();
+          this.deleteCasino();
           break;
         default:
           selection = 0;
@@ -70,20 +67,11 @@ class Menu { //Main menu details and operations
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         0) Exit
         1) Add Casino
-        2) View Casino Details
-        3) Remove Casino
-        4) Display Casino Listing
+        2) Display Casino Listing
+        3) View Casino Details
+        4) Remove Casino
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         `);
-  }
-
-  displayCasino() { //menu functions
-    let casinoList = "";
-    for (let i = 0; i < this.casino.length; i++) {
-      casinoList = casinoList[i] + ") " + this.casino[i].name + "\n";
-    }
-
-    alert(casinoList);
   }
 
   addCasino() {
@@ -91,21 +79,30 @@ class Menu { //Main menu details and operations
     this.casino.push(new Casino(name));
   }
 
+  displayCasino() { //menu functions
+    let casinoList = "";
+    for (let i = 0; i < this.casino.length; i++) {
+      casinoList = casinoList[i] + ") " + this.casino[i].name + "\n";
+    }
+  
+    alert(casinoList);
+  }
+
   viewCasino() {
     let index = prompt("Please enter casino index.");
     if (index > -1 && index < this.casino.length) {
-      this.selectedCasino = this.casino[index];
+      this.selectedCasino = (new Casino(this.casino[index]));
       let description = "Casino Name:" + this.selectedCasino.name + "\n";
 
       for (let i = 0; i < this.selectedCasino.casino.name.length; i++) {
-        description = description +(i + 1) +") " + this.selectedCasino.casino[i].name + "\n";
+        description = description +[i] +") " + this.selectedCasino.casino[i].name + "\n";
       }
     }
   }
   deleteCasino(){
       let index = prompt('Please enter Casino index for removal.')
       if (index > -1 && index < this.casino.length){
-        casino.splice[index, 1]
+        this.casino.splice[index, 1]
       }  
     }
   
@@ -123,14 +120,17 @@ class Menu { //Main menu details and operations
   // let selection = this.casinoMenu(description);
     // switch (selection) {
     //   case "1":
-    //     this.addCasino();
+    //     this.addFeature();
     //     break;
     //   case "2":
-    //     this.deleteCasino();
+    //     this.deleteFeature();
     // }
 }
+
+console.log(new Menu(this.casino)); //
+
 
 let menu = new Menu();
 menu.start();
 
-console.log(Menu.casino);
+
