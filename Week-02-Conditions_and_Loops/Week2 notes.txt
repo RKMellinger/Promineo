@@ -1,0 +1,94 @@
+Class notes
+DRY principle - Don't Repeat Yourself
+Boolean - True/false, yes/no, up/down, 0/1, etc. it is a 2 answer operation.
+
+% - Modu
+== - Equal to
+>= - Greater than
+<= - Less than
+
+&& - And, used in a statement, If 5 == 5 && 3 is >= 2.
+|| - Or, also used in the same mannor as || except it equals and 'or" function.
+
+If - is a function which runs an if statement and can be chained to multiple outcomes ending in an 		"Else if".
+Switch - Is similar to If, used to evaluate a variable and then provide multiple different code 		blocks that could be executed based on the value of the variable. These will use a "Break" 		to finish the code.
+
+Loop - Created a code which will repeat code to a scheduled stop point. (Add 4 cups to a bowl - Add 	1, add 1, add 1, add 1)
+
+for - is a loop funtion, for (let i = 0; i < 10; i++) {
+				console.log (i) 
+				}
+	This will create a counting patern which will stop at 9 as 10 would stop the code.
+for (in) - An array which will run with previous information 'Index' (List position)
+
+for (of) - An array which will run with previous information 'Data' (Names on the list)
+
+while - creates a looping patern which may not have a specific stop point and is more flexable as 		to it's applicatioin. Be causious, as it can create an infinate loop, which can cause 		crashs or other errors. 
+
+do - will run at least one process, while and if will not run if the conditions are not met, Do 		will process and show one result minimum.	
+
+User Input- 
+
+window. - will create a window. var name = window.prompt('What is your name?');
+
+prompt - will create a prompt window. var username = prompt('Username:');
+
+alert - will create an alert window. var password = prompt('Password:');
+
+
+Research questions:
+
+What are the different loops JavaScript provides us with?
+
+What is the syntax of one of the loops in your above answer? How and when should you use this loop? Give an example.
+
+Research:
+
+What are the different loops JavaScript provides us with?
+
+"JavaScript supports different kinds of loops:
+for - loops through a block of code a number of times
+for/in - loops through the properties of an object
+for/of - loops through the values of an iterable object
+while - loops through a block of code while a specified condition is true
+do/while - also loops through a block of code while a specified condition is true
+
+https://www.w3schools.com/js/js_loop_for.asp
+
+What is the syntax of one of the loops in your above answer? How and when should you use this loop? Give an example. 
+https://developer.arm.com/documentation/ka003727/latest#:~:text=The%20syntax%20for%20a%20do,valid%20C%20statement%20or%20block. 
+https://www.digitalocean.com/community/tutorials/java-do-while-loop
+
+Answers:
+
+What are the different loops JavaScript provides us with?
+
+Javascript provides multiple loop functions. The "For" loop will run a block of code as long as the condition is a "False" value while comparing multiple expressions. The "For/in loops will iterate for specific values and data for an object or listing. The "For/of" loop will create a loop running through iterable objects like "Arrays" and other user-defined objects. "While" statements will run in a loop as long as the condition is in a "true" value. The "Do/while" statement will run minimum of one time until the specified conditions return false.
+
+Ref: https://www.w3schools.com/js/js_loop_for.asp
+
+
+What is the syntax of one of the loops in your above answer? How and when should you use this loop? Give an example.
+
+The "do/while' syntax: 
+let i = 1
+do { 
+  i = i + 2;
+} while (i <= 100); 
+console.log(i); 
+
+The statement is a looping code used when the results are needed before the loop runs, like a control sample. Confirming the start point is what was entered into the code prior to running. So the above example will run one time (i = 1) then run untill it is no longer less than 100. The result is 1+2=3, 3+2=5, etc until the sum reaches 101. An great example would be tv, You turn on say Netflix and it shows a trending show, but you don't want to watch that show (uninterested, bored, mood, whatever), that would be the first run of a do/while which resulted false. You scroll through 5 more shows before finding the one you want to watch which then results as True. So it should be:
+
+let i = 1
+let uninterestingShow = 10 
+do {
+ i = i + 1;
+} while (i <= uninterestingShow);
+console.log(i)
+
+This would equate to "i" scrolled through 11 shows until I found an interesting show.
+
+Ref:
+https://developer.arm.com/documentation/ka003727/latest#:~:text=The%20syntax%20for%20a%20do,valid%20C%20statement%20or%20block. 
+https://www.digitalocean.com/community/tutorials/java-do-while-loop
+ 
