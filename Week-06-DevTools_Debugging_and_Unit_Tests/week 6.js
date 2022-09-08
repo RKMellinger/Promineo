@@ -29,24 +29,24 @@ const FACE = [
   "K",
   "A"]; // Card face
 
-  // const value = {
-  //   "A": 1,
-  //   "2": 2,
-  //   "3": 3,
-  //   "4": 4,
-  //   "5": 5,
-  //   "6": 6,
-  //   "7": 7,
-  //   "8": 8,
-  //   "9": 9,
-  //   "10": 10,
-  //   "J": 11,
-  //   "Q": 12,
-  //   "K": 13
-  //   }
+  const value = {
+    "A": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "J": 11,
+    "Q": 12,
+    "K": 13
+    }
 
 
-//
+
 function newDeck() {
     // Creating deck of cards
     return SUITS.flatMap((suit) => {
@@ -84,9 +84,9 @@ class Deck {
   player() {
     for(let i=0; i<deckSize; i++){
       if(i % 2 === 0){
-      player1.push(this.deck[i])
+      player1.push(this.cards[i])
       }else {
-      player2.push(this.deck[i])
+      player2.push(this.cards[i])
       }
 
     }
@@ -122,20 +122,18 @@ class CardGame {     //Starting menu for selections
            ~~~~~~~~~~~~~~~~~~~~~~~~~~
            `);
     }
-    deal(){            //Will start game
-
-    }
-  //   judgement(){
-  //     for (i = 0; i < 26; i++){
-  //       if ((player1[i].compareTo(FACES[i])>(player2[i].compareTo(FACES[i])) {
-  //         player1Points++          
-  //       }e1lse if ((player1[i].compareTo(FACES[i])<(player2[i].compareTo(FACES[i])){
-  //         player2Points++
-  //       }else {
-  //         tie++
-  //       }
-  //    }
-  // }
+    deal(){
+      for (let i = 0; i < 26; i++){
+        if ((player1[i] == value)>(player2[i] == value)) {
+          player1Points++          
+        }else if ((player1[i])<(player2[i])){
+          player2Points++
+        }else {
+          tie++
+        }
+        console.log(player1Points,player2Points,tie)
+     }
+  }
     winner(){
       console.log(`
      Player 1 total points: ${player1Points}
@@ -147,7 +145,7 @@ class CardGame {     //Starting menu for selections
 
 
 let menu = new CardGame() //Starts the prompts rolling
-// menu.start()
+menu.start()
 
 let freshDeck = new Deck()
 console.log(freshDeck)
