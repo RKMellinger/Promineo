@@ -28,7 +28,24 @@ const FACE = [
   "Q",
   "K",
   "A"]; // Card face
- 
+
+  // const value = {
+  //   "A": 1,
+  //   "2": 2,
+  //   "3": 3,
+  //   "4": 4,
+  //   "5": 5,
+  //   "6": 6,
+  //   "7": 7,
+  //   "8": 8,
+  //   "9": 9,
+  //   "10": 10,
+  //   "J": 11,
+  //   "Q": 12,
+  //   "K": 13
+  //   }
+
+
 //
 function newDeck() {
     // Creating deck of cards
@@ -46,9 +63,9 @@ class Cards {
     this.face = face;
   }
 }
-  // showCard(){
-  //   return `Suit: ${this.suit}, Face value is: ${this.face}`
-  // }
+  function showCard(){
+    return `Suit: ${this.suit}, Face value is: ${this.face}`
+}
 
 class Deck {
   //Code to create the full deck
@@ -64,8 +81,7 @@ class Deck {
       this.cards[j] = temp
     } this.deck.push(this.cards)
   }
-}
-function Player() {
+  player() {
     for(let i=0; i<deckSize; i++){
       if(i % 2 === 0){
       player1.push(this.deck[i])
@@ -74,10 +90,12 @@ function Player() {
       }
 
     }
+    console.log(player1)
+    console.log(player2);
   }
+}
 
-console.log(Player(player1))
-console.log(Player(player2));
+
 class CardGame {     //Starting menu for selections
   constructor(){
   }
@@ -105,58 +123,33 @@ class CardGame {     //Starting menu for selections
            `);
     }
     deal(){            //Will start game
-      const VALUES = {
-        "A": 1,
-        "2": 2,
-        "3": 3,
-        "4": 4,
-        "5": 5,
-        "6": 6,
-        "7": 7,
-        "8": 8,
-        "9": 9,
-        "10": 10,
-        "J": 11,
-        "Q": 12,
-        "K": 13
-      }
-      return VALUES[card]
+
     }
-  //   judge(){
- 
-  //     for (i = 0; i < 26; i++)
-  //     If (player1Points > player2Points){
-  //       winner = player1
-  //     }else if (){
-
-  //     }
-  //   }
+  //   judgement(){
+  //     for (i = 0; i < 26; i++){
+  //       if ((player1[i].compareTo(FACES[i])>(player2[i].compareTo(FACES[i])) {
+  //         player1Points++          
+  //       }e1lse if ((player1[i].compareTo(FACES[i])<(player2[i].compareTo(FACES[i])){
+  //         player2Points++
+  //       }else {
+  //         tie++
+  //       }
+  //    }
   // }
-  
-  
-
-
-    //  for (i = 0; i < 26; i++)
-    //     If ((player1[i] === deck[i]) > player2[i]  === deck[i])){
-    //      player1Points++
-    //     } else if ((player1[i] === deck[i]) > player2[i]  === deck[i])){
-    //      player2Points++
-    //     }else {
-    //      tie++
-    //     }
-//     winner()
-//     console.log(`
-//     Player 1 total points: ${player1Points}
-//     Player 2 total points: ${player2Points}
-//     Total number of ties: ${tie}
-//     The winner is ${winner}
-//     `)
-}
+    winner(){
+      console.log(`
+     Player 1 total points: ${player1Points}
+     Player 2 total points: ${player2Points}
+     Total number of ties: ${tie}
+     The winner is ${winner}
+     `)
+}}
 
 
 let menu = new CardGame() //Starts the prompts rolling
-menu.start()
+// menu.start()
 
 let freshDeck = new Deck()
 console.log(freshDeck)
 freshDeck.shuffle()
+freshDeck.player()
