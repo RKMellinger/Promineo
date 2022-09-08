@@ -7,10 +7,6 @@ console.log("JS Final");
 // if/else statement to compare player 1 points and player 2 points to show the winner via alert.
 let player1 = [];
 let player2 = [];
-let player1Points =0
-let player2Points =0
-let tie = 0
-let winner = 0
 let deckSize = 52;
 let halfDeck = Math.ceil(deckSize / 2)
 const SUITS = ["H", "D", "C", "S"]; //Suits array
@@ -98,6 +94,12 @@ class Deck {
 
 class CardGame {     //Starting menu for selections
   constructor(){
+    this.player1Hand = 0
+    this.player2Hand = 0
+    this.player1Points =0
+    this.player2Points =0
+    this.tie = 0
+    this.winner = 0
   }
     start() {  //Starts the the game
       let selection = this.gamePlay();
@@ -123,25 +125,32 @@ class CardGame {     //Starting menu for selections
            `);
     }
     deal(){
+
       for (let i = 0; i < 26; i++){
-        if ((player1[i] == value)>(player2[i] == value)) {
-          player1Points++          
-        }else if ((player1[i])<(player2[i])){
-          player2Points++
+        this.player1Hand = player1.FACE[i]
+        this.player2Hand = player2.FACE[i]
+        if ((value[this.player1Hand])>(value[this.player2Hand])) {
+          this.player1Points++          
+        }else if ((value[this.player1Hand])<(value[this.player2Hand])){
+          this.player2Points++
         }else {
-          tie++
+          this.tie++
         }
-        console.log(player1Points,player2Points,tie)
+        console.log(this.player1Points,this.player2Points,this.tie)
      }
   }
     winner(){
       console.log(`
-     Player 1 total points: ${player1Points}
-     Player 2 total points: ${player2Points}
-     Total number of ties: ${tie}
-     The winner is ${winner}
+     Player 1 total points: ${this.player1Points}
+     Player 2 total points: ${this.player2Points}
+     Total number of ties: ${this.tie}
+     The winner is ${this.winner}
      `)
-}}
+  }
+    clear(){
+      return this.start()
+    }
+}
 
 
 let menu = new CardGame() //Starts the prompts rolling
