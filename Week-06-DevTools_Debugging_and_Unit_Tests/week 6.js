@@ -1,162 +1,93 @@
-console.log("JS Final");
-// classes to start functions, Card, Deck, and the game itself
-//
-//
-// Player1 vs Player2 - When player wins they get a point, at end of string, display total.
-// if/else statement for win loss, if array[index] value is greater it's a win.
-// if/else statement to compare player 1 points and player 2 points to show the winner via alert.
-let player1 = [];
-let player2 = [];
-let deckSize = 52;
-let halfDeck = Math.ceil(deckSize / 2)
-const SUITS = ["H", "D", "C", "S"]; //Suits array
-const FACE = [
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "J",
-  "Q",
-  "K",
-  "A"]; // Card face
-
-  const value = {
-    "A": 1,
-    "2": 2,
-    "3": 3,
-    "4": 4,
-    "5": 5,
-    "6": 6,
-    "7": 7,
-    "8": 8,
-    "9": 9,
-    "10": 10,
-    "J": 11,
-    "Q": 12,
-    "K": 13
-    }
-
-
-
-function newDeck() {
-    // Creating deck of cards
-    return SUITS.flatMap((suit) => {
-      return FACE.map((face) => {
-        return new Cards(suit, face);
-      });
-    });
-
-}
-class Cards {
-  //Framework for the cards
-  constructor(suit, face) {
-    this.suit = suit;
-    this.face = face;
+class Player {
+  constructor(name) {
+      this.name = name
+      this.score = 0;
+      this.hand = [];
   }
 }
-  function showCard(){
-    return `Suit: ${this.suit}, Face value is: ${this.face}`
+let names = ["Stockfish 13","Fat Fritz 2","Komodo Dragon","Igel 3.0.5","RubiChess 2.1","Houdini 6","Deep Blue"]
+let player1 = new Player(names[Math.floor(Math.random()*names.length)])
+let player2 = new Player(names[Math.floor(Math.random()*names.length)])
+
+console.log("line 31", player1.name, player1.score, player1.hand)
+console.log("line 32", player2.name, player2.score, player2.hand)
+
+let faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
+console.log(faces.length);
+let suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+let value = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+console.log("line 19",value.length);
+
+class Card {
+  constructor(faces, suit, value) {
+      this.faces = faces;
+      this.suit = suit;
+      this.value = value;
+  }
 }
 
 class Deck {
-  //Code to create the full deck
-  constructor(cards = newDeck()) {
-      this.cards = cards;
-      this.deck = [];
+  constructor() {
+      this.deck = []; 
+      this.tie = 0
+      this.winner = ""
+  }
+
+  createDeck() {
+      for (let facesIndex = 0; facesIndex < faces.length; facesIndex++) {
+          for (let suitsIndex = 0; suitsIndex < suits.length; suitsIndex++) {
+              this.deck.push(new Card(faces[facesIndex], suits[suitsIndex], value[facesIndex]));
+          }
+      }
   }
   shuffle() {
-    for (let i = deckSize - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      const temp = this.cards[i]
-      this.cards[i] = this.cards[j]
-      this.cards[j] = temp
-    } this.deck.push(this.cards)
-  }
-  player() {
-    for(let i=0; i<deckSize; i++){
-      if(i % 2 === 0){
-      player1.push(this.cards[i])
-      }else {
-      player2.push(this.cards[i])
-      }
-
+          for (let i = 52 -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i)
+            let k = this.card[i]
+            this.card[i] = this.card[j]
+            this.card[j] = k
     }
-    console.log(player1)
-    console.log(player2);
   }
-}
+  dealDeck() {
+      player1.hand.push(this.deck.slice(0, 26)); //for loop
+      player2.hand.push(this.deck.slice(26, 52))
+      console.log("line 52",player1.hand)
+      console.log("line 53",player2.hand)
 
-
-class CardGame {     //Starting menu for selections
-  constructor(){
-    this.player1Hand = 0
-    this.player2Hand = 0
-    this.player1Points =0
-    this.player2Points =0
-    this.tie = 0
-    this.winner = 0
   }
-    start() {  //Starts the the game
-      let selection = this.gamePlay();
-          while (selection != 0) {
-          switch (selection) {
-          case '1':
-             this.deal();
-             break;
-          default:
-            selection = 0;
-         }
-         selection = this.gamePlay();
-      }
-      alert("Thank you, goodbye");
-    }
-    gamePlay(){  //Menu option text
-    return prompt(`
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~
-           Greetings Program!!
-           0) Exit
-           1) Deal
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~
-           `);
-    }
-    deal(){
-
+  scoreCard(){
       for (let i = 0; i < 26; i++){
-        this.player1Hand = player1.FACE[i]
-        this.player2Hand = player2.FACE[i]
-        if ((value[this.player1Hand])>(value[this.player2Hand])) {
-          this.player1Points++          
-        }else if ((value[this.player1Hand])<(value[this.player2Hand])){
-          this.player2Points++
+        if (player1.cards[value[i]]>player2.cards[value[i]]) {
+          player1.score + 1        
+        }else if (player1.cards[value[i]]<player2.cards[value[i]]){
+          player2.score + 1
         }else {
-          this.tie++
+          this.tie + 1
         }
-        console.log(this.player1Points,this.player2Points,this.tie)
+        console.log(player1.score,player2.score,this.tie)
      }
   }
-    winner(){
-      console.log(`
-     Player 1 total points: ${this.player1Points}
-     Player 2 total points: ${this.player2Points}
-     Total number of ties: ${this.tie}
-     The winner is ${this.winner}
-     `)
-  }
-    clear(){
-      return this.start()
-    }
+  // winning(){
+  //     if (player1.score>player2.score && player1.score>this.tie) {
+  //     this.winner = player1
+  //       }else if (player1.score< player2.score && player2.score>this.tie){
+  //         this.winner = player2
+  //       }else if (player1.score< player2.score && player2.score>this.tie){
+  //         this.winner = this.tie
+  //       }else{
+  //         alert ('ERROR!!!!!')
+  //       }
+  //    console.log(`
+  //    Player 1 total points: ${this.player1.score}
+  //    Player 2 total points: ${this.player2.score}
+  //    Total number of ties: ${this.tie}`
+  //    `The winner is ${this.winner}
+  //    `)
+  // }
 }
 
 
-let menu = new CardGame() //Starts the prompts rolling
-menu.start()
-
-let freshDeck = new Deck()
-console.log(freshDeck)
-freshDeck.shuffle()
-freshDeck.player()
+let freshDeck = new Deck();
+freshDeck.createDeck();
+freshDeck.dealDeck();
+freshDeck.scoreCard()
