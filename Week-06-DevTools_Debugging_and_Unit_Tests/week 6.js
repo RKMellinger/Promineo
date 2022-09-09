@@ -57,9 +57,9 @@ class Deck {
   }
   scoreCard(){
       for (let i = 0; i < 26; i++){
-        if (player1.cards[value[i]]>player2.cards[value[i]]) {
+        if (player1.cards>player2.cards) {
           player1.score + 1        
-        }else if (player1.cards[value[i]]<player2.cards[value[i]]){
+        }else if (player1.cards<player2.cards){
           player2.score + 1
         }else {
           this.tie + 1
