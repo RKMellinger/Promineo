@@ -31,13 +31,13 @@ class Card { // Card builder
 }
 let tie = 0
 let totalTies = 0
-let winner = ""
+
 let player1Points = 0
 let player2Points = 0
 class Deck { //the Deck builder 
   constructor() {
       this.deck = []; 
-
+      this.winner = ""
 
 
   }
@@ -97,30 +97,23 @@ class Deck { //the Deck builder
         ${player1.name}: ${player1.score}
         ${player2.name}: ${player2.score}
         And a total of ${tie} ties!`)
-        if (player1Points > player2Points && player1Points > totalTies) {
-          winner = player1.name
-        }else if (player1Points < player2Points && player2Points > totalTies){
-          winner = player2.name
-        }else if (player1Points < totalTies && player2Points < totalTies){
-          winner = "It's a tie!!!"
-        }else{
-          alert ('ERROR!!!!!')
-        }
-        console.log(`
-        Player 1 total points: ${player1Points}
-        Player 2 total points: ${player2Points}
-        Total number of ties: ${totalTies}`
-        `The winner is ${winner}
-        `)
 
      }
 
   }
   winning(){
-    // for(let i = 0;i=player1.score.length;i){
-    //   for(let j =0;j=player2.score.length;j){
-    //     for(let k =0;k=tie.length;k){
-
+          if (player1.score > player2.score && player1.score > tie) {
+            this.winner = player1.name
+          }else if (player1.score < player2.score && player2.score > tie){
+            this.winner = player2.name
+          }else {
+            this.winner = ("It's a tie")            
+          }
+          console.log(player1.name + " total points: "+ player1.score + "\n" + 
+          player2.name + " total points: "+ player2.score + "\n" + "Total number of ties: "+ 
+          tie + "\n")
+          console.log("The winner is: " + this.winner + "!!!!!")
+          console.log(this.winner + " takes the prize!!!")
         }
 
 }
@@ -130,7 +123,6 @@ class Deck { //the Deck builder
 //   }
 // }
 
-// console.log("line 88", player1.deck)
 
 let freshDeck = new Deck();
 freshDeck.createDeck();
