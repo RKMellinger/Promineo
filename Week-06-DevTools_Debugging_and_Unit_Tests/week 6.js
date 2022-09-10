@@ -5,26 +5,28 @@ class Player { // Player descriptions
       this.hand = [];
   }
 }
-let names = ["Stockfish 13","Fat Fritz 2","Komodo Dragon","Igel 3.0.5","RubiChess 2.1","Houdini 6","Deep Blue"]
-let player1 = new Player(names[Math.floor(Math.random()*names.length)]) 
-let player2 = new Player(names[Math.floor(Math.random()*names.length)]) // Assigns a random name to the player
+let names = ["Stockfish 13","Fat Fritz 2","Komodo Dragon","Igel 3.0.5","RubiChess 2.1",
+"Houdini 6","Deep Blue", "AlphaGo", "Deep Mind", "Boris Diplomat", "Chess Challenger", 
+"The King", "Mephisto","Belle 1976","AlphaZero 2017", "Maven", "Chinook", "KingsRow", "Chess Master 2000"]
+let player1 = new Player(names[Math.floor(Math.random()*names.length)]) // Assigns a random name to the player
+let player2 = new Player(names[Math.floor(Math.random()*names.length)]) 
 
 console.log(`Lets play some Chess, er.. War... 
-Before you are some of the greatest computer chess playing programs of all time.
+Before you are some of the worlds notable game playing programs of all time.
 This round's combatants are:`);
 console.log(`Player1: ${player1.name} starting score is: ${player1.score}`) 
 console.log(`Player2: ${player2.name} starting score is: ${player2.score}`)
 
-let faces = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']; //Card components
-let suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+let face = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']; //Card components
+let suits = ['♥', '♦', '♣', '♠'];
 let value = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 let fullDeck = 52
 let playerDecks = 26
 
 
 class Card { // Card builder
-  constructor(faces, suit, value) {
-      this.faces = faces;
+  constructor(face, suit, value) {
+      this.face = face;
       this.suit = suit;
       this.value = value;
   }
@@ -43,9 +45,9 @@ class Deck { //the Deck builder
   }
 
   createDeck() { //creates the deck
-      for (let facesIndex = 0; facesIndex < faces.length; facesIndex++) {
+      for (let faceIndex = 0; faceIndex < face.length; faceIndex++) {
           for (let suitsIndex = 0; suitsIndex < suits.length; suitsIndex++) {
-              this.deck.push(new Card(faces[facesIndex], suits[suitsIndex], value[facesIndex]));
+              this.deck.push(new Card(face[faceIndex], suits[suitsIndex], value[faceIndex]));
           }
       }
   }
@@ -79,18 +81,22 @@ class Deck { //the Deck builder
   scoreCard(){
       for (let i = 0; i < 26; i++){
         if (player1.hand[i].value > player2.hand[i].value) {
-          console.log("And the draw",player1.hand[i],player2.hand[i])
-          console.log(`${player1.name} wins!`)
+          console.log("And the draw")
+          console.log(player1.hand[i])
+          console.log(player2.hand[i])
+          console.log(player1.name + " wins!")
           player1.score += 1     
-//          console.log(player1.score);   
         }else if (player1.hand[i].value < player2.hand[i].value){
           player2.score += 1
-          console.log(`${player2.name} wins!`)         
-          console.log("And the draw",player1.hand[i],player2.hand[i])
-//          console.log(player2.score); 
+          console.log("And the draw")
+          console.log(player1.hand[i])
+          console.log(player2.hand[i])
+          console.log(player2.name + " wins!")         
         }else {
           tie += 1
-          console.log("And the draw",player1.hand[i],player2.hand[i])
+          console.log("And the draw")
+          console.log(player1.hand[i])
+          console.log(player2.hand[i])
           console.log(`It's a tie!!`)
         }
         console.log(`The score is:
