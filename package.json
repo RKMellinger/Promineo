@@ -1,10 +1,10 @@
 {
   "name": "promineo",
   "version": "1.0.0",
-  "description": "Class work",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,9 @@
     "url": "https://github.com/RKMellinger/Promineo/issues"
   },
   "homepage": "https://github.com/RKMellinger/Promineo#readme",
-  "dependencies": {
+  "devDependencies": {
     "chai": "^4.3.6",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
   }
 }
