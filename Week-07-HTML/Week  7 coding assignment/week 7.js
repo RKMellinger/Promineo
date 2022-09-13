@@ -20,12 +20,13 @@ Thank you for your time.`)
 
 //Magic Cannonball
 
-let userQuestion = `Please enter your question..`
+let userQuestion = ""
 console.log(userQuestion)
 let randomNumber = Math.floor(Math.random() * 8);
 console.log(randomNumber)
 let cannonBall = ""
-
+function magicCannonball(){
+    userQuestion = prompt("Please enter your question..")
 switch (randomNumber){
 case randomNumber = 0 :
 cannonBall = 'Yar, It be certain'
@@ -43,6 +44,7 @@ break
  cannonBall = 'Dead Men Tell No Tales'
 break
  case (randomNumber = 5):
+    
  cannonBall = 'set the sails and rigging!'
 break
  case (randomNumber = 6):
@@ -51,5 +53,6 @@ default:
  cannonBall = 'The mists say come back later'
  break
 }
-
-console.log(cannonBall)
+return alert(cannonBall)
+}
+console.log(magicCannonball(cannonBall))
