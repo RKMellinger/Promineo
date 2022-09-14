@@ -4,9 +4,18 @@
 Research questions: 
 
 What are 3 HTML elements not mentioned any of the video this week? What do they do and how are they used? 
-Video element used - html, head, title, <p>, <a>, <h1 text>, <B>, <I>, <sup>, <!-- comment out's --->, <br>, 
-<ol>, <ul>, <li>, <table>,<tr>, <th>, <form>, <div>, <span>, <script>
+Video element used: html, head, title, <p>, <a>, <h1 text>, <B>, <I>, <sup>, <!-- comment out's --->, <br>, <ol>, <ul>, <li>, <table>,<tr>, <th>, <form>, <div>, <span>, <script>, <img>
+
+Not discussed: <base>, <link>, <meta>, <address>, <aside><footer><header><main><nav><section><figure><figcaption>
+
+3 elements not used were: figure, header, and menu. Starting with the latter, Menu "<menu>" is an item similar to the unordered list element as it creates an unorganized list and uses the list item "<li>" tag but, unlike UL, the menu acts as a directory. Instead of just displaying items on the list it is used for actions. A menu for page links, expanded descriptions, etc. Another element is the header which also means a footer element. Header is used to create a header on the page. in the head tag area it creates a place for a title which is displayed in the upper portion of the page above anything in the body tags. Like Header, the Footer will be in the foot of the page below any other body tags. The other element I chose is the figure "<figure>" tag. The figure tag is used to separate out individual self-contained content like images, codesnippets, diagrams, etc. and their associated captions <figcaption>. This element is then able to be inserted or moved around the page with out affecting the flow of the page. 
+Ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
 
 Choose one of your favorite websites and identify 5 different HTML elements used on the website. Make sure to include the URL in your submission.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element - This site has a <head> with <title> and <script> elements. in the <body> there are <ul>, <div>, and <footer> in the main body. 
+As it is an easy site, I have a second:
+https://learn.promineotech.com/course/view.php?id=58&section=7 - Again, in the <head> there is a <title> showing on the browser tab, <script> and <nav> elements to make the links work, and <style>  elements to connect to the css.
+
 
 What is your favorite thing you learned this week?

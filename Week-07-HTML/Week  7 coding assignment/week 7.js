@@ -20,7 +20,7 @@ let cannonBall = ""
 let myButton = document.getElementById("submit");
 //
 function magicCannonball(){
-//    userQuestion = prompt("Please enter your question..")
+
 switch (randomNumber){
 case randomNumber = 0 :
 cannonBall = 'Yar, It be certain'
@@ -47,7 +47,6 @@ default:
  cannonBall = 'The mists say come back later'
  break
 }
-//return alert(cannonBall)
 }
 magicCannonball()
 console.log(myButton)

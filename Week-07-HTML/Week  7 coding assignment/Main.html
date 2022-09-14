@@ -1,72 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 7 Coding assignment</title>
-    <script src="week 7.js"></script>
-    <style>
-      table, th, td {
-        border:5px solid rgb(0, 0, 0);
-        border-collapse: collapse;
-      }
-      </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 7 Coding assignment</title>
+  <script src="week 7.js"></script>
+  <style>
+    table,
+    th,
+    td {
+      border: 5px solid rgb(0, 0, 0);
+      border-collapse: collapse;
+    }
+  </style>
+  <header>
+    <table style="width: 100%">
+      <th><a href="Main.html"> Main Page </a></th>
+      <th><a href="Members list.html"> Members Directory </a></th>
+      <th><a href="Upcoming events.html"> Upcoming Events </a></th>
+      <th><a href="join.html">Make yer mark!!</a></th>
+    </table>
+  </header>
 </head>
+
 <body>
-  <table style="width: 100%">
-    <th><a href="Main.html"> Main Page </a></th>
-    <th><a href="Members list.html"> Members Directory </a></th>
-    <th><a href="Upcoming events.html"> Upcoming Events </a></th>
-    <th><a href="join.html">Make yer mark!!</a></th>
-  </table><br><br>
-    <!-- as the console.log and JS alert shows, I am part of  501c3 reenactment group. As part of this 
+  <br>
+  <!-- as the console.log and JS alert shows, I am part of  501c3 reenactment group. As part of this 
         class i hope to be able to build a site for the group when I an done. -->
-   <div> <h1><b>Welcome to the Battle Wolf!</b></h1>
-    <img src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/247090105_4508219565891421_8665784241660428087_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=825194&_nc_ohc=DoZVJHedKn0AX-Q1dmi&_nc_ht=scontent.flas1-1.fna&oh=00_AT-Ck2-02Rl7YYMggOJdg8XLW_KflS1UIpKi-MlnX2eYEQ&oe=63266723" 
-    alt="Battlewolf emblem" height="400" title="Flag of the Battle Wolf!"/>
-  <p>Welcome traveler to the home of the Battle Wolf. We are a non-profit 501c3 group of historical reenactors <br>
-    who travel around the southwest of the new world bringing enlightenment and educational fun</p>
-  <ul>
-    <li>Viking Skalds and Sagas: Nightly fireside tellings of skalds and singing of songs amist food and wine.</li>
-    <li>General merry making: We pass good tithings to all who pass. We offer tours of our encampment and some members even distribute our liberated wealth to passing children.</li>
-    <li>Oversized jenga but with swords: Yes! Come play our oversized Jenga with the use of swords. To free the block you must use a rapier to remove it from the tower, only after the block has hit the ground can you use your hand.. En garde!</li>
-    <li>Bartering table: We offer bartering services, have an item for trade? Bring it by and see if there is something you'd be willing to trade it for. Selections change hourly so be sure to stop by often!</li>
-  </ul>
-</div>
-<div>
-  <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook site.</a><br>
-</div>
-<div>
-<p>Want to join after seeing all of this?   <button><a href="join.html">Make yer mark!!</a></button></p>
-</div>
+  <div>
+    <h1><b>Welcome to the Battle Wolf!</b></h1>
+    <img
+      src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/247090105_4508219565891421_8665784241660428087_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=825194&_nc_ohc=DoZVJHedKn0AX-Q1dmi&_nc_ht=scontent.flas1-1.fna&oh=00_AT-Ck2-02Rl7YYMggOJdg8XLW_KflS1UIpKi-MlnX2eYEQ&oe=63266723"
+      alt="Battlewolf emblem" height="400" title="Flag of the Battle Wolf!" />
+    <p>Welcome traveler to the home of the Battle Wolf. We are a non-profit 501c3 group of historical reenactors <br>
+      who travel around the southwest of the new world bringing enlightenment and educational fun</p>
+    <ul>
+      <li>Viking Skalds and Sagas: Nightly fireside tellings of skalds and singing of songs amist food and wine.</li>
+      <li>General merry making: We pass good tithings to all who pass. We offer tours of our encampment and some members
+        even distribute our liberated wealth to passing children.</li>
+      <li>Oversized jenga but with swords: Yes! Come play our oversized Jenga with the use of swords. To free the block
+        you must use a rapier to remove it from the tower, only after the block has hit the ground can you use your
+        hand.. En garde!</li>
+      <li>Bartering table: We offer bartering services, have an item for trade? Bring it by and see if there is
+        something you'd be willing to trade it for. Selections change hourly so be sure to stop by often!</li>
+    </ul>
+  </div>
+
+  <div>
+    <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook
+      site.</a><br>
+  </div>
+  <div>
+    <p>Want to join after seeing all of this? <button><a href="join.html">Make yer mark!!</a></button></p>
+  </div>
 
   <br><br>
 
   <div>
-  <!-- Magic Cannonball program -->
-  <p>Seeking yer fortune? Why not ask Davy Jones' "Magic" Cannonball..</p>
-  <form onsubmit="magicCannonball()">
-    <label for="userQuestion">What be yer question?</label> 
-    <input type="text" name="userQuestion" id="userQuestion" />
-    <input type="submit" />
-  </form>
-  <script>
-    function magicCannonball() {
-      alert(cannonBall);
-    }
-  </script>
-  <br>
-  <br>
+    <!-- Magic Cannonball program -->
+    <p>Seeking yer fortune? Why not ask Davy Jones' "Magic" Cannonball..</p>
+    <form onsubmit="magicCannonball()">
+      <label for="userQuestion">What be yer question?</label>
+      <input type="text" name="userQuestion" id="userQuestion" />
+      <input type="submit" />
+    </form>
+    <script>
+      function magicCannonball() {
+        alert(cannonBall);
+      }
+    </script>
+    <br>
+    <br>
 </body>
+<foot>
+  <footer>
+    <table style="width: 100%">
+      <th><a href="Main.html"> Main Page </a></th>
+      <th><a href="Members list.html"> Members Directory </a></th>
+      <th><a href="Upcoming events.html"> Upcoming Events </a></th>
+      <th><a href="join.html">Make yer mark!!</a></th>
+    </table>
+    <br>
+    <br>
+  </footer>
+</foot>
 
-<footer>
-  <table style="width: 100%">
-    <th><a href="Main.html"> Main Page </a></th>
-    <th><a href="Members list.html"> Members Directory </a></th>
-    <th><a href="Upcoming events.html"> Upcoming Events </a></th>
-    <th><a href="join.html">Make yer mark!!</a></th>
-  </table>
-  <br>
-  <br>
-</footer>
 </html>
