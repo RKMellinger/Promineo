@@ -1,11 +1,11 @@
-console.log(`Greetings Program, 
+console.log(`Greetings, 
 This is the week 7 coding assignment. As a but of fyi, I am part of a 
 501c3 historical reenactment group and by the end of this I would like
 to be able to build a website for them. If you don't mind I'll start working 
 on it here. :D
 Thank you for your time.`)
 
-alert(`Greetings Program, 
+alert(`Greetings, 
 This is the week 7 coding assignment. As a but of fyi, I am part of a 
 501c3 historical reenactment group and by the end of this I would like
 to be able to build a website for them. If you don't mind I'll start working 
@@ -17,6 +17,7 @@ Thank you for your time.`)
 let userQuestion = ""
 let randomNumber = Math.floor(Math.random() * 8);
 let cannonBall = ""
+let myButton = document.getElementById("submit");
 //
 function magicCannonball(){
 //    userQuestion = prompt("Please enter your question..")
@@ -48,9 +49,13 @@ default:
 }
 //return alert(cannonBall)
 }
-window.addEventListener('load', event => {
-  magicCannonball();
-});
+magicCannonball()
+console.log(myButton)
+
+myButton.addEventListener("click", function () {
+
+  alert(cannonBall)
+})
 console.log(userQuestion)
 console.log(randomNumber)
 console.log(magicCannonball(cannonBall))
