@@ -18,33 +18,36 @@
     <a href="Upcoming events.html">Upcoming Events</a><br><br>
     <!-- as the console.log and JS alert shows, I am part of  501c3 reenactment group. As part of this 
         class i hope to be able to build a site for the group when I an done. -->
-    <h1><b>Welcome to the Battle Wolf!</b></h1>
+   <div> <h1><b>Welcome to the Battle Wolf!</b></h1>
   <p>Welcome traveler to the home of the Battle Wolf. We are a non-profit 501c3 group of historical reenactors 
-    who travel around the southwest of the New World bringing enlightenment and educational fun</p>
-
+    who travel around the southwest of the New World bringing enlightenment and educational fun</p></div>
+  <div>
   <ul>
     <li>Viking Skalds and Sagas</li>
     <li>Day or night drinking</li>
     <li>Various distilling and spirts</li>
     <li>General merry making</li>
     <li>Oversized jenga but with swords</li>
-  </ul>
-
+  </ul></div>
+<div>
   <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook site.</a><br>
 <p>Want to join after seeing all of this?   <button><a href="join.html">Make yer mark!!</a></button></p>
+</div>
 
   <br><br>
+
+  <div>
   <!-- Magic Cannonball program -->
   <p>Seeking yer fortune? Why not ask Davy Jones' Magic Cannonball..</p>
-<form id="frm1" action="/action_page.php">
-  What be yer question? <input type="text" name="fname"><br><br>
-  <input type="button" onclick="magicCannonball()" value="Submit">
-</form>
-
-<script>
-function magicCannonball() {
-  document.getElementById("week 7.js").submit();
-}
-</script>
+  <form onsubmit="magicCannonball()">
+    <label for="userQuestion">What be yer question?</label> 
+    <input type="text" name="userQuestion" id="userQuestion" />
+    <input type="submit" />
+  </form>
+  <script>
+    function magicCannonball() {
+      alert(cannonBall);
+    }
+  </script>
 </body>
 </html>

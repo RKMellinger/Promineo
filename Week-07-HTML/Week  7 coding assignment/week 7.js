@@ -15,12 +15,11 @@ Thank you for your time.`)
 //Magic Cannonball Js game
 
 let userQuestion = ""
-console.log(userQuestion)
 let randomNumber = Math.floor(Math.random() * 8);
-console.log(randomNumber)
 let cannonBall = ""
+//
 function magicCannonball(){
-    userQuestion = prompt("Please enter your question..")
+//    userQuestion = prompt("Please enter your question..")
 switch (randomNumber){
 case randomNumber = 0 :
 cannonBall = 'Yar, It be certain'
@@ -29,7 +28,7 @@ case randomNumber = 1:
  cannonBall = 'I feel it in my bones'
 break
  case (randomNumber = 2):
- cannonBall = 'The map says treasure abound'
+ cannonBall = 'The map says there be treasure'
 break
  case (randomNumber = 3):
   cannonBall = 'Ya, might walk the plank..'
@@ -47,6 +46,11 @@ default:
  cannonBall = 'The mists say come back later'
  break
 }
-return alert(cannonBall)
+//return alert(cannonBall)
 }
-//console.log(magicCannonball(cannonBall))
+window.addEventListener('load', event => {
+  magicCannonball();
+});
+console.log(userQuestion)
+console.log(randomNumber)
+console.log(magicCannonball(cannonBall))
