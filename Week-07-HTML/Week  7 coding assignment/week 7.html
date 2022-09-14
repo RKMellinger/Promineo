@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 7 Coding assignment</title>
     <script src="week 7.js"></script>
+    <style>
+      table, th, td {
+        border:5px solid rgb(0, 0, 0);
+        border-collapse: collapse;
+      }
+      </style>
 </head>
 <body>
-    <a href="https://www.facebook.com/BattleWolf">Official Facebook for BattleWolf.</a><br>
     <a href="week 7.html">Main Page</a><br>
     <a href="Members list.html">Members Directory</a><br>
     <a href="Upcoming events.html">Upcoming Events</a><br><br>
@@ -22,10 +27,24 @@
     <li>Day or night drinking</li>
     <li>Various distilling and spirts</li>
     <li>General merry making</li>
+    <li>Oversized jenga but with swords</li>
   </ul>
 
+  <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook site.</a><br>
+<p>Want to join after seeing all of this?   <button><a href="join.html">Make yer mark!!</a></button></p>
 
-  <p>Ask the Magic Cannonball</p>
-  <p>Link for JS cannonball switch</p>
+  <br><br>
+  <!-- Magic Cannonball program -->
+  <p>Seeking yer fortune? Why not ask Davy Jones' Magic Cannonball..</p>
+<form id="frm1" action="/action_page.php">
+  What be yer question? <input type="text" name="fname"><br><br>
+  <input type="button" onclick="magicCannonball()" value="Submit">
+</form>
+
+<script>
+function magicCannonball() {
+  document.getElementById("week 7.js").submit();
+}
+</script>
 </body>
 </html>
