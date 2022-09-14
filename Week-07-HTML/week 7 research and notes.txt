@@ -3,7 +3,9 @@
 
 Research questions: 
 
-What are 3 HTML elements not mentioned any of the video this week? What do they do and how are they used?
+What are 3 HTML elements not mentioned any of the video this week? What do they do and how are they used? 
+Video element used - html, head, title, <p>, <a>, <h1 text>, <B>, <I>, <sup>, <!-- comment out's --->, <br>, 
+<ol>, <ul>, <li>, <table>,<tr>, <th>, <form>, <div>, <span>, <script>
 
 Choose one of your favorite websites and identify 5 different HTML elements used on the website. Make sure to include the URL in your submission.
 
