@@ -1,5 +1,7 @@
 #headerTable {
+  padding: 20px;
   width: 100%;
   border: 5px solid rgb(0, 0, 0);
   border-collapse: collapse;
+  margin: 10px;
 }
