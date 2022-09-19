@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Members Listing</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <table style="width: 100%">
+    <table id="headerTable">
         <th><a href="Main.html"> Main Page </a></th>
         <th><a href="Members list.html"> Members Directory </a></th>
         <th><a href="Upcoming events.html"> Upcoming Events </a></th>
@@ -19,7 +20,7 @@
     <h1>Welcome to our members page.</h1>
     <div>
         <h4>Below is a listing of our current members.</h4>
-        <h2>Board Members:</h2>
+        <h2 id="boardMembers">Board Members:</h2>
         <figure></figure>
         <img src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/246863055_10223203222163768_8142658797297913799_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=b9115d&_nc_ohc=abtMZO7OaZAAX-9oog1&_nc_ht=scontent.flas1-1.fna&oh=00_AT9jsPERAPiD-ZcDPaQto6xvyqI2OiU7MY--YpJYMmON_A&oe=63273084"
             alt="Baron Shenanagans and Gunpowder enjoying a feast." height="500"
@@ -80,10 +81,10 @@
             Captain Grim is as hard as they come. He expects everyone on his crew to to work almost as hard <br>
             as they play, but be warned, he once set his own ship on fire to send a warning to his enemies.</p>
         <br>
-
+        <figure id="duchy">
         <h2>Our main patreon, er, patron:</h2>
         <h2>Duca Ludovico "il Moro" Sforvza, Ducato di Milano</h2>
-        <figure>
+
             <img src="https://scontent.flas1-1.fna.fbcdn.net/v/t1.6435-9/37024759_2304537019572827_1756519900395864064_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=lvnq3P4iiG4AX_Pl6l1&_nc_ht=scontent.flas1-1.fna&oh=00_AT9_Gg7qpGpjp_nJKRTZBVY8WfGKkYGhJqwt5QFkppk53g&oe=63487DBF"
                 alt="The Illustrious Duke of Milan." height="500" title="The Illustrious Duke of Milan." />
             <figcaption>The Illustrious Duke of Milan.</figcaption>
@@ -93,7 +94,7 @@
             and is always happy to receive our tribute.<br>
         </p>
     </div>
-    <div>
+    <div id="deployed">
         <figure>
             <img src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/293526664_5327276273985742_5870160536613227886_n.jpg?stp=cp6_dst-jpg&_nc_cat=104&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=4Uf13MT0G5cAX8JLoW0&tn=PiESBVT5LVaYKVp9&_nc_ht=scontent.flas1-1.fna&oh=00_AT-4MzR0dwpwwyKYWoQY7PzkkNRfcuSOnCuYPhuaGp9VQQ&oe=63272D57"
                 alt="Commadore Shenanigan, Capt. Hawkins, Capt McBadger-Martogg, Her Brother Capt. McBadger, and Gunner “Bottles” Martogg"
@@ -106,7 +107,7 @@
         <h3>Captain Maximus McBadger - Captain of the Night Terror</h3>
         <h3>First Mate Valeria McBadger</h3>
     </div>
-    <div>
+    <div id="theCrew">
         <h2>The Crew:</h2>
         <p>Our ships are crewed by some of the finest pirate, er Privateers in land. They come from all walks of life
             and areas of the new and old world.
@@ -161,7 +162,7 @@
 </body>
 
 <footer>
-    <table style="width: 100%">
+    <table id="headerTable">>
         <th><a href="Main.html"> Main Page </a></th>
         <th><a href="Members list.html"> Members Directory </a></th>
         <th><a href="Upcoming events.html"> Upcoming Events </a></th>
@@ -169,7 +170,7 @@
     </table>
     <br>
     <br>
-    <script src="week 7.js"></script>
+    <script src="index.js"></script>
 </footer>
 
 </html>

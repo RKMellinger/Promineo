@@ -4,23 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 7 Coding assignment</title>
-
+  <title>Week 8 Coding assignment</title>
+<link rel="stylesheet" href="index.css">
   <style>
-    table,
-    th,
-    td {
-      border: 5px solid rgb(0, 0, 0);
-      border-collapse: collapse;
-    }
+
   </style>
   <header>
-    <table style="width: 100%">
+    <table id="headerTable">
       <th><a href="Main.html"> Main Page </a></th>
       <th><a href="Members list.html"> Members Directory </a></th>
       <th><a href="Upcoming events.html"> Upcoming Events </a></th>
       <th><a href="join.html">Make yer mark!!</a></th>
     </table>
+    <script src="index.js"></script>
   </header>
 </head>
 
@@ -28,7 +24,7 @@
   <br>
   <!-- as the console.log and JS alert shows, I am part of  501c3 reenactment group. As part of this 
         class i hope to be able to build a site for the group when I an done. -->
-  <div>
+  <div id="generalInfo">
     <h1><b>Welcome to the Battle Wolf!</b></h1>
     <img
       src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/247090105_4508219565891421_8665784241660428087_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=825194&_nc_ohc=DoZVJHedKn0AX-Q1dmi&_nc_ht=scontent.flas1-1.fna&oh=00_AT-Ck2-02Rl7YYMggOJdg8XLW_KflS1UIpKi-MlnX2eYEQ&oe=63266723"
@@ -59,14 +55,13 @@
 
   <br><br>
 
-  <div>
-    <!-- Magic Cannonball program -->
+  <div id="cannonball">     <!-- Magic Cannonball program -->   
     <p>Seeking yer fortune? Why not ask Davy Jones' "Magic" Cannonball..</p>
     <form onsubmit="magicCannonball()">
       <label for="userQuestion">What be yer question?</label>
       <input type="text" name="userQuestion" id="userQuestion" />
       <input type="submit" />
-    </form>
+    </form>    
     <script>
       function magicCannonball() {
         alert(cannonBall);
@@ -78,7 +73,7 @@
 </body>
 <foot>
   <footer>
-    <table style="width: 100%">
+    <table id="headerTable">>
       <th><a href="Main.html"> Main Page </a></th>
       <th><a href="Members list.html"> Members Directory </a></th>
       <th><a href="Upcoming events.html"> Upcoming Events </a></th>
@@ -86,7 +81,7 @@
     </table>
     <br>
     <br>
-    <script src="index.js"></script>
+
   </footer>
 </foot>
 
