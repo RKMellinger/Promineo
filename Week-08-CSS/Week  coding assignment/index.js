@@ -50,9 +50,9 @@ default:
 }
 magicCannonball()
 console.log(myButton)
-myButton.addEventListener("click", function(){
-  alert(cannonBall)
-})
+//myButton.addEventListener("click", function(){
+//  alert(cannonBall)
+//})
 console.log(userQuestion)
 console.log(randomNumber)
 console.log(magicCannonball(cannonBall))
