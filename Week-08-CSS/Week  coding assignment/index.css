@@ -1,4 +1,12 @@
 
+html { 
+  background: url(https://media.istockphoto.com/vectors/pirate-ship-background-with-compass-vector-id165932327?k=20&m=165932327&s=612x612&w=0&h=qCTsNqMCtYirdjkXvcBt2NqM0_vR9WRSdmEGEkJWW_M=) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body{
   background-color: rgba(226, 226, 226, 0.505);
   color: black;
@@ -12,6 +20,9 @@ body{
   border-collapse: collapse;
   margin: 20px;
 }
+ul{
+  text-align: left;
+}
 #generalInfo{
   align-items: 50% 50%;
   border: 3px solid green;
@@ -19,7 +30,8 @@ body{
 text-align: center;
 }
 img {
-  position: relative;
+  position:static;
+align-items: center;
   width:auto;
   height: 600px;
   border: 1px solid black;
@@ -32,7 +44,7 @@ figure, figcaption {
 #boardMembers{
   text-align: center;;
   border: 3px solid green;
-  background-color: rgb(92, 222, 148);
+  background-color: rgb(216, 254, 233);
   object-position: 50%;
   }
 #duchy{
