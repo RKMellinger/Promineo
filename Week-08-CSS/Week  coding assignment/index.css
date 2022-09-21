@@ -1,15 +1,9 @@
 html {
-  /* background: url(https://media.istockphoto.com/vectors/pirate-ship-background-with-compass-vector-id165932327?k=20&m=165932327&s=612x612&w=0&h=qCTsNqMCtYirdjkXvcBt2NqM0_vR9WRSdmEGEkJWW_M=) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */
   background-color: azure;
 }
 
 
 body {
-
   color: black;
   mix-blend-mode: darken;
 }
@@ -25,7 +19,6 @@ body {
 }
 
 #footerTable {
-
   width: 75%;
   text-align: center;
   border: 5px solid rgb(0, 0, 0);
@@ -89,7 +82,6 @@ h2 {
 
 h3 {
   text-align: center;
-
 }
 
 h4 {
@@ -121,9 +113,13 @@ b {
 }
 
 #joinUp {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Flag_of_Henry_Every_red.svg/160px-Flag_of_Henry_Every_red.svg.png) no-repeat;
-  width: 160px;
-  height: 124px;
+  position: absolute;
+  border: 2px solid #6495ED;
+  background-color: #BCD2EE;
+  border-radius: 40px;
+  /* padding-top: 7px; */
+  padding: 10px;
+  display: block;
 }
 
 #bookOfFaces {
@@ -278,14 +274,13 @@ tr:hover {
 }
 
 #home {
-
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Flag_of_Henry_Every_red.svg/160px-Flag_of_Henry_Every_red.svg.png) no-repeat;
-  width: 160px;
-  height: 124px;
-
+  background-color: lightblue;
+  border-radius: 12px;
+  padding: 10px;
 }
 
 #disney {
+  background-color: lavender;
   border-radius: 12px;
   padding: 10px;
 }
@@ -317,7 +312,7 @@ tr:hover {
 /* styles the back button moving it to center image */
 .notReady .oops {
   position: absolute;
-  top: 15%;
+  top: 14%;
   left: 45%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
