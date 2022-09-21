@@ -56,3 +56,19 @@ console.log(myButton)
 console.log(userQuestion)
 console.log(randomNumber)
 console.log(magicCannonball(cannonBall))
+
+
+function crewDrop(){
+    document.getElementById("crewBtn").classList.toggle("show");
+}
+window.onclick = crewDrop("click")
+  if ("click".target.matches('.crewBtn')) {
+    var theCrewDir = document.getElementsByClassName("crewDir-content");
+    var i;
+    for (i = 0; i < theCrewDir.length; i++) {
+      var j = theCrewDir[i];
+      if (j.classList.contains('show')) {
+        j.classList.remove('show');
+      }
+    }
+  }

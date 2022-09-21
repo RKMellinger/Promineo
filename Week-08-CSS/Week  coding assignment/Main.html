@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="mainPage" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Week 8 Coding assignment</title>
-<link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
   <style>
 
   </style>
@@ -26,14 +26,15 @@
         class i hope to be able to build a site for the group when I an done. -->
 
 
-<img src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/247090105_4508219565891421_8665784241660428087_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=825194&_nc_ohc=DoZVJHedKn0AX-Q1dmi&_nc_ht=scontent.flas1-1.fna&oh=00_AT-Ck2-02Rl7YYMggOJdg8XLW_KflS1UIpKi-MlnX2eYEQ&oe=63266723"
-    alt="Battlewolf emblem" title="Flag of the Battle Wolf!" >
-   <div id="generalInfo"> 
-    
-    <h1><b>Welcome to the Battle Wolf!</b></h1>  
+  <img id="logo"
+    src="https://scontent.flas1-1.fna.fbcdn.net/v/t39.30808-6/247090105_4508219565891421_8665784241660428087_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=825194&_nc_ohc=DoZVJHedKn0AX-Q1dmi&_nc_ht=scontent.flas1-1.fna&oh=00_AT-Ck2-02Rl7YYMggOJdg8XLW_KflS1UIpKi-MlnX2eYEQ&oe=63266723"
+    alt="Battlewolf emblem" title="Flag of the Battle Wolf!">
+  <div id="generalInfo">
+
+    <h1><b>Welcome to the Battle Wolf!</b></h1>
     <p>Welcome traveler to the home of the Battle Wolf. We are a non-profit 501c3 group of historical reenactors
       who travel around the southwest of the new world bringing enlightenment and educational fun.</p>
-    <ul>
+    <ul id="nightlyEvents">
       <li><b>Viking Skalds and Sagas:</b> Nightly fireside tellings of skalds and singing of songs amist food and wine.
       </li>
       <li><b>General merry making:</b> We pass good tithings to all who pass. We offer tours of our encampment and some
@@ -47,36 +48,42 @@
     </ul>
   </div>
 
-  <div>
-    <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook
-      site.</a><br>
-  </div>
-  <div>
-    <p>Want to join after seeing all of this? <button><a href="join.html">Make yer mark!!</a></button></p>
-  </div>
 
   <br><br>
 
-  <div id="cannonball">     <!-- Magic Cannonball program -->   
-    <p>Seeking yer fortune? Why not ask Davy Jones' "Magic" Cannonball..</p>
+  <div id="cannonball">
+    <!-- Magic Cannonball program -->
+    <h2>Seeking yer fortune?</h2>
+    <h4> Why not ask Davy Jones' <br>"Magic" Cannonball..</h4>
     <form onsubmit="magicCannonball()">
-      <label for="userQuestion">What be yer question?</label>
-      <input type="text" name="userQuestion" id="userQuestion" />
+      <label for="userQuestion">What be yer question?</label><br>
+      <input type="text" name="userQuestion" id="userQuestion" /><br>
       <input type="submit" />
-    </form>    
+    </form>
     <script>
       function magicCannonball() {
         document.getElementById("click");
         alert(cannonBall);
       }
+
     </script>
     <br>
-    <br>
+  </div>
+  <div id="joinLink">
+    <p>Want to join after seeing all of this? <br><button id="joinUp"><a href="join.html">Make yer mark!!</a></button>
+    </p>
+  </div>
+  <br>
+  <div id="bookOfFaces">
+    <a href="https://www.facebook.com/BattleWolf">For further information please visit our official facebook
+      site.</a><br>
+  </div>
+  <br>
 
 </body>
 <foot>
   <footer>
-    <table id="headerTable">>
+    <table id="footerTable">
       <th><a href="Main.html"> Main Page </a></th>
       <th><a href="Members list.html"> Members Directory </a></th>
       <th><a href="Upcoming events.html"> Upcoming Events </a></th>
