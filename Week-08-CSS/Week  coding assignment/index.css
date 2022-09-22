@@ -3,9 +3,10 @@ html {
 }
 
 
+
 body {
   color: black;
-  /* mix-blend-mode: darken; */
+
 }
 
 #headerTable {
@@ -16,6 +17,7 @@ body {
   margin: 13%;
   margin-top: 5%;
   margin-bottom: 0%;
+
 }
 
 #footerTable {
@@ -35,7 +37,12 @@ th {
 
 /* -----Main Page--------------------------------------------------------------------------------------------------------------------- */
 #mainPage {
+  background: url(https://networkinvegas.com/wp-content/uploads/sunsetpark.jpg) no-repeat center center fixed;
   background-color: ivory;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #logo {
@@ -110,8 +117,9 @@ b {
 }
 
 #joinLink {
-  margin-left: 2%;
-
+  text-align: center;
+  margin: auto 75% auto 15%;
+  border: 5px dotted black;
 }
 
 #joinUp {
@@ -122,14 +130,27 @@ b {
   /* padding-top: 7px; */
   padding: 10px;
   display: block;
+  margin: auto auto auto 3%;
 }
 
 #bookOfFaces {
-  margin-left: 2%;
+  text-align: center;
+  margin: auto 15% auto 75%;
+  border: 5px dotted black;
+
 }
 
 /* -----Members Page--------------------------------------------------------------------------------------------------------------------- */
 /* Members page Board Members functions */
+#members {
+  background: url(https://networkinvegas.com/wp-content/uploads/sunsetpark.jpg) no-repeat center center fixed;
+  background-color: ivory;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 #boardMembers {
   /* text-align: center; */
 
@@ -232,11 +253,18 @@ button {
 #crewPhotos {
   background-color: lightsteelblue;
   padding: 5%;
+  margin: auto 5% auto 5%;
 }
 
 /* -----Events Page--------------------------------------------------------------------------------------------------------------------- */
 #events {
-  background-color: rgb(255, 249, 250);
+  background: url(https://scontent.flas1-1.fna.fbcdn.net/v/t1.6435-9/175974633_10220466833762942_3503204992175135653_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=b9115d&_nc_ohc=zcA8OIHo9JAAX8lZ2Zg&_nc_ht=scontent.flas1-1.fna&oh=00_AT9OW-MG8fgGPPHbd0V8gHi_OwaZpaJ9FNpGH4dz29kNrg&oe=635175F1) no-repeat center center fixed;
+  background-color: ivory;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 #eventsTable {
@@ -251,21 +279,31 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: lightblue;
+  background-color: dimgray;
+}
+
+tr:nth-child(odd) {
+  background-color: darkgrey;
 }
 
 tr:hover {
   border: 5px;
-  background-color: lightgray;
+  background-color: lightgreen;
 
 }
 
 /* -----Join Page Form--------------------------------------------------------------------------------------------------------------------- */
 /* Join page options */
 #join {
-  background: url(https://wallpapers-hub.art/wallpaper-images/556796.jpg) no-repeat;
-  background-color: black;
+  background: url(https://wallpapers-hub.art/wallpaper-images/556796.jpg) no-repeat center center fixed;
+  background-color: ivory;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
+
 
 #joinPage {
   background-color: darkgrey;
@@ -290,14 +328,17 @@ tr:hover {
 
 /* -----Error page--------------------------------------------------------------------------------------------------------------------- */
 /* Error Page functions */
-#notReady {
-  background-color: lightskyblue;
-  position: absolute;
+
+#errorPage {
+  background-color: black;
+  position: relative;
   top: 0;
-  left: 0;
+  left: 50;
   /* Preserve aspet ratio */
-  min-width: 100%;
-  min-height: 100%;
+  min-width: fit-content;
+  max-height: fit-content;
+  color: aquamarine;
+
 }
 
 /* creating and placing button */
@@ -308,21 +349,22 @@ tr:hover {
 
 /* Make responsive */
 .notReady img {
-  width: 100%;
-  height: auto;
+  margin: 2% auto auto 10%;
+  width: fit-content;
+  height: fit-content;
 }
 
 /* styles the back button moving it to center image */
 .notReady .oops {
   position: absolute;
   top: 14%;
-  left: 45%;
+  left: 55%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: lightblue;
-  color: black;
+  background-color: black;
+  color: aquamarine;
   font-size: 16px;
-  padding: 12px 24px;
+  padding: 42px 54px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -336,11 +378,11 @@ tr:hover {
   position: absolute;
   width: 5px;
   top: 19%;
-  left: 55%;
+  left: 80%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: lightblue;
-  color: black;
+  background-color: black;
+  color: aquamarine;
   font-size: 16px;
   padding: 10px 15px;
   border: none;
@@ -352,11 +394,11 @@ tr:hover {
   position: absolute;
   width: 5px;
   top: 24%;
-  left: 57%;
+  left: 90%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: lightblue;
-  color: black;
+  background-color: black;
+  color: aquamarine;
   font-size: 16px;
   padding: 8px 12px;
   border: none;
@@ -368,11 +410,11 @@ tr:hover {
   position: absolute;
   width: 5px;
   top: 28%;
-  left: 60%;
+  left: 100%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: lightblue;
-  color: black;
+  background-color: black;
+  color: aquamarine;
   font-size: 16px;
   padding: 5px 5px;
   border: none;
