@@ -5,7 +5,7 @@ html {
 
 body {
   color: black;
-  mix-blend-mode: darken;
+  /* mix-blend-mode: darken; */
 }
 
 #headerTable {
@@ -68,7 +68,9 @@ img {
 
 figure,
 figcaption {
-  align-items: center;
+  display: block;
+  margin: auto;
+  /* margin-right: auto; */
 }
 
 h1 {
@@ -261,15 +263,16 @@ tr:hover {
 /* -----Join Page Form--------------------------------------------------------------------------------------------------------------------- */
 /* Join page options */
 #join {
-  background-color: lightgray;
+  background: url(https://wallpapers-hub.art/wallpaper-images/556796.jpg) no-repeat;
+  background-color: black;
 }
 
 #joinPage {
-  background-color: rgb(48, 48, 48);
+  background-color: darkgrey;
   text-align: center;
   border: 5px solid black;
-  color: aliceblue;
-  margin: 40%;
+  color: black;
+  margin: 35%;
   margin-top: 5%;
 }
 
