@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/RKMellinger/Promineo/issues"
   },
-  "homepage": "https://github.com/RKMellinger/Promineo#readme"
+  "homepage": "https://github.com/RKMellinger/Promineo#readme",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {}
 }
