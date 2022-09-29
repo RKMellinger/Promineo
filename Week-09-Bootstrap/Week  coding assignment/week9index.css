@@ -78,10 +78,10 @@ tr {
 
 }
 
-/* tr,
-td {
-    vertical-align: center;
-} */
+button{
+    align-items: center;
+    margin-left: 25%;
+}
 
 h1 {
     text-align: center;
@@ -121,6 +121,7 @@ h5 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg2 {
@@ -130,6 +131,7 @@ h5 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg3 {
@@ -139,6 +141,7 @@ h5 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .bg4 {
@@ -147,14 +150,17 @@ h5 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
 .bg5 {
     background-image: url("https://scontent.flas1-2.fna.fbcdn.net/v/t1.6435-9/212911011_6373506072675560_568667471714048533_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=FTA21xXzGb8AX8QMp5g&_nc_ht=scontent.flas1-2.fna&oh=00_AT_4SqAs9hCZUyzvVFLKzCQIwlYhlGs4rT5hkETwupBUpQ&oe=6358FA60");
     height: 100%;
-    background-position: center;
+    background-color: gray;
+    background-position:center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-attachment: fixed;
 
 }
