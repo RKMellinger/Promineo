@@ -24,6 +24,5 @@
   "homepage": "https://github.com/RKMellinger/Promineo#readme",
   "directories": {
     "test": "test"
-  },
-  "devDependencies": {}
+  }
 }

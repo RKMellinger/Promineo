@@ -1,0 +1,142 @@
+.img-container-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.smallsquare {
+    max-width: 20%;
+    height: auto;
+    flex: 0 0 20%;
+    padding-top: 20%;
+    display: grid;
+    position: relative;
+}
+
+.h_rectangle {
+    max-width: 40%;
+    flex: 0 0 40%;
+    padding-top: 20%;
+    position: relative;
+}
+
+.bigsquare {
+    max-width: 40%;
+    height: auto;
+    flex: 0 0 40%;
+    padding-top: 40%;
+    display: grid;
+    position: relative;
+}
+
+.bigsquare_blank {
+    max-width: 40%;
+    height: auto;
+    flex: 0 0 40%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner_square {
+    max-width: 50%;
+    flex: 0 0 50%;
+    height: 50%;
+    position: relative;
+}
+
+.v_rectangle {
+    max-width: 20%;
+    flex: 0 0 20%;
+    padding-top: 40%;
+    position: relative;
+}
+
+.img-grid-c {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+    padding: 2.5px;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+th,
+tr {
+    border: 5px solid black;
+    block-size: 150px;
+    writing-mode: horizontal-tb;
+    color: whitesmoke;
+
+}
+
+/* tr,
+td {
+    vertical-align: center;
+} */
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 2%;
+}
+
+h5 {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 20%;
+}
+
+.bg {
+    background-image: url("https://scontent.flas1-1.fna.fbcdn.net/v/t1.6435-9/87953131_4101538746538982_5940360617033465856_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=JZ0rEyz8qCcAX80uvhR&_nc_ht=scontent.flas1-1.fna&oh=00_AT_P-No6E1ZUdvornrc9gUFI9smFfBSeslEfQkyJBCva7A&oe=6359057E");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg2 {
+
+    background-image: url("https://www.nps.gov/articles/images/jeffery-aiello-dv_racetrack-1_1.jpg?maxwidth=1200&maxheight=1200&autorotate=false");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg3 {
+
+    background-image: url("https://www.nps.gov/im/mojn/images/1E30598E-155D-4519-3E78EF15292476F9Original.jpg?maxwidth=650&autorotate=false&quality=78&format=webp");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg4 {
+    background-image: url("https://scontent.flas1-1.fna.fbcdn.net/v/t1.6435-9/94484904_4312425108783677_5918868948576632832_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=HYK5K8iA_JIAX_NEQPi&_nc_ht=scontent.flas1-1.fna&oh=00_AT92tTy6rtyQvbhL7n2a00GZtNNUGWuu7bXy6d4QwArqNQ&oe=635A9D78");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.bg5 {
+    background-image: url("https://scontent.flas1-2.fna.fbcdn.net/v/t1.6435-9/212911011_6373506072675560_568667471714048533_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=FTA21xXzGb8AX8QMp5g&_nc_ht=scontent.flas1-2.fna&oh=00_AT_4SqAs9hCZUyzvVFLKzCQIwlYhlGs4rT5hkETwupBUpQ&oe=6358FA60");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
