@@ -27,23 +27,3 @@ document.getElementById("add").addEventListener("click", () => {
   document.getElementById("new-text").value = "";
 });
 console.log(id);
-
-class Question {
-  // Player descriptions
-  constructor(question) {
-    this.question = question;
-  }
-}
-let questions = [
-  "What is the capital of Assyria?",
-  "What is the airspeed velocity of an unladen swallow?",
-  "Africian or European Swallow?",
-  "What is your quest?",
-  "How do you know she is a witch?",
-  "Should we go to Camelot?",
-];
-let question1 = new Question(
-  questions[Math.floor(Math.random() * questions.length)]
-);
-
-console.log(question1);

@@ -1,85 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project page</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
     <link rel="stylesheet" href="week10.css" />
+  </head>
 
-</head>
-
-<body>
+  <body class="bg-light">
+    <div
+      style="
+        background-image: url(https://images.affordableseating.net/dpr_1.0,f_auto,q_auto/afd/media/contenttype/restaurant_table_types_and_styles_-_header_1.jpg);
+        background-size: cover;
+        height: 480px;
+        padding-top: 80px;
+      "
+    ></div>
     <header>
-        <!-- •	Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
+      <!-- •	Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
                 •	A Bootstrap styled table representing your choice of data.
                 •	A Bootstrap styled form that allows a user to add a new row to the table when clicking on submit.
  -->
-
-
     </header>
     <div class="container-fluid">
-        <table class="table">
-            <thead class="table-sm">
+      <table class="table">
+        <thead class="table-sm bg-secondary text-white">
+          <tr>
+            <th>
+              <h1>
+                Welcome Traveler! <br />
+                Thank you for your interest in our location, please reach out to
+                us below
+              </h1>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="table table-sm">
+          <tr>
+            <td colspan="4">
+              <table class="table table-light mb-0">
                 <tr>
-                    <th>
-                        <h1 class="alert alert-danger">STOP! Who would cross the Bridge of Death Must answer me These
-                            questions three Ere the other side he see.</h1>
-                    </th>
+                  <th>
+                    <h5>What is your name?</h5>
+                  </th>
+                  <th>
+                    <h5>Can we have your Email?</h5>
+                  </th>
+                  <th>
+                    <h5>
+                      Any comments? Complaints? Recommendations? Just saying Hi?
+                    </h5>
+                  </th>
                 </tr>
-            </thead>
-            <tbody class="table table-sm">
                 <tr>
-                    <td colspan="4">
-                        <table class="table table-dark mb-0">
-                            <tr>
-                                <th>
-                                    <h5>What is your name?</h5>
-                                </th>
-                                <th>
-                                    <h5>What is your favorite color?</h5>
-                                </th>
-                                <th>
-                                    <h5>
-                                        <script
-                                            src="/Week-10-JavaScript_and_DOM_Manipulation/Week  coding assignment/week.js">question1</script>
-                                    </h5>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-
-                                </th>
-                                <td>
-
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
+                  <td>James Howlett</td>
+                  <td>wolverine@xaviersinstatute.com</td>
+                  <td>Hey Bub, you really know how to serve a rare steak.</td>
                 </tr>
-            </tbody>
-        </table>
+                <div class="container-fluid">
+                  <br />
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm">
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-sm-4">
+                                <label for="new-customer-name"
+                                  >Your Name?</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="new-customer-name"
+                                />
+                              </div>
 
+                              <div class="col-sm-8">
+                                <label for="new-customer-email"
+                                  >Your Email</label
+                                >
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="new-customer-email"
+                                />
+                              </div>
+                            </div>
+                            <label for="new-customer-comment">Comments?</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="new-customer-comment"
+                            />
+                          </div>
+                          <br />
+                        </div>
+                        <button
+                          id="new-team"
+                          class="btn btn-primary form-control"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br /><br />
     </div>
-    <div id="paragraphs">
-        <p id="content">hello</p>
-
-    </div>
-
-
-    <button id="btn">Change Value</button> <br>
-    <input id="remove-id">
-    <button id="remove"> Remove Paragraph</button><br>
-    <input type="text" id="new-text">
-    <button id="add">Add Paragraph</button>
-
-
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="week.js"></script>
-</body>
-
+  </body>
 </html>
