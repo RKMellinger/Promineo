@@ -2,14 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>Project page</title>
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.css"
-    />
-    <link rel="stylesheet" href="week10.css" />
+      href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="week10.css" />
   </head>
 
   <body class="bg-light">
@@ -19,8 +24,7 @@
         background-size: cover;
         height: 480px;
         padding-top: 80px;
-      "
-    ></div>
+      "></div>
     <header>
       <!-- •	Using HTML, Bootstrap, and JavaScript create a single page website that contains the following:
                 •	A Bootstrap styled table representing your choice of data.
@@ -43,7 +47,9 @@
         <tbody class="table table-sm">
           <tr>
             <td colspan="4">
-              <table class="table table-light mb-0">
+              <table
+                class="table table-light mb-0"
+                id="comment-table">
                 <tr>
                   <th>
                     <h5>Name</h5>
@@ -60,65 +66,68 @@
                   <td>wolverine@xaviersinstatute.com</td>
                   <td>Hey Bub, you really know how to serve a rare steak.</td>
                 </tr>
-                <div class="container-fluid">
-                  <br />
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-sm">
-                          <div class="form-group">
-                            <div class="row">
-                              <div class="col-sm-4">
-                                <label for="new-customer-name"
-                                  >What is your name?</label
-                                >
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="new-customer-name"
-                                />
-                              </div>
-
-                              <div class="col-sm-8">
-                                <label for="new-customer-email"
-                                  >Can we have your Email?</label
-                                >
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="new-customer-email"
-                                />
-                              </div>
-                            </div>
-                            <label for="new-customer-comment"
-                              >Any comments? Complaints? Recommendations? Just
-                              saying Hi?</label
-                            >
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="new-customer-comment"
-                            />
-                          </div>
-                          <br />
-                        </div>
-                        <button
-                          id="new-team"
-                          class="btn btn-primary form-control"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </table>
             </td>
           </tr>
         </tbody>
       </table>
-      <br /><br />
+      <div class="container-fluid">
+        <br />
+        <form class="form">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm">
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <label for="new-customer-name">
+                        What is your name?
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="new-customer-name" />
+                    </div>
+
+                    <div class="col-sm-7">
+                      <label for="new-customer-email">
+                        Can we have your Email?
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="new-customer-email"
+                        placeholder="happyeatter@food.yum" />
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="new-customer-comment">
+                          Any comments? Complaints? Recommendations? Just saying
+                          Hi?
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="new-customer-comment" />
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                </div>
+                <button
+                  id="new-customer-btn"
+                  class="btn btn-primary form-control">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+    <br />
+    <br />
+    <br />
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
