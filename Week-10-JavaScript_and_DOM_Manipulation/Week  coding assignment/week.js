@@ -32,19 +32,19 @@ button.addEventListener('click', ()=>{
   let td = document.createElement('td')
   td.innerText = customerName
   let t = document.getElementById("comment-table")
-  t.appendChild(td)
+  t.appendChild(tr)
+  tr.appendChild(td)
   td = document.createElement('td')
   td.innerText = customerEmail
-t = document.getElementById("comment-table")
-  t.appendChild(td)
+  tr.appendChild(td)
   td = document.createElement('td')
   td.innerText = customerComment
-  t = document.getElementById("comment-table")
-  t.appendChild(td)
+  tr.appendChild(td)
 customerName = document.getElementById("new-customer-name").value="";
 customerEmail = document.getElementById("new-customer-email").value="";
 customerComment = document.getElementById("new-customer-comment").value="";
 } )
+
 
 // document.getElementById("remove").addEventListener("click", () => {
 //   let idToRemove = document.getElementById("remove-id").value;
