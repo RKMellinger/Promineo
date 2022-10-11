@@ -37,7 +37,7 @@ function onClick(id, action) {
 }
 
 function getValue(id) {
-  return document.getElementById(id).vlaue;
+  return document.getElementById(id).value;
 }
 
 function drawDOM() {
