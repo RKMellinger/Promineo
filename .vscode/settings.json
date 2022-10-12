@@ -1,6 +1,8 @@
 {
-    "prettier.bracketSameLine": true,
-    "prettier.singleAttributePerLine": true,
-    "editor.formatOnSave": true,
-    "editor.minimap.autohide": true
+  "prettier.bracketSameLine": true,
+  "prettier.singleAttributePerLine": false,
+  "editor.formatOnSave": true,
+  "editor.minimap.autohide": true,
+  "prettier.withNodeModules": false,
+  "prettier.enable": false
 }

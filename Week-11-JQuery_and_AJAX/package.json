@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "ajax": "^0.0.4",
+    "bootstrap": "^5.2.2",
+    "jquery": "^3.6.1"
+  },
+  "name": "week-11-jquery_and_ajax",
+  "version": "1.0.0",
+  "main": "test_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

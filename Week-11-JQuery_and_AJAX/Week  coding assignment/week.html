@@ -2,28 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link
-      rel="stylesheet"
-      href="week.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="week.css" />
   </head>
   <body>
-    <!-- •	Using any of the tools you’ve worked with so far, create a game of Tic-Tac-Toe.
-•	Create a Tic-Tac-Toe game grid using your HTML element of choice. 
-•	When a cell in the grid is clicked, an X or O should appear in that spot depending on whose turn it is.
-•	A heading should say whether it is X’s or O’s turn and change with each move made.
-•	A button should be available to clear the grid and restart the game.
-•	When a player has won, or the board is full and the game results in a draw, a Bootstrap alert or similar Bootstrap component should appear across the screen announcing the winner.
- -->
-    <header></header>
+    <!-- 
+•	Using any of the tools you’ve worked with so far, create a game of Tic-Tac-Toe.
+    •	Create a Tic-Tac-Toe game grid using your HTML element of choice. 
+    •	When a cell in the grid is clicked, an X or O should appear in that spot depending on whose turn it is.
+    •	A heading should say whether it is X’s or O’s turn and change with each move made.
+    •	A button should be available to clear the grid and restart the game.
+    •	When a player has won, or the board is full and the game results in a draw, a Bootstrap alert or similar Bootstrap component should appear across the screen announcing the winner.
+
+-->
+    <header>
+      <div class="container primary" role="alert">       
+        <h1 class="text-center" id="title">
+          Who wants to play Tic-Tac-Toe?
+        </h1>
+        <h3
+          class="text-center"
+          id="players"></h3>
+      </div>
+      <h2 class="alert alert-success text-center" id="winner" role="alert">
+        Winner!
+      </h2>
+    </header>
+    <div class="container">
+      <div class="row" style="height: 200px">
+        <div class="col-lg-4 rounded border border-dark text-center text-justify">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="top-left">
+            <h1 id="h1-top-left">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 200px" id="top-middle">
+            <h1 id="h1-top-middle">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="top-right">
+            <h1 id="h1-top-right">&nbsp</h1>
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+        style="height: 200px">
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="center-left">
+            <h1 id="h1-center-left">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="center-middle">
+            <h1 id="h1-center-middle">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="center-right">
+            <h1 id="h1-center-right">&nbsp</h1>
+          </button>
+        </div>
+      </div>
+      <div
+        class="row"
+        style="height: 200px">
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="bottom-left">
+            <h1 id="h1-bottom-left">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="bottom-middle">
+            <h1 id="h1-bottom-middle">&nbsp</h1>
+          </button>
+        </div>
+        <div class="col-lg-4 rounded border border-dark text-center">
+          <button type="button" class="btn btn-outline-primary" style="height: 100%" id="bottom-right">
+            <h1 id="h1-bottom-right">&nbsp</h1>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="week9index.css"></script>
+    <script src="week.js"></script>
   </body>
 </html>
