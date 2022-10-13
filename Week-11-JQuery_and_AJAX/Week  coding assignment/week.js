@@ -4,6 +4,7 @@ class Player {
     this.name = name;
     this.mark = mark;
     this.score = 0
+    this.squares = []
   }
 }
 
@@ -98,9 +99,7 @@ $("#7").on("click", () => currentMove)
 $("#8").on("click", () => currentMove)
 
 
-$("winner").val(`Current turn is: ${currentTurn()}`);
-let winning_player = "";
-// winning_player = player1.name;
+
 
 
 
@@ -135,14 +134,9 @@ console.log(player2);
 console.log(gameSquares);
 
 
-
-
-
-
 // console.log(winning_player);
 // Setting the text for the Player's banner and the Winner Banner.
-document.getElementById("players").innerHTML = `The players for this match are: ${player1.name} vs. ${player2.name}`;
-document.getElementById("winner").innerHTML = 'And the winner is.... ' + winning_player;
+// document.getElementById("winner").innerHTML = 'And the winner is.... ' + winning_player;
 
 
 // document.getElementById("btn").addEventListener("click", currentMove());
@@ -152,35 +146,54 @@ function currentMove() {
   $("#btn").on('click').button('toggle')
   $("btn").val(currentTurn)
 }
+let currentPlayer = firstMove()
 
-
-function currentTurn() { // Sets the current move
-  for (let m = 5; m > 0; m--) {
-    if (m % 2 == 0) {
-      player1.score++
-      return player1.mark;
-    } else //(m % 2 != 0) 
-    {
-      player2.score++
-      return player2.mark;
-      // } else {
-      //   return winningScore('')
-
-    }
-
+function firstMove() {
+  let i = marks[Math.floor(Math.random() * marks.length)]
+  if (player1.mark === i) {
+    return player1
+  } else {
+    return player2
   }
 }
 
+function currentTurn() { // Sets the current move
+  for (let m = 0; m < 5; m++) {
+    if (currentPlayer === player1) {
+      $("#btn").on('click', () => $(id).push(player1.squares))
+      document.getElementById("btn").innerHTML = player1.mark;
+      currentPlayer = player2;
+      return player2.mark;
+    } else {
+      $("#btn").on('click', () => $(id).push(player2.squares))
+      document.getElementById("btn").innerHTML = player2.mark;
+      currentPlayer = player1;
+      return player1.mark;
+    }
+  }
+}
+
+document.getElementById("players").innerHTML = `The players for this match are: ${player1.name} vs. ${player2.name}`;
+document.getElementById("winner").innerHTML = `Current turn is: ${currentPlayer.name} using ${currentPlayer.mark}`;
+let winning_player = "";
+// winning_player = player1.name;
+
+
+//function for scoring the game, should validate between the winCombo array and the players moves
 // function winningScore() {
+//  if(player1 moves === winCombo){
+//  document.getElementById("winner").innerHTML = `The winner is... ${player1.name} using ${player1.mark} Congratulations!!`;
+// }else if (player2 moves === wincombo){
+//  document.getElementById("winner").innerHTML = `The winner is... ${player2.name} using ${player2.mark} Congratulations!!`;
+//} else {
+//  document.getElementById("winner").innerHTML = `We have a stalemate!! Better luck next time.`;
+//}
 
-
-//
 
 // Computer players moves
 // function p2Shuffle() {
 //   gameSquares.push(gameSquares[Math.floor(Math.random() * gameSquares.length)]);
 // }
-currentMove()
 
 $("#reset").on("click", () => {
   $("#btn").text("")
