@@ -7,15 +7,15 @@ class Player {
 }
 
 // Clearing the test text from the grid.
-$("top-left").val("");
-$("top-middle").val("");
-$("top-right").val("");
-$("center-left").val("");
-$("center-middle").val("");
-$("center-right").val("");
-$("bottom-left").val("");
-$("bottom-middle").val("");
-$("bottom-right").val("");
+// $("top-left").val("");
+// $("top-middle").val("");
+// $("top-right").val("");
+// $("center-left").val("");
+// $("center-middle").val("");
+// $("center-right").val("");
+// $("bottom-left").val("");
+// $("bottom-middle").val("");
+// $("bottom-right").val("");
 
 $("winner").val("");
 
@@ -52,11 +52,27 @@ let gameSquares = [
   $("bottom-right"),
 ];
 
+let marks = ["X", "O"]
 let winning_player = "";
+
 let player1 = new Player(
   prompt(`Please enter your name. ${this.name}`),
-  prompt('Please type "X" or "O".', this.mark)
+  prompt('Please type "X" or "O".' + this.mark)
 );
+player1.mark = p1Mark()
+
+function p1Mark() { // forces capitol letters only and assigns a random mark if an invalid choice is made.
+  if (player1.mark === "X" || player1.mark === "O") {
+    return player1.mark;
+  } else if (player1.mark === "x") {
+    return (player1.mark = "X");
+  } else if (player1.mark === "o") {
+    return (player1.mark = "O");
+  } else {
+    alert("invalid choice, your mark will be assigned.");
+    return (player1.mark = marks[Math.floor(Math.random() * marks.length)])
+  }
+}
 
 let player2 = new Player(
   names[Math.floor(Math.random() * names.length)],
@@ -65,19 +81,8 @@ let player2 = new Player(
 
 console.log(player1);
 console.log(player2);
-console.log(gameSquares.values());
+console.log(gameSquares[1]);
 
-function p1Mark() {
-  if (player1.mark === "X" || player1.mark === "O") {
-    return player1.mark;
-  } else if (player1.mark === "x") {
-    return (player1.mark = "X");
-  } else if (player1.mark === "o") {
-    return (player1.mark = "O");
-  } else {
-    alert("invalid choice, please type 'X' or 'O'..");
-  }
-}
 
 function p2Mark() {
   // Function for determining player1's mark.
@@ -90,13 +95,16 @@ function p2Mark() {
   return i;
 }
 
+winning_player = player1.name;
+
+console.log(winning_player);
 // Setting the text for the Player's banner and the Winner Banner.
-$("players").val(`The players for this match are: ${player1.name} vs. ${player2.name}`);
-$("winner").val(`And the winner is.... ${winning_player}`);
+document.getElementById("players").innerHTML = `The players for this match are: ${player1.name} vs. ${player2.name}`;
+document.getElementById("winner").innerHTML = ('And the winner is.... ' + winning_player);
 
 // Creating the x or o insert.
 function currentMove() {
-  for (let m = 0; m < gameSquares.length; m++) {
+  for (let m = gameSquares.length; m > 0; m--) {
     if (m % 2 == 0) {
       return player1.mark;
     } else {
@@ -107,12 +115,10 @@ function currentMove() {
 }
 
 
-// document.getElementsByClassName("button").addEventListener("click", currentMove);
+// document.getElementById("btn").addEventListener("click", currentMove);
 
 // Computer players moves
 // function p2Shuffle() {
 //   gameSquares.push(gameSquares[Math.floor(Math.random() * gameSquares.length)]);
 // }
 
-// winning_player = player1.name;
-$("winner").val(winning_player);
