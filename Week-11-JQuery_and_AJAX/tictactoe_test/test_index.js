@@ -39,7 +39,10 @@ function startGame() { //starts the game
   }
 }
 function turnClick(square) { //changes the turns
-  turn(square.target.id, player1)
+  if (typeof boardGrid[square.target.id] === 'number') {
+    turn(square.target.id, player1)
+    if (!stalemate()) turn(openMoves(), player2)
+  }
 }
 function turn(squareId, player) {
   boardGrid[squareId] = player
@@ -65,6 +68,26 @@ function gameComplete(winner) {
       winner.player == player1 ? "green" : "red"
   }
 }
-function endgame() { }
+function openMoves() {
+  return boardGrid.filter(s => typeof s == 'number')
+}
+function bestSpot() {
+  return openMoves()[0]
+}
+function declareWinner(who) {
+  document.querySelector(".endgame")
+}
+function stalemate() {
+  if (openMoves().length == 0) {
+    for (let i = 0; i < cells.length; i++) {
+      cells[i].style.backgroundColor = "green"
+      cells[i].removeEventListener('click', turnClick, false)
+    }
+    declareWinner("Stalemate!")
+    return true
+  }
+  return false
+}
+
 
 startGame()
