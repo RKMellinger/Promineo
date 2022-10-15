@@ -23,14 +23,15 @@ function p2Mark() { //assigns the other character to player2
   }
   return i;
 }
-document.getElementById("playerBanner").innerText = `${player1} vs. ${player2}`;
+
 console.log(player1);
 console.log(player2);
 
 const cells = document.querySelectorAll('.cell') //pushes all "cells" to the const cells
 
-function startGame() { //starts the game
-  document.getElementById("endgame").innerText = "Current Player: "
+//starts the game
+function startGame() {
+  document.getElementById("endgame").style.display = "none"
   boardGrid = Array.from(Array(9).keys())
   for (let i = 0; i < cells.length; i++) {
     cells[i].innerText = ''
@@ -38,56 +39,164 @@ function startGame() { //starts the game
     cells[i].addEventListener('click', turnClick, false)
   }
 }
-function turnClick(square) { //changes the turns
+
+//changes the turns to next player
+function turnClick(square) {
   if (typeof boardGrid[square.target.id] === 'number') {
     turn(square.target.id, player1)
-    if (!stalemate()) turn(openMoves(), player2)
-  }
-}
-function turn(squareId, player) {
-  boardGrid[squareId] = player
-  document.getElementById(squareId).innerText = player
-  let winner = checkWin(boardGrid, player)
-  if (winner) gameComplete(winner)
-}
-function checkWin(board, player) {
-  let plays = board.reduce((a, e, i) =>
-    (e === player) ? a.concat(i) : a, [])
-  let winner = null
-  for (let [index, win] of winCombo.entries()) {
-    if (win.every(elem => plays.indexOf(elem) > -1)) {
-      winner = { index: index, player: player }
-      break
+    if (stalemate() == false) {
+      turn(openSpots(), player2)
     }
   }
-  return winner
-}
-function gameComplete(winner) {
-  for (let index of winCombo[winner, index]) {
-    document.getElementById(index).style.backgroundColor =
-      winner.player == player1 ? "green" : "red"
+
+  // controls the players turn
+  function turn([squareId], player) {
+    boardGrid[squareId] = player
+    // console.log("printing boardGrid" + boardGrid)
+    // console.log("Printing Player " + player);
+    document.getElementById(squareId).innerHTML = player
+    document.getElementById("playerBanner").innerText = `Current turn = ${player}`;
+    let winner = checkWin(boardGrid, player)
+    if (winner) gameComplete(winner)
   }
-}
-function openMoves() {
-  return boardGrid.filter(s => typeof s == 'number')
-}
-function bestSpot() {
-  return openMoves()[0]
-}
-function declareWinner(who) {
-  document.querySelector(".endgame")
-}
-function stalemate() {
-  if (openMoves().length == 0) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i].style.backgroundColor = "green"
-      cells[i].removeEventListener('click', turnClick, false)
+
+  //  Checks the board for winning combinations
+  function checkWin(board, player) {
+    let plays = board.reduce((a, e, i) =>
+      (e === player) ? a.concat(i) : a, [])
+    let winner = null
+    for (let [index, win] of winCombo.entries()) {
+      if (win.every(elem => plays.indexOf(elem) > -1)) {
+        winner = { index: index, player: player }
+        break
+      }
     }
-    declareWinner("Stalemate!")
-    return true
+    return winner
   }
-  return false
+
+  // Displays the winning pattern and stops the game and shows the winner
+  function gameComplete(winner) {
+    for (let index of winCombo[winner, index]) {
+      document.getElementById(index).style.backgroundColor =
+        winner.player == player1 ? "green" : "red"
+    }
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].removeEventListener('click', turnClick, false);
+    }
+    declareWinner(gameWon.player == player1 ? "You win!" : "You lose.");
+  }
+
+  // Changes the winner banner to display who is the winner
+  function declareWinner(who) {
+    document.querySelector(".endgame").style.display = "block";
+    document.querySelector(".endgame .text").innerText = who;
+  }
+
+  // dumb ai for player2 moves
+  function openSpots() {
+    return boardGrid.filter(s => typeof s == 'number')
+  }
+  function openMoves() {
+    return openSpots(randomizer(openSpots()));
+  }
+  function randomizer(max) {
+    return Math.floor(Math.random() * max)
+  }
+
+
+  // Determines if a stalemate
+  function stalemate() {
+    if (openMoves().length == 0) {
+      for (let i = 0; i < cells.length; i++) {
+        cells[i].style.backgroundColor = "green"
+        cells[i].removeEventListener('click', turnClick, false)
+      }
+      declareWinner("Stalemate!")
+      return true
+    }
+    return false
+  }
 }
+
 
 
 startGame()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// smart ai for a challenge
+
+// function minMax(newBoard, player) {
+//   let openSpots = openMoves(newBoard)
+//   if (winner(newBoard, player)) {
+//     return { score: -10 }
+//   } else if (checkWin(newBoard, player2)) {
+//     return { score: 20 }
+//   } else if (openSpots.length === 0) {
+//     return { score: 0 }
+//   }
+//   let moves = []
+//   for (let i = 0; i < openSpots.length; i++) {
+//     let move = {}
+//     move.index = newBoard[openSpots[i]] = player
+
+//     if (player == player2) {
+//       let result = minMax(newBoard, player1)
+//       move.score = result.score
+//     } else {
+//       let result = minMax(newBoard, player2)
+//       move.score = result.score
+//     }
+//     newBoard[openSpots[i]] = move.index
+//     moves.push(move)
+
+
+//   }
+//   let smartMove
+//   if (player === player2) {
+//     let highScore = -10000
+//     for (let i = 0; i < moves.length; i++) {
+//       if (moves[i].score > highScore) {
+//         highScore = moves[i].score
+//         smartMove = i
+//       }
+//     }
+//   } else {
+//     let highScore = 10000
+//     for (let i = 0; i < moves.length; i++) {
+//       if (moves[i].score < highScore) {
+//         highScore = moves[i].score
+//         smartMove = i
+//       }
+//     }
+//   }
+//   return moves[smartMove]
+// }
