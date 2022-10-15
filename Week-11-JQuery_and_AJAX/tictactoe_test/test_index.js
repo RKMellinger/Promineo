@@ -1,7 +1,20 @@
-let boardGrid
-let marks = ["X", "O"] //Player marks array, they are randomly assigned.
+let boardGrid //declares the board, will be used later.
+let marks = ["X", "O"] // Array of player marks, they are randomly assigned.
+
 let player1 = marks[Math.floor(Math.random() * marks.length)] //random assigning of player1
-let player2 = p2Mark()
+let player2 = p2Mark() // uses a function to assign player2 mark
+
+function p2Mark() { //assigns the other character to player2
+  let i = "";
+  if (player1 === "X") {
+    i = "O";
+  } else {
+    i = "X";
+  }
+  return i;
+}
+console.log(player1);
+console.log(player2);
 
 // An Array of winning combinations.
 const winCombo = [
@@ -14,22 +27,10 @@ const winCombo = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-function p2Mark() { //assigns the other character to player2
-  let i = "";
-  if (player1 === "X") {
-    i = "O";
-  } else {
-    i = "X";
-  }
-  return i;
-}
-
-console.log(player1);
-console.log(player2);
 
 const cells = document.querySelectorAll('.cell') //pushes all "cells" to the const cells
 
-//starts the game
+// Starts a new game and resets board when reset button is pressed.
 function startGame() {
   document.getElementById("endgame").style.display = "none"
   boardGrid = Array.from(Array(9).keys())
@@ -97,10 +98,7 @@ function turnClick(square) {
     return boardGrid.filter(s => typeof s == 'number')
   }
   function openMoves() {
-    return openSpots(randomizer(openSpots()));
-  }
-  function randomizer(max) {
-    return Math.floor(Math.random() * max)
+    return openSpots(Math.floor(Math.random() * (openSpots().length)));
   }
 
 
