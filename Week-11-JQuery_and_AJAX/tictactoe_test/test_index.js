@@ -41,12 +41,24 @@ function startGame() {
   }
 }
 
+
+// The "turnCount()" should be cworking with turnClick() to change the current player to the current player, 
+// Unfortunately this is not working correctly. I tried just calling the "player" in the turn function, I 
+// tried using the turncount function to directly change the value between player1 and player2, but no change. 
+// I believe it has to do with the "dumb" ai set for player2 (based off of something online) is either going 
+// too fast to register or is bypassing this step. I have tried asking peers on discord, my mentor, and tried
+// reviewing the class video from my instructor but no answers were returned and the video was never uploaded.
+// Unfortunatly I am out of time for it this week..
 function turnCount() {
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 10; i++) {
     if (i % 2 == 0) {
+      console.log(i)
       return player1
-    } else {
+    } else if (i % 2 != 0) {
+      console.log(i)
       return player2
+    } else {
+      return player1
     }
   }
 }
@@ -66,7 +78,7 @@ function turn([squareId], player) {
   // console.log("printing boardGrid" + boardGrid)
   // console.log("Printing Player " + player);
   document.getElementById(squareId).innerHTML = player
-  document.getElementById("playerBanner").innerText = `Current turn = ${player}`;
+  document.getElementById("playerBanner").innerText = turnCount();
   let winner = checkWin(boardGrid, player)
   if (winner) gameComplete(winner)
 }
@@ -104,9 +116,7 @@ function declareWinner(winner) {
 function openSpots() {
   return boardGrid.filter(s => typeof s == 'number')
 }
-// function openMoves() {
-//   return openSpots()[0];
-// }
+
 
 // Determines if a stalemate
 function stalemate() {
@@ -127,4 +137,4 @@ function stalemate() {
 
 startGame()
 
-
+console.log($("header"))
