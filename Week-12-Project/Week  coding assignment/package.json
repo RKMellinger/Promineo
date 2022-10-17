@@ -1,0 +1,19 @@
+{
+  "name": "week-coding-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "week.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax": "^0.0.4",
+    "bootstrap": "^5.2.2",
+    "chai": "^4.3.6",
+    "crud": "^0.0.28",
+    "jquery": "^3.6.1",
+    "mocha": "^10.1.0"
+  }
+}
