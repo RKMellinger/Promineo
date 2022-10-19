@@ -1,32 +1,34 @@
-let button = document.getElementById("new-customer-btn");
+let button = $("#new-customer-btn");
 
-button.addEventListener('click', (event) => {
+// api link https://63502b28df22c2af7b657cd0.mockapi.io/current/
+
+button.on('click', (event) => {
   event.preventDefault()
-  let customerName = document.getElementById("new-customer-name").value;
-  let customerEmail = document.getElementById("new-customer-email").value;
-  let customerQty = document.getElementById("new-customer-qty").value;
-  let customerRequest = document.getElementById("new-customer-request").value;
+  let customerName = $("#new-customer-name").val();
+  let customerEmail = $("#new-customer-email").val();
+  let customerQty = $("#new-customer-qty").val();
+  let customerRequest = $("#new-customer-request").val();
   console.log(customerName);
   console.log(customerEmail)
   console.log(customerQty);
   console.log(customerRequest)
-  let t = document.getElementById("comment-table")
-  let tr = document.createElement("tr")
-  let td = document.createElement('td')
-  td.innerText = customerName
-  t.appendChild(tr)
-  tr.appendChild(td)
-  td = document.createElement('td')
-  td.innerText = customerEmail
-  tr.appendChild(td)
-  td = document.createElement('td')
-  td.innerText = customerQty
-  tr.appendChild(td)
-  td = document.createElement('td')
-  td.innerText = customerRequest
-  tr.appendChild(td)
-  customerName = document.getElementById("new-customer-name").value = "";
-  customerEmail = document.getElementById("new-customer-email").value = "";
-  customerQty = document.getElementById("new-customer-qty").value = "";
-  customerRequest = document.getElementById("new-customer-request").value = "";
+  let t = $("#reservation-table")
+  let tr = $("#tr")
+  let td = $('#td')
+  td.text("#customerName").val
+  t.append("#tr")
+  tr.append("#td")
+  td = $('#td')
+  td.text("#customerEmail").val
+  tr.append("#td")
+  td = $('#td')
+  td.text("#customerQty").val
+  tr.append("#td")
+  td = $('#td')
+  td.text("#customerRequest").val
+  tr.append("#td")
+  customerName = $("#new-customer-name").val("");
+  customerEmail = $("#new-customer-email").val("");
+  customerQty = $("#new-customer-qty").val("");
+  customerRequest = $("#new-customer-request").val("");
 })
