@@ -26,7 +26,7 @@
 •	Use Bootstrap and CSS to style your project.
 -->
 
-  <body class="bg-">
+  <body class="bg-light">
     <div style="
         background-image: url(https://i0.wp.com/www.karsidonline.com/wp-content/uploads/2019/01/The-Restaurant-at-the-End-of-the-Universe.jpg?fit=1600%2C900&ssl=1);
         background-size: cover;
@@ -88,7 +88,8 @@
                     <h5>Number of Guests</h5>
                   </th>
                   <th>
-                    <h5>Seating areas currently available: Main floor, Veranda/patio, Bar/lounge - Areas are subject to scheduled unavailability.</h5>
+                    <h5>Seating areas currently available: Main floor, Veranda/patio, Bar/lounge </h5>
+                    <h5>- Areas are subject to scheduled unavailability.</h5>
                   </th>
                 </tr>
                 <tr>
@@ -111,7 +112,7 @@
               <div class="col-sm">
                 <div class="form-group">
                   <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-sm-5">
                       <label for="new-customer-name">
                         What is your name?
                       </label>
@@ -120,7 +121,7 @@
                         class="form-control"
                         id="new-customer-name" />
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-6">
                       <label for="new-customer-email">
                         Can we have your Email?
                       </label>
@@ -131,33 +132,33 @@
                         placeholder="happyeatter@food.yum"
                         required />
                     </div>
-                    <div class="col-sm-3">
-                      <label for="new-customer-qty">
-                        Number in your party?
-                      </label>
-                      <select class="form-control" id="new-customer-qty">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                          <option>11</option>
-                          <option>12</option>
-                          <option>13</option>
-                          <option>14</option>
-                          <option>15</option>
-                          <option>more*</option>
-                        </select>
-
-                    </div>
                     <div class="row">
-
-                      <div class="col">
+                      
+                      <div class="col-sm-2">
+                        <label for="new-customer-qty">
+                          How many in your group?
+                        </label>
+                        <select class="form-control" id="new-customer-qty">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>more*</option>
+                          </select>
+  
+                      </div>
+                      <div class="col-sm-10">
                         <label for="new-customer-request">
                           Where would you prefer to be seated?
                         </label>
@@ -189,6 +190,7 @@
       rel="stylesheet"
       href="week.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="week.js"></script>
   </body>
