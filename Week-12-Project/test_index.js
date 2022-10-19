@@ -2,18 +2,21 @@
 
 class House {
   constructor(name) {
-    this.name = namethis.room = []
+    this.name = name
+    this.room = []
   }
   addRoom(name, area) {
     this.rooms.push(new Room(name, area))
   }
 }
+
 class Room {
   constructor(name, area) {
     this.name = name
     this.area = area
   }
 }
+
 class HouseService {
   // static url = "http//ancient-taiga-31359.herokuapp.com/api/houses"
   static getAllHouses() {
@@ -21,11 +24,11 @@ class HouseService {
   }
   static gethouse(id) {
     return $.get(this.url + `/${id}`)
-
   }
   static createHouse(house) {
     return $.post(this.url, house)
   }
+
   static updateHouse(house) {
     return $.ajax({
       url: this.url + `/${house}`,
@@ -35,6 +38,7 @@ class HouseService {
       type: 'PUT'
     })
   }
+
   static deleteHouse(id) {
     return $.ajax({
       url: this.url + `DELETE`
@@ -84,7 +88,6 @@ class DOMManager {
       }
     }
   }
-
   static render(houses) {
     this.houses = houses
     $('app').empty()
