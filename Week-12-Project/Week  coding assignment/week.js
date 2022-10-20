@@ -1,5 +1,7 @@
 let button = $("#new-customer-btn");
 
+var homePortURL = $.get('https://63502b28df22c2af7b657cd0.mockapi.io/current/reservations')
+
 button.on('click', (event) => {
   event.preventDefault()
   let customerName = $("#new-customer-name").val();
@@ -17,19 +19,6 @@ button.on('click', (event) => {
 
   $("#reservation-table").append(newEntry);
 
-
-
-  // .append($("<tr></tr>").val(
-  //   ($("<td></td>").text(customerName)),
-  //   ($("<td></td>").text(customerEmail)),
-  //   ($("<td></td>").text(customerQty)),
-  //   ($("<td></td>").text(customerRequest))))
-
-
-  // ($("<td></td>").text(customerName)),
-  // ($("<td></td>").text(customerEmail)),
-  // ($("<td></td>").text(customerQty)),
-  // ($("<td></td>").text(customerRequest))
   customerName = $("#new-customer-name").val("");
   customerEmail = $("#new-customer-email").val("");
   customerQty = $("#new-customer-qty").val("");
