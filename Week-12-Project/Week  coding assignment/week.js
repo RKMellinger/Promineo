@@ -1,27 +1,20 @@
 // Initial creation for variables
+let reservations = []
+let customerCount = 2
 
+// creates the JS links to the html buttons
 let button = $("#new-customer-btn");
 let editBtn = $("#editBtn")
 let removeBtn = $("#removeBtn")
-let reservations = []
-let customerCount
 
 
-
-// mockapi link and variables for the site/functions
+// mockapi link for the site/functions
 let getPortURL = ('https://63502b28df22c2af7b657cd0.mockapi.io/current/reservations')
 
-
-
-let tableServer = $(reservations).on("load", () => {
-  for (var i = 0; i < reservations.length; i++) {
-    newEntry += `<tr><td> ${reservations[i].customerCount}</td><td>${reservations[i].customerName}</td><td>${reservations[i].customerEmail}</td><td>${reservations[i].customerQty}</td><td>${reservations[i].customerRequest}</td><td><button class='btn btn-primary' id='editBtn'>Edit</button><button class='btn btn-danger' id='removeBtn'>Delete</button></td></tr>`;
-  }
-});
 // initial functions to collect and display information.
 button.on('click', (event) => {
   event.preventDefault()
-
+  //creaes JS elements for the HTML input.
   let customerName = $("#new-customer-name").val();
   let customerEmail = $("#new-customer-email").val();
   let customerQty = $("#new-customer-qty").val();
@@ -35,10 +28,12 @@ button.on('click', (event) => {
   console.log(customerRequest);
   console.log(reservations);
 
+  // Pushed the user data into the reservations array.
   reservations.push(customerCount, customerName, customerEmail, customerQty, customerRequest)
 
+  //takes user data and creates the html table entry.
   let newEntry =
-    `<tr><td>${customerName} </td><td>${customerEmail}</td><td>${customerQty}</td><td>${customerRequest}</td><td><button class="btn btn-primary" id="editBtn">Edit</button><button class="btn btn-danger" id="removeBtn">Delete</button></td></tr>`;
+    `<tr><td>${customerName}</td><td>${customerEmail}</td><td>${customerQty}</td><td>${customerRequest}</td><td><button class="btn btn-primary" id="editBtn">Edit</button><button class="btn btn-danger" id="removeBtn">Delete</button></td></tr>`;
   $("#reservation-table").append(newEntry);
   customerCount++
   customerName = $("#new-customer-name").val("");
@@ -46,15 +41,16 @@ button.on('click', (event) => {
   customerQty = $("#new-customer-qty").val("");
   customerRequest = $("#new-customer-request").val("");
 
-
 })
 
-
+// gets and pushes the mockAPI data into the reservations array.
 function getAllRes() {
   return $.get(getPortURL).then((response) => { reservations.push(response) });
 }
 
-getAllRes()
+// reservations.table($("#reservation-table"))
+
+
 // function getMyRes(id) {
 //   return $.get(this.url + `/${id}`);
 // }
@@ -72,3 +68,5 @@ getAllRes()
 //   event.preventDefault()
 
 // })
+
+getAllRes()
