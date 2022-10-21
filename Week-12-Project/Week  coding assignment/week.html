@@ -9,12 +9,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Week 12 Project page</title>
-    <link
-      rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.css" />
-    <link
-      rel="stylesheet"
-      href="week.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="week.css" />
   </head>
 <!--    
   Week 12 Coding Project
@@ -43,7 +39,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item disabled">
+            <li class="nav-item disSabled">
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
@@ -72,129 +68,40 @@
             </th>
           </tr>
         </thead>
-        <tbody class="table table-sm">
-          <tr>
-            <td colspan="4">
-              <table
-                class="table table-light mb-0" id="reservation-table">
-                <tr>
-                  <th>
-                    <h5>Name</h5>
-                  </th>
-                  <th>
-                    <h5>Contact information</h5>
-                  </th>
-                  <th>
-                    <h5>Number of Guests</h5>
-                  </th>
-                  <th>
-                    <h5>Seating areas currently available: Main floor, Veranda/patio, Bar/lounge </h5>
-                    <h5>- Areas are subject to scheduled unavailability.</h5>
-                  </th>
-                  <th></th>
-                </tr>
-                <tr>
-                  <td>James Howlett</td>
-                  <td>wolverine@xaviersinstatute.com</td>
-                  <td>1</td>
-                  <td>Bar Area</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </tbody>
+      </table>
+      <div class="container-fluid">
+        <table class="table table-sm">
+          <thead>
+            <form class="form">
+              <div class="card-body">
+                <div class="col-sm">
+                  <div class="form-group">
+                    <div class="row">
+                      <div id="new-reservation" class="jumbotron">
+                        <h2>Reservation Name:</h2>
+                        <input type="text" id="new-reservation-name" class="form-control"> <br>
+                        <button id="new-reservation-name" class="btn btn-primary form-control">Create</button>
+                    </div>
+                    <br>
+                  <h6>*If your group has more than 15 people, please call for reservations. Host stand 1-(555)999-0000</h6>
+                    </div>
+
+                  </div>
+                  
+                    </div>
+            </div>
+          </form>
+          </thead>
+          <div id="reservation-table"></div>
       </table>
       <br />
-      <div class="container-fluid">
-        <br />
-        <form class="form">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm">
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col-sm-5">
-                      <label for="new-customer-name">
-                        What is your name?
-                      </label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="new-customer-name" />
-                    </div>
-                    <div class="col-sm-6">
-                      <label for="new-customer-email">
-                        Can we have your Email?
-                      </label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="new-customer-email"
-                        placeholder="happyeatter@food.yum"
-                        required />
-                    </div>
-                    <div class="row">
-                      
-                      <div class="col-sm-2">
-                        <label for="new-customer-qty">
-                          How many in your group?
-                        </label>
-                        <select class="form-control" id="new-customer-qty">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>more*</option>
-                          </select>
-  
-                      </div>
-                      <div class="col-sm-10">
-                        <label for="new-customer-request">
-                          Where would you prefer to be seated?
-                        </label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="new-customer-request" />
-                      </div>
-                    </div>
-                  </div>
-                  <br />
-                </div>
-                <button
-                  id="new-customer-btn"
-                  class="btn btn-primary form-control">
-                  Submit
-                </button>
-                
-              </div>
-            </div>
-            <br>
-            <h6>*If your group has more than 15 people, please call for reservations. Host stand 1-(555) 379-2468</h6>
-          </div>
-        </form>
-      </div>
     </div>
     <br />
     <br />
     <br />
-    <link
-      rel="stylesheet"
-      href="week.css" />
+    <link rel="stylesheet" href="week.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="week.js"></script>
+    <script src="test_index.js"></script>
   </body>
 </html>
