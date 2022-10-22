@@ -32,6 +32,7 @@
       </div>
     <header>
       <div class="container-fluid" >
+        <!-- Navbar header -->
       <nav class="navbar navbar-expand-md navbar-dark bg-secondary"id="headerBar">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +57,7 @@
       </nav>
     </div>
     </header>
+    <!-- First container for the Welcome text -->
     <div class="container-fluid" id="mainTable">
       <table class="table">
         <thead class="table-sm text-white" id="welcomeTable">
@@ -69,6 +71,7 @@
           </tr>
         </thead>
       </table>
+      <!-- Container to start the reservation -->
       <div class="container-fluid">
         <table class="table table-sm">
           <thead>
@@ -80,7 +83,7 @@
                       <div id="new-reservation" class="jumbotron">
                         <h2>Reservation Name:</h2>
                         <input type="text" id="new-reservation-name" class="form-control"> <br>
-                        <button id="new-reservation-name" class="btn btn-primary form-control">Create</button>
+                        <button type="button" id="create-new-reservation" class="btn btn-primary form-control">Create</button>
                     </div>
                     <br>
                   <h6>*If your group has more than 15 people, please call for reservations. Host stand 1-(555)999-0000</h6>
@@ -92,6 +95,7 @@
             </div>
           </form>
           </thead>
+          <!-- A flag div for JS/JQuery to create it's table information. -->
           <div id="reservation-table"></div>
       </table>
       <br />
