@@ -3,7 +3,9 @@
     "bootstrap": "^5.2.1",
     "chai": "^4.3.6",
     "jquery": "^3.6.1",
-    "mocha": "^10.0.0"
+    "jsx": "^0.9.89",
+    "mocha": "^10.0.0",
+    "react": "^18.2.0"
   },
   "name": "promineo",
   "description": "\"# Promineo\"",
@@ -24,5 +26,9 @@
   "homepage": "https://github.com/RKMellinger/Promineo#readme",
   "directories": {
     "test": "test"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }
