@@ -1,0 +1,16 @@
+{
+  "name": "week-14-props_state_events_and_lifecycle_methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "week.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsx": "^0.9.89",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0"
+  }
+}
