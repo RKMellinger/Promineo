@@ -1,20 +1,18 @@
-import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import ReactDOM from 'react-dom/client';
-import NavbarLink from './components/Navbar';
-import App from './App';
-import Login from './components/Login';
-import Validate from './context/Validate';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarLink from "./components/NavbarLink";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-<div>
+    <div>
       <NavbarLink />
-</div>
+    </div>
 
-<App/>
-</>
+    <App />
+  </>
 );
 
-
+// Boiler plate script from the create-react-app and the links to the associated process created in the other pages.

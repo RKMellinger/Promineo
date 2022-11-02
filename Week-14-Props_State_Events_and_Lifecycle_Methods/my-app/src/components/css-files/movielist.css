@@ -1,0 +1,11 @@
+h2 {
+    font-family: cursive;
+    text-align: center;
+}
+#outter{
+    border: 5px dotted yellow;
+}
+#spacer{
+    padding: 10px;
+    margin: 10px;
+}

@@ -1,0 +1,10 @@
+#cards{
+    width: 390px;
+    height: 950px;
+    text-align: center;
+    padding: 10px;
+}
+
+#images{
+    max-height: 500px;
+}
