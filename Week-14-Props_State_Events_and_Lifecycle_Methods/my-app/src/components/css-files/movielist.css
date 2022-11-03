@@ -1,11 +1,13 @@
 h2 {
     font-family: cursive;
     text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 #outter{
-    border: 5px dotted yellow;
+    border: 5px dotted red;
 }
 #spacer{
-    padding: 10px;
-    margin: 10px;
+    padding: 15px;
+    margin: 15px;
 }

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-
+import "./css-files/user.css";
 import "./css-files/movielist.css";
+import Stars from "./interactives/Stars";
 import Dracula from "./movies/Dracula";
 import Howard from "./movies/Howard";
 import Mummy from "./movies/Mummy";
@@ -12,12 +13,19 @@ export default class Movielist extends Component {
     return (
       <Container className="align-items-top justify-content-center">
         <div className="body ">
-          <h2>Classic Movies</h2>
+          <h2>Classic B Movies</h2>
         </div>
+        <Col>
+          <Stars />
+        </Col>
         <Row>
-          <Santa />
-
-          <Howard />
+          <Container className="col-md-5">
+            <Santa />
+          </Container>
+          <Col className="col-md-2"></Col>
+          <Container className="col-md-5">
+            <Howard />
+          </Container>
         </Row>
         <Row>
           <Col
@@ -25,9 +33,13 @@ export default class Movielist extends Component {
             id="spacer"></Col>
         </Row>
         <Row>
-          <Mummy />
-
-          <Dracula />
+          <Container className="col-md-5">
+            <Mummy />
+          </Container>
+          <Col className="col-md-2"></Col>
+          <Container className="col-md-5">
+            <Dracula />
+          </Container>
         </Row>
       </Container>
     );

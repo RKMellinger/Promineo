@@ -1,8 +1,9 @@
 #cards{
     width: 390px;
-    height: 950px;
+    height: 1000px;
     text-align: center;
     padding: 10px;
+    margin-bottom: 50px;
 }
 
 #images{
