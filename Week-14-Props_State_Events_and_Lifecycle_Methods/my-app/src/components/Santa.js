@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Table } from "react-bootstrap";
 import "../css-files/movies.css";
-import Movielist from "../Movielist";
-import Stars from "../interactives/Stars";
-// import UserVoice from "../interactives/UserVoice";
+import Movielist from "./Movielist";
+import Stars from "./interactives/Stars";
+// import UserComment from "../interactives/UserComment";
 
 let santaReview = [];
 
@@ -30,16 +30,20 @@ export default function Santa() {
           But two Earth children are also nabbed, and this complicates things
           for Kimar.
         </Card.Text>
-        {/* <UserVoice /> */}
-        {[...Array(1)].map((star, index) => {
+        {[...Array(1)].map((star, name, comment, index) => {
           index += 1;
           return (
             <Container key={index}>
-              <Stars santaReview={santaReview} />
+              <Stars rating={star} />
+              <UserComment
+                name={name}
+                comment={comment}
+              />
             </Container>
           );
         })}
       </Card.Body>
+      <Table></Table>
     </Card>
   );
 }
