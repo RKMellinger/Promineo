@@ -1,11 +1,12 @@
 #cards{
-    width: 390px;
-    height: 1000px;
+    width: 50vw;
+    height: auto;
     text-align: center;
     padding: 10px;
     margin-bottom: 50px;
 }
 
 #images{
+    max-width: 400px;
     max-height: 500px;
 }
