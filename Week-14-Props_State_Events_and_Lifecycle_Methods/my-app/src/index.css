@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,16 +15,38 @@ ul {
   list-style: none;
 }
 .container {
-  max-width: 1000px;
+  max-width: 768px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 5px;
 }
-.navbarMain {
-  height: auto;
+#nav {
+  box-sizing: border-box;
   width: 100vw;
-  display:inline;
+  display:inline-flex;
+  justify-content: space-between;
   align-items:center;
-  margin-bottom: 30px;
+  padding: 5px;
+  margin-bottom: 20px;
+  background-color: rgb(192, 45, 26);
+  color: #fff;
+}
+#navItemsStart{
+  padding: 10px;
+  margin: 10px;
+}
+#cards{
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: auto;
+  margin-bottom: 50px;
+}
+
+#images{
+  max-width: 500px;
+  max-height: auto;
+  padding: auto;
+  margin: auto;
 }
 .card {
   background-color: #fff;
@@ -72,16 +95,19 @@ ul {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.rating li:hover,
+.rating li:hover{
+  background: #7783c5;
+  color: #fff;
+}
 .num-display {
-  background: #0c2885;
+  background: #0c1e85;
   color: #fff;
 }
 [type='radio'] {
   opacity: 0;
 }
 [type='radio']:checked~label {
-  background: #0c2885;
+  background: #0c1e85;
   color: #fff;
 }
 .input-group {

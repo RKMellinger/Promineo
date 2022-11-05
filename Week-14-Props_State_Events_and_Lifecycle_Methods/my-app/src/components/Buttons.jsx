@@ -1,4 +1,8 @@
 import PropTypes from 'prop-types';
+
+
+
+// This function creates the main submit button.
 function Buttons({ children, version, type, isDisabled }) {
   return (
     <button 

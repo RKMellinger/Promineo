@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+
+
+// This function creates the card that hoses the reviews and the review submit section..
 function Cards({ children, reverse }) {
   console.log("Here's Cards");
   return (

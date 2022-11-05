@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import ReviewItem from './ReviewItem';
+import ReviewMovie from './ReviewMovie';
 import PropTypes from 'prop-types';
+
+//Creates the display brlow the movie card for the posted reviews.
+
 function MovieReviewList({ review, handleDelete }) {
   if (!review || review.length === 0) {
     return <p>No reviews yet</p>;
@@ -10,7 +13,7 @@ function MovieReviewList({ review, handleDelete }) {
    <AnimatePresence>
   {review.map(item => (
   <motion.div key={item.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-   <ReviewItem key={item.id} item={item} handleDelete={handleDelete}     />
+   <ReviewMovie key={item.id} item={item} handleDelete={handleDelete}     />
   </motion.div>
    ))}
  </AnimatePresence>

@@ -16,3 +16,5 @@ const MovieData = [
   },
 ];
 export default MovieData;
+
+// Just generic data for when the page first populates.

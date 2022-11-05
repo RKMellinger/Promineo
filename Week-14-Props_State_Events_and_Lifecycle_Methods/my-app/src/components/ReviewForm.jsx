@@ -3,7 +3,8 @@ import Cards from './Cards';
 import Buttons from './Buttons'
 import RatingSelect from './RatingSelect';
 import Santa from './Santa';
-import { Container } from 'react-bootstrap';
+
+// adds the functionality and puts the main display cards together. 
 
 function ReviewForm({ handleAdd }) {
   const [text, setText] = useState('');
@@ -33,6 +34,8 @@ function ReviewForm({ handleAdd }) {
   handleAdd(newFeedback);
   setText('');
   }
+  // Everything above pushed the user provided data into the posted review array. 
+  //Below is the majority of the functions put together rendering most of the page.
 };
   return (
     <div className='container'>

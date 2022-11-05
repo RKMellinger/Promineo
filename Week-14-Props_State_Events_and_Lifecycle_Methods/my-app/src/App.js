@@ -1,12 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-
 import MovieReviewList from "./Components/MovieReviewList";
 import MovieReviewStats from "./Components/MovieReviewStats";
 import MovieData from "./Data/MovieData";
 import ReviewForm from "./Components/ReviewForm";
 import NavbarLink from "./Components/NavbarLink";
-import { Container } from "react-bootstrap";
 function App() {
   const [review, setReview] = useState(MovieData);
   const addReview = (newReview) => {
@@ -19,13 +17,17 @@ function App() {
     }
   };
   return (
+    //This fil brings the major functions together.
     <>
-      {/* <Container>
+      <div>
         <NavbarLink />
-      </Container> */}
+      </div>
+      {/* THis JSX holds the overall  */}
       <div className="container">
         <ReviewForm handleAdd={addReview} />
+        {/* These are the forms that  create and hold the movie card, comments, and the comments */}
         <MovieReviewStats review={review} />
+        {/* Below is the static list for the reviews */}
         <MovieReviewList
           review={review}
           handleDelete={deleteFeedback}

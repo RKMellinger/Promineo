@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import "./css-files/movies.css";
+
+// Creates the movie card for the movie to be reviewed..
 
 export default function Santa() {
   return (
@@ -13,7 +14,9 @@ export default function Santa() {
         src="https://flxt.tmsimg.com/assets/p4232_p_v8_aa.jpg"
       />
       <Card.Body>
-        <Card.Title>SANTA CLAUS CONQUERS THE MARTIANS</Card.Title>
+        <Card.Title id="movieTitle">
+          SANTA CLAUS CONQUERS THE MARTIANS
+        </Card.Title>
         <Card.Text>1964, Holiday/Sci-fi, 1h 20m</Card.Text>
         <Card.Text>
           Martian ruler Kimar (Leonard Hicks) is upset that the children of Mars

@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
-function MovieReviewStats({ review }) {
+
+
+// This function cretes the review averages between the movie card and the posted reviews.
+
+export default function MovieReviewStats({ review }) {
   // Calculate Ratings Average
   let average =
     review.reduce((accumulator, current) => {
@@ -17,4 +21,4 @@ function MovieReviewStats({ review }) {
 MovieReviewStats.propTypes = {
   review: PropTypes.array.isRequired,
 };
-export default MovieReviewStats;
+

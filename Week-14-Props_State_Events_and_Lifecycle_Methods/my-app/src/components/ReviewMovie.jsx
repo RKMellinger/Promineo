@@ -1,7 +1,10 @@
 import { FaTimes } from "react-icons/fa";
 import Cards from "./Cards";
 import PropTypes from "prop-types";
-function ReviewItem({ item, handleDelete }) {
+
+// Creates the posted review cards. It takes the text from the data, the review rating, and adds a delete button.
+
+export default function ReviewMovie({ item, handleDelete }) {
   return (
     <Cards>
       <div className="num-display">{item.rating}</div>
@@ -14,7 +17,6 @@ function ReviewItem({ item, handleDelete }) {
     </Cards>
   );
 }
-ReviewItem.propTypes = {
+ReviewMovie.propTypes = {
   item: PropTypes.object.isRequired,
 };
-export default ReviewItem;
