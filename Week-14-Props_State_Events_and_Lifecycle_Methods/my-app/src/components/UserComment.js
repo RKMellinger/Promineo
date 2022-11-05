@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import {
   Button,
   Col,
@@ -7,118 +8,44 @@ import {
   FormLabel,
   Row,
 } from "react-bootstrap";
-// import Stars from "./Stars";
+import Stars from "./Stars";
 
+const reviewArray = [];
 //This is the application which takes in and stores the user input. The User, Comments, and stars.
 export default function UserComment() {
-  function Stars() {
-    const [rating, pushRating] = useState(0);
+  const [key, setKey] = useState("");
+  const [review, setReview] = useState("");
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
 
-    function pushRating(event) {
-      console.log("Push Rating", event.target.value);
-      return event.target.value;
-    }
-    return (
-      <Container onClick={pushRating}>
-        <input
-          id="star-5"
-          type="radio"
-          name="rating"
-          value="5"></input>
-        <label
-          htmlFor="star-5"
-          title="5 stars">
-          <i
-            className="active fa fa-thermometer-full icon-2x"
-            aria-hidden="true"></i>
-        </label>
-        <input
-          id="star-4"
-          type="radio"
-          name="rating"
-          value="4"></input>
-        <label
-          htmlFor="star-4"
-          title="4 stars">
-          <i
-            className="active fa fa-thermometer-three-quarters icon-2x"
-            aria-hidden="true"></i>
-        </label>
-        <input
-          id="star-3"
-          type="radio"
-          name="rating"
-          value="3"></input>
-        <label
-          htmlFor="star-3"
-          title="3 stars">
-          <i
-            className="active fa fa-thermometer-half icon-2x"
-            aria-hidden="true"></i>
-        </label>
-        <input
-          id="star-2"
-          type="radio"
-          name="rating"
-          value="2"></input>
-        <label
-          htmlFor="star-2"
-          title="2 stars">
-          <i
-            className="active fa fa-thermometer-quarter icon-2x"
-            aria-hidden="true"></i>
-        </label>
-        <input
-          id="star-1"
-          type="radio"
-          name="rating"
-          value="star-1"></input>
-        <label
-          htmlFor="star-1"
-          title="1">
-          <i
-            className="active fa fa-thermometer-empty icon-2x"
-            aria-hidden="true"></i>
-        </label>
-      </Container>
-    );
-    {
-    }
-  }
+  // [...Array(1)].map((name, comment) => {})
 
-  const [newComment, setNewComment] = useState("");
-  return [...Array(1)].map((name, comment) => {
+  function pushAll() {}
+  setKey(uuidv4);
+  setReview(newRating);
+  setName();
+  setComment();
+  // Setup to push all collected data below to reviewArray[] above.
+  // [key, review, name, comment].push(reviewArray)
+
+  return (
     <div>
-      <Container>
-        <Row>
-          <Col>
-            <FormControl>
-              <FormLabel>
-                Name:
-                <input
-                  type="text"
-                  name={name}
-                />
-              </FormLabel>
-              <FormLabel>
-                Comments:
-                <input
-                  type="text"
-                  name={comment}
-                />
-              </FormLabel>
-
-              <Button
-                type="submit"
-                name="submit"
-                onClick={setNewComment}>
-                Submit
-              </Button>
-            </FormControl>
-          </Col>
-        </Row>
-      </Container>
-    </div>;
-  });
+      <form>
+        <Stars />
+        <input
+          className="name"
+          id="name"
+          input="text"></input>
+        <input
+          className="comment"
+          id="comment"
+          input="comment"></input>
+        <button
+          className="btn btn-primary"
+          onClick={pushAll}>
+          Submit
+        </button>
+      </form>
+    </div>
+  );
 }
-//form, submit,

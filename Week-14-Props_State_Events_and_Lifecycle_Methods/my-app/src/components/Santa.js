@@ -1,9 +1,10 @@
 import React from "react";
 import { Card, Container, Table } from "react-bootstrap";
-import "../css-files/movies.css";
+import "./css-files/movies.css";
 import Movielist from "./Movielist";
-import Stars from "./interactives/Stars";
-// import UserComment from "../interactives/UserComment";
+import Stars from "./Stars";
+import Tables from "./Tables";
+import UserComment from "./UserComment";
 
 let santaReview = [];
 
@@ -33,17 +34,18 @@ export default function Santa() {
         {[...Array(1)].map((star, name, comment, index) => {
           index += 1;
           return (
-            <Container key={index}>
-              <Stars rating={star} />
-              <UserComment
-                name={name}
-                comment={comment}
-              />
-            </Container>
+            <>
+              {/* <Container key={index}>
+                <Stars rating={star} />
+              </Container> */}
+              <Container>
+                <UserComment />
+              </Container>
+            </>
           );
         })}
       </Card.Body>
-      <Table></Table>
+      {/* <Tables /> */}
     </Card>
   );
 }

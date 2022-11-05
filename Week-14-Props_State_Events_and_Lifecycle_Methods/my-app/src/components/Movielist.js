@@ -6,7 +6,7 @@ import "./css-files/movielist.css";
 // import Dracula from "./movies/Dracula";
 // import Howard from "./movies/Howard";
 // import Mummy from "./movies/Mummy";
-import Santa from "./movies/Santa";
+import Santa from "./Santa";
 
 export default class Movielist extends Component {
   render() {
