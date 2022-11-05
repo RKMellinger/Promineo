@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-import MovieReviewList from "./Components/MovieReviewList";
-import MovieReviewStats from "./Components/MovieReviewStats";
-import MovieData from "./Data/MovieData";
-import ReviewForm from "./Components/ReviewForm";
-import NavbarLink from "./Components/NavbarLink";
+import MovieReviewList from "./MovieList/MovieReviewList";
+import MovieReviewStats from "./MovieList/MovieReviewStats";
+import MovieData from "./ReviewMovie/MovieData";
+import ReviewForm from "./MovieList/ReviewForm";
+import NavbarLink from "./MovieList/NavbarLink";
 function App() {
   const [review, setReview] = useState(MovieData);
   const addReview = (newReview) => {
