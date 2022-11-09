@@ -4,8 +4,8 @@ export default class NewRoomForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameValue: "",
-      areaValue: "",
+      nameValue: '',
+      areaValue: '',
     };
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleAreaChange = this.handleAreaChange.bind(this);
@@ -23,20 +23,21 @@ export default class NewRoomForm extends Component {
       name: this.state.nameValue,
       area: this.state.areaValue,
     });
-    this.setState({ nameValue: "", areaValue: "" });
+    this.setState({ nameValue: '', areaValue: '' });
+    console.log(this.state.nameValue, this.state.areaValue);
   }
 
   render() {
     return (
       <div>
         <input
-          type={"text"}
+          type="text"
           placeholder="Name"
           onChange={this.handleNameChange}
           value={this.state.nameValue}
         />
         <input
-          type={"text"}
+          type="text"
           placeholder="Area"
           onChange={this.handleAreaChange}
           value={this.state.areaValue}

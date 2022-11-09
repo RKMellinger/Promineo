@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import House from "./house";
+import House from "./House";
 
 const HOUSES_ENDPOINT = "https://ancient-taiga-31359.herokuapp.com/api/houses";
 
@@ -13,35 +13,29 @@ export default class App extends React.Component {
 
   render() {
     const houses = this.state
-      ? this.state.house.map((house, index) =>
-          console.log(
-            "li 18 houses ",
-            houses
-          )(
-            <House
-              key={index}
-              data={house}
-              addNewRoom={this.addNewRoom}
-              deleteRoom={this.deleteRoom}
-            />
-          )
-        )
+      ? this.state.houses.map((house, index) => (
+          <House
+            key={index}
+            data={house}
+            addNewRoom={this.addNewRoom}
+            deleteRoom={this.deleteRoom}
+          />
+        ))
       : null;
-    console.log("houses failed");
     return <div>{houses}</div>;
   }
+
   componentDidMount() {
     fetch(HOUSES_ENDPOINT)
       .then((res) => res.json())
       .then((data) => {
-        console.log("li 36 data ", data);
         this.setState({
           houses: data,
         });
       });
   }
   deleteRoom(e, house, room) {
-    const index = house.room.indexOf(room);
+    const index = house.rooms.indexOf(room);
     house.rooms.splice(index, 1);
     updateHouse(house).then(() => {
       this.setState((state) => {
@@ -57,11 +51,11 @@ export default class App extends React.Component {
     e.preventDefault();
   }
   addNewRoom(e, house, room) {
-    house.room.push(room);
+    house.rooms.push(room);
     updateHouse(house).then(() => {
       this.setState((state) => {
         for (let h of state.houses) {
-          if (h.id === house._id) {
+          if (h._id === house._id) {
             let h = house;
             break;
           }
@@ -74,7 +68,7 @@ export default class App extends React.Component {
 }
 
 function updateHouse(house) {
-  return fetch(`${HOUSES_ENDPOINT}/${house.id}`, {
+  return fetch(`${HOUSES_ENDPOINT}/${house._id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
