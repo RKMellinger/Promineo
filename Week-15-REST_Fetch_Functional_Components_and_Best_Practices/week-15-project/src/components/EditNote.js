@@ -1,5 +1,6 @@
+import axios from "axios";
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default class EditNote extends Component {
   constructor(props) {
@@ -17,12 +18,16 @@ export default class EditNote extends Component {
     // Make the API call to grab the note with the id
     let noteId = this.props.match.params.id;
 
-    axios.get(`http://localhost:8080/notes/${noteId}`).then((response) => {
-      this.setState({
-        title: response.data.title,
-        body: response.data.body,
+    axios
+      .get(
+        `https://63502b28df22c2af7b657cd0.mockapi.io/current/notepad"${noteId}`
+      )
+      .then((response) => {
+        this.setState({
+          title: response.data.title,
+          body: response.data.body,
+        });
       });
-    });
   }
 
   handleTitleChange(e) {
@@ -37,7 +42,9 @@ export default class EditNote extends Component {
     e.preventDefault();
     // Make an api call to delete the note with the id of this.props.match.params.id
     axios
-      .delete(`http://localhost:8080/notes/${this.props.match.params.id}`)
+      .delete(
+        `"https://63502b28df22c2af7b657cd0.mockapi.io/current/notepad:${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({ goBack: true });
       });
@@ -47,10 +54,13 @@ export default class EditNote extends Component {
     e.preventDefault();
     // Make an api call to save the note the the id of this.props.match.params.id
     axios
-      .patch(`http://localhost:8080/notes/${this.props.match.params.id}`, {
-        title: this.state.title,
-        body: this.state.body,
-      })
+      .patch(
+        `"https://63502b28df22c2af7b657cd0.mockapi.io/current/notepad:${this.props.match.params.id}`,
+        {
+          title: this.state.title,
+          body: this.state.body,
+        }
+      )
       .then((response) => {
         this.setState({ goBack: true });
       });
@@ -64,7 +74,7 @@ export default class EditNote extends Component {
 
   render() {
     if (this.state.goBack) {
-      return <Redirect to="/" />;
+      return <Navigate to="/" />;
     }
 
     return (

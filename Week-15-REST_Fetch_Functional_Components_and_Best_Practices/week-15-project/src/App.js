@@ -1,14 +1,32 @@
 import React from "react";
-import NotesList from "./components/NotesList";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-//https://www.youtube.com/watch?v=8KB3DHI-QbM&ab_channel=ChrisBlakely
-export default function App() {
+import Notes from "./components/Note";
+import EditNote from "./components/EditNote";
+import CreateNote from "./components/CreateNote";
+
+export default function BasicExample() {
   return (
-    <div>
-      <h1>Greetings Program</h1>
-      <div className="container">
-        <NotesList />
-      </div>
-    </div>
+    <Router>
+      <>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            component={Notes}
+          />
+          <Route
+            exact
+            path="/component/:id/edit"
+            component={EditNote}
+          />
+          <Route
+            exact
+            path="/component/create"
+            component={CreateNote}
+          />
+        </Routes>
+      </>
+    </Router>
   );
 }

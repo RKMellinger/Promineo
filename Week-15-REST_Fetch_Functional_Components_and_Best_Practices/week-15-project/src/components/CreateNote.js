@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 export default class CreateNote extends Component {
   constructor(props) {
@@ -24,16 +25,13 @@ export default class CreateNote extends Component {
   handleSave(e) {
     e.preventDefault();
     // Make an api call to create a new note
-    fetch("http://localhost:8080/notes")
-      .then((res) => res.json())
-      .then((res) => {
-        const title = res.map((title) => title.id);
-        const body = res.map((body) => body.id);
-        this.setState({ goBack: true });
-        console.log("Success", e);
+    axios
+      .post("https://63502b28df22c2af7b657cd0.mockapi.io/current/notepad", {
+        title: this.state.title,
+        body: this.state.body,
       })
-      .catch((error) => {
-        console.log("Failure", error);
+      .then((response) => {
+        this.setState({ goBack: true });
       });
   }
 
