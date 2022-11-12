@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import House from "./House";
 import { housesApi } from "./HousesApi";
 
