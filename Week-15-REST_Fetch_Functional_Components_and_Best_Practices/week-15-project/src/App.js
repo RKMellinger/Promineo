@@ -1,32 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React, { Component } from "react";
+import HousesList from "./components/HousesList";
 
-import Notes from "./components/Note";
-import EditNote from "./components/EditNote";
-import CreateNote from "./components/CreateNote";
-
-export default function BasicExample() {
-  return (
-    <Router>
-      <>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            component={Notes}
-          />
-          <Route
-            exact
-            path="/component/:id/edit"
-            component={EditNote}
-          />
-          <Route
-            exact
-            path="/component/create"
-            component={CreateNote}
-          />
-        </Routes>
-      </>
-    </Router>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <HousesList />
+      </div>
+    );
+  }
 }
