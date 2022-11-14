@@ -1,36 +1,29 @@
 import React, { Component } from "react";
 import NewRoomForm from "./NewRoomForm";
 
-export const House = (props) => {
-  console.log(props);
-  const { house, updateHouse } = props;
+export default class House extends Component {
+  render() {
+    const rooms = this.props.data.rooms
+      ? this.props.data.rooms.map((room, index) => (
+          <li key={index}>
+            {room.name} Area: {room.area}
+            <button
+              onClick={(e) => this.props.deleteRoom(e, this.props.data, room)}>
+              Delete
+            </button>
+          </li>
+        ))
+      : null;
 
-  const deleteRoom = (roomId) => {
-    const updatedHouse = {
-      ...house,
-      rooms: house.rooms.filter((x) => x._.id !== roomId),
-    };
-    updateHouse(updatedHouse);
-  };
-  const addNewRoom = (room) =>
-    updateHouse({ ...house, rooms: [...house.rooms, room] });
-
-  const rooms = () => (
-    <ul>
-      {house.rooms.map((room, index) => {
-        <li key={index}>
-          <label>{`${room.name} Area: ${room.area}`}</label>
-          <button onClick={(e) => deleteRoom(room._id)}>Delete</button>
-        </li>;
-      })}
-    </ul>
-  );
-  return (
-    <div>
-      <h1>{house.name}</h1>
-      {rooms({ rooms, houseId: house._id, deleteRoom })}
-      <NewRoomForm addNewRoom={addNewRoom} />
-    </div>
-  );
-};
-export default House;
+    return (
+      <div>
+        <h1>{this.props.data.name}</h1>
+        <ul>{rooms}</ul>
+        <NewRoomForm
+          addNewRoom={this.props.addNewRoom}
+          data={this.props.data}
+        />
+      </div>
+    );
+  }
+}

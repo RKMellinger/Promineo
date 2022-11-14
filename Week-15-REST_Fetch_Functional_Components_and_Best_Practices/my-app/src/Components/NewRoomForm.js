@@ -1,43 +1,48 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 
-export default function NewRoomForm(props) {
-  const [name, setName] = useState("");
-  const [area, setArea] = useState(undefined);
+export default class NewRoomForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nameValue: "",
+      areaValue: "",
+    };
 
-  const handleAreaInput = (e) => {
-    const int = parseInt(e.target.value, 10);
-    setArea(int >= 0 ? int : "");
-  };
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleAreaChange = this.handleAreaChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleNameChange(e) {
+    this.setState({ nameValue: e.target.value });
+  }
+  handleAreaChange(e) {
+    this.setState({ areaValue: e.target.value });
+  }
+  handleClick(e) {
+    this.props.addNewRoom(e, this.props.data, {
+      name: this.state.nameValue,
+      area: this.state.areaValue,
+    });
+    this.setState({ nameValue: "", areaValue: "" });
+  }
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (name && area) {
-      props.addNewRoom({ name, area });
-      setName("");
-      setArea("");
-    } else {
-      console.log("invalid input");
-    }
-  };
-
-  return (
-    <div>
-      <h4>Add a new room</h4>
-      <form onSubmit={onSubmit}>
+  render() {
+    return (
+      <div>
         <input
           type="text"
-          placeholder="name"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
+          placeholder="Name"
+          value={this.state.nameValue}
+          onChange={this.handleNameChange}
         />
         <input
           type="text"
-          placeholder="area"
-          onChange={handleAreaInput}
-          value={area}
+          placeholder="Area"
+          value={this.state.areaValue}
+          onChange={this.handleAreaChange}
         />
-        <button type="submit">Add Room</button>
-      </form>
-    </div>
-  );
+        <button onClick={this.handleClick}>Add Room</button>
+      </div>
+    );
+  }
 }
