@@ -15,7 +15,7 @@ export const Note = () => {
     event.preventDefault();
     NoteAPI.post({ note });
     setnote("");
-    render();
+    render(note.note);
   };
 
   // Displays the new note user input area

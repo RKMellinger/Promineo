@@ -4,7 +4,7 @@ import "./app.css";
 import Note from "./components/Note";
 import NotesList from "./components/NotesList";
 import Header from "./components/Header";
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 function App() {
   return (
