@@ -1,6 +1,7 @@
 let API_CALL = "https://63502b28df22c2af7b657cd0.mockapi.io/current/notepad";
 
 class NotesApi {
+  //makes the api call to get the notes
   get = async () => {
     try {
       const response = await fetch(API_CALL);
@@ -12,6 +13,7 @@ class NotesApi {
   };
 
   update = async (note) => {
+    //updates the notes
     try {
       const response = await fetch(API_CALL + "/" + note.id, {
         method: "PUT",
@@ -27,6 +29,7 @@ class NotesApi {
   };
 
   post = async (note) => {
+    //posts the notes
     try {
       const response = await fetch(API_CALL, {
         method: "POST",
@@ -43,6 +46,7 @@ class NotesApi {
   };
 
   delete = async (id) => {
+    //deletes the notes
     try {
       const response = await fetch(API_CALL + "/" + id, {
         method: "DELETE",

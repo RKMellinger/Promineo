@@ -1,15 +1,19 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import "./app.css";
 import Note from "./components/Note";
 import NotesList from "./components/NotesList";
-import "./app.css";
 import Header from "./components/Header";
+import { Container, Row } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Note />
-      <NotesList />
+      <Container className="container ">
+        <NotesList />
+      </Container>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { render } from "react-dom";
 import { NoteAPI } from "./apiFiles/NotesAPI";
 
+//Creates the new note form
 export const Note = () => {
   const [note, setnote] = useState([]);
 
@@ -8,12 +10,15 @@ export const Note = () => {
     setnote(event.target.value);
   };
 
+  // Handles the submit function of the new note
   const handleSubmit = (event) => {
     event.preventDefault();
     NoteAPI.post({ note });
     setnote("");
+    render();
   };
 
+  // Displays the new note user input area
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
