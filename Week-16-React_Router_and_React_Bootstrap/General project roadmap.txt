@@ -6,7 +6,7 @@ Refactor the Restaurant app pages.
 
 3. Re-factor the reservations page(week12). Use full crud operation. create, read, update, delete
 
-Using browser router, Open main landing page first. The nav bar will have access to all 3 pages. 
+Using browser router, Open main landing page first. The nav bar will have access to all 3 pages. If time permits, add local time clock and timer for "next show" on page. 
  {use reactrouter.com/en/main/start}
 
 Landing page is basic/generic restaurant landing page. Picture of space cafe as the main, little blurb about it and links to the other pages. 
