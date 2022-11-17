@@ -8,7 +8,9 @@ export default class NotesList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [],
+      notes: [props],
+      // re-render if notes value changes
+      notes: this.props.newNotes,
     };
   }
   // gets the notes from the api
@@ -22,7 +24,12 @@ export default class NotesList extends React.Component {
   };
   //renders the notes and creates the css grid
   render() {
-    console.log(this.state.notes);
+    console.log("NL line 8 state notes", this.state.notes);
+    console.log("NL line 9 props", this.props);
+    if (this.state.notes !== this.props.newNotes) {
+      this.setState({ notes: this.props.newNotes });
+    }
+
     return (
       <div className="note-list">
         <h2>View All Notes</h2>

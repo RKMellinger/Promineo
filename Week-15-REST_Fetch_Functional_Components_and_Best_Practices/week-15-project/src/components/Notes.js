@@ -6,16 +6,17 @@ export const Notes = (props) => {
   const { note } = props;
 
   const handleDelete = async () => {
-    //Function for deleting the podted notes from the list and api
+    //Function for deleting the posted notes from the list and api
     await NoteAPI.delete(note.id);
     window.location.reload();
   };
 
-  const handleEdit = () => {
-    //Should handle the edit function of the notes but currently is not working
-    const input = document.getElementById(note.id);
-    NoteAPI.update({ id: note.id, note: note.note });
-    input.focus();
+  // creates edit window to update notes and post notes
+  const handleEdit = async () => {
+    //Function for editing the posted notes from the list and api
+    const newNote = prompt("Edit your note", note.note);
+    await NoteAPI.put(note.id, { note: newNote });
+    window.location.reload();
   };
 
   return (

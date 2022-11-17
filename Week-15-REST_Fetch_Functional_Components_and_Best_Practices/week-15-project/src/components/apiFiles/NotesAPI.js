@@ -30,6 +30,7 @@ class NotesApi {
 
   post = async (note) => {
     //posts the notes
+    console.log("line 33", note);
     try {
       const response = await fetch(API_CALL, {
         method: "POST",

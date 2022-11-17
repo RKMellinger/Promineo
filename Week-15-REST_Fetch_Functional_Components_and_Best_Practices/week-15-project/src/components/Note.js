@@ -3,7 +3,8 @@ import { render } from "react-dom";
 import { NoteAPI } from "./apiFiles/NotesAPI";
 
 //Creates the new note form
-export const Note = () => {
+export const Note = (props) => {
+  console.log("line 7", props);
   const [note, setnote] = useState([]);
 
   const handleChange = (event) => {
@@ -11,11 +12,13 @@ export const Note = () => {
   };
 
   // Handles the submit function of the new note
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    NoteAPI.post({ note });
+    let post = await NoteAPI.post({ note });
     setnote("");
-    render(note.note);
+    let latestData = await NoteAPI.get();
+    props.setNewNotes(latestData);
+    console.log("note 21", latestData);
   };
 
   // Displays the new note user input area
