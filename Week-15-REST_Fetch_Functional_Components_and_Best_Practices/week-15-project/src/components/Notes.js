@@ -16,7 +16,6 @@ export const Notes = (props) => {
     const input = document.getElementById(note.id);
     NoteAPI.update({ id: note.id, note: note.note });
     input.focus();
-    window.location.reload();
   };
 
   return (

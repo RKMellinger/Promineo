@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "./app.css";
+import "./App.css";
 import Note from "./components/Note";
 import NotesList from "./components/NotesList";
 import Header from "./components/Header";

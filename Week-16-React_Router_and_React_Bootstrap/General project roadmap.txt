@@ -1,0 +1,35 @@
+Refactor the Restaurant app pages.
+
+1. Landing page with general information on Milliways.
+
+2. Re-factor the comments page (week10) is pulled from mockAPI (create script with what ever} - eventualy add only comments.
+
+3. Re-factor the reservations page(week12). Use full crud operation. create, read, update, delete
+
+Using browser router, Open main landing page first. The nav bar will have access to all 3 pages. 
+ {use reactrouter.com/en/main/start}
+
+Landing page is basic/generic restaurant landing page. Picture of space cafe as the main, little blurb about it and links to the other pages. 
+
+The comments page {Like a blog} reads and creates a post with api. -If time, make delete and update.
+
+The Reservations page will be full crud from start. {Make multi page functions for fetching data? Might be easier to call on other pages.} The reservation will take name, party number, dropdown seating request. id will be assigned/relayed by the api. Can probably reuse the current mockAPI reservation link.
+
+
+If time, attempt to learn and use css to create logo.
+
+
+function App(){
+return (
+<BrowserRouter>
+<Header/> // Create a header function and insert it here.
+<main>
+<Routes>
+<Route path="*" element={<Home/>}/>
+<Route path="Comments" element={<Comments/>}/>
+<Route path="Reservations" element={<Reservations/>}/>
+</Routes>
+</main>
+</BrowserRouter>
+)}
+
