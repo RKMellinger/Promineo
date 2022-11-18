@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Header() {
-  return <div>Header goes here.</div>;
+  return <div className="nav-logo"></div>;
 }
