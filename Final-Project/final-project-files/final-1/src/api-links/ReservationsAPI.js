@@ -64,4 +64,4 @@ class RESERVATION_API {
   };
 }
 
-export const RESERVATION_API = new RESERVATION_API();
+export const Reservation_API = new RESERVATION_API();

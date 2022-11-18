@@ -1,10 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {} from "react-bootstrap";
+import { Card, div } from "react-bootstrap";
 import Home from "./components/Home";
 import Comments from "./components/Comments";
 import Header from "./components/Header";
@@ -29,6 +27,7 @@ export default function App() {
             element={<Reservations />}
           />
         </Routes>
+        <Card></Card>
       </main>
     </BrowserRouter>
   );

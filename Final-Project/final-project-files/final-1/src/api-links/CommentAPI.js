@@ -64,4 +64,4 @@ class COMMENT_API {
   };
 }
 
-export const COMMENT_API = new COMMENT_API();
+export const Comment_API = new COMMENT_API();
