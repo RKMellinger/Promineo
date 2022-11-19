@@ -11,7 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container{
+  position: absolute;
+}
 .header {
+  position:fixed;
   min-height: 100vh;
   margin: 0;
   display: block;
@@ -50,24 +54,73 @@ li a:hover:not(.active) {
   color: white;
 }
 .main{
-  margin-left: 25%;
-  padding: 1px 16px;
-  justify-content: top;
-  height: 1000px;
+  position: relative;
+margin-left: 25%;
   color: #000;
+}
+h1{
+  text-align: center;
+}
+h3{
+  text-align: center;
 }
 
 .nav-logo {
+  position: relative;
   border-radius: 50%;
-  border: 2px solid #555;
-  padding: 5px;
-  width: 150px;
+  border: 2px solid rgb(57, 255, 20);
+  background-color: #555;
   height: 150px;
+  width: 150px;
   margin: 0 auto;
-  display: block;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding: 5px;
+  box-sizing: content-box;
+  
 }
+.nav-logo-logo:before,
+.nav-logo-logo:after {
+  content: "";
+  box-sizing: content-box;
+  position: absolute;
+  margin: 0 23px;
+  margin-top: 28px;
+  margin-bottom: 20px;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 85px;
+  border: 10px solid rgb(57, 255, 20);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border-bottom: white;
+  transform: rotate(0deg);
+  opacity: 0.3
+
+}
+.nav-logo-logo:after {
+  left: auto;
+  right: 0;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border-bottom: white;
+  transform: rotate(0deg);
+}
+.milliways{
+  position: relative;
+  margin-top: 30%;
+  margin-left: 0%;
+  font-family: cursive;
+font-size: 36px;
+color: rgb(255, 16, 240);
+}
+
+
 
 
 

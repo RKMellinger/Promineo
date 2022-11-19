@@ -10,7 +10,7 @@ import Header from "./components/Header";
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <div className="header">
           <ul>
@@ -24,7 +24,7 @@ export default function App() {
               <Link to="./Comments">Comments</Link>
             </li>
             <li>
-              <Link to=".Reservations">Reservations</Link>
+              <Link to="./Reservations">Reservations</Link>
             </li>
           </ul>
         </div>
