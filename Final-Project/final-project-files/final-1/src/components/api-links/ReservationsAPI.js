@@ -1,11 +1,13 @@
-let COMMENT_CALL =
-  "https://63502b28df22c2af7b657cd0.mockapi.io/current/comments";
+import React from "react";
 
-class COMMENT_API {
-  //makes the api call to get the comments
+let RESERVATION_CALL =
+  "https://63502b28df22c2af7b657cd0.mockapi.io/current/reservations";
+
+class RESERVATION_API {
+  //makes the api call to get the reservations
   get = async () => {
     try {
-      const response = await fetch(COMMENT_CALL);
+      const response = await fetch(RESERVATION_CALL);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -13,15 +15,15 @@ class COMMENT_API {
     }
   };
 
-  update = async (comment) => {
-    //updates the comments
+  update = async (reservation) => {
+    //updates the reservations
     try {
-      const response = await fetch(COMMENT_CALL + "/" + comment.id, {
+      const response = await fetch(RESERVATION_CALL + "/" + reservation.id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ comment: comment.comment }),
+        body: JSON.stringify({ reservation: reservation.reservation }),
       });
       return await response.json();
     } catch (error) {
@@ -29,16 +31,16 @@ class COMMENT_API {
     }
   };
 
-  post = async (comment) => {
-    //posts the comments
-    console.log("line 33", comment);
+  post = async (reservation) => {
+    //posts the reservations
+    console.log("line 33", reservation);
     try {
-      const response = await fetch(COMMENT_CALL, {
+      const response = await fetch(RESERVATION_CALL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(comment),
+        body: JSON.stringify(reservation),
       });
       const data = await response.json();
       return data;
@@ -48,9 +50,9 @@ class COMMENT_API {
   };
 
   delete = async (id) => {
-    //deletes the comments
+    //deletes the reservations
     try {
-      const response = await fetch(COMMENT_CALL + "/" + id, {
+      const response = await fetch(RESERVATION_CALL + "/" + id, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -64,4 +66,4 @@ class COMMENT_API {
   };
 }
 
-export const Comment_API = new COMMENT_API();
+export const ReservationAPI = new RESERVATION_API();

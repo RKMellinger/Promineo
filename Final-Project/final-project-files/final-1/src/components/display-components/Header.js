@@ -4,8 +4,9 @@ import React from "react";
 export default function Header() {
   return (
     <div className="nav-logo">
+      {/* Creating the text part of the logo */}
       <p className="milliways">Milliways</p>
-      <div className="nav-logo-logo"></div>
+      <div className="nav-logo-logo">{/* Creating parts of the logo */}</div>
     </div>
   );
 }

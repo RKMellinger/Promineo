@@ -1,4 +1,12 @@
-img{
+.cardImg{
 position:relative;
-margin-top: 50%;
+margin-top: 0%;
+max-width: 480px;
+max-height: fit-content;
+}
+.card{
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    color: black;
 }

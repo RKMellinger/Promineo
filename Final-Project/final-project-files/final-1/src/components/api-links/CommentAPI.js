@@ -1,11 +1,13 @@
-let RESERVATION_CALL =
-  "https://63502b28df22c2af7b657cd0.mockapi.io/current/reservations";
+import React from "react";
 
-class RESERVATION_API {
-  //makes the api call to get the reservations
+let COMMENT_CALL =
+  "https://63502b28df22c2af7b657cd0.mockapi.io/current/comments";
+
+class COMMENT_API {
+  //makes the api call to get the comments
   get = async () => {
     try {
-      const response = await fetch(RESERVATION_CALL);
+      const response = await fetch(COMMENT_CALL);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -13,15 +15,15 @@ class RESERVATION_API {
     }
   };
 
-  update = async (reservation) => {
-    //updates the reservations
+  update = async (comment) => {
+    //updates the comments
     try {
-      const response = await fetch(RESERVATION_CALL + "/" + reservation.id, {
+      const response = await fetch(COMMENT_CALL + "/" + comment.id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ reservation: reservation.reservation }),
+        body: JSON.stringify({ comment: comment.comment }),
       });
       return await response.json();
     } catch (error) {
@@ -29,16 +31,16 @@ class RESERVATION_API {
     }
   };
 
-  post = async (reservation) => {
-    //posts the reservations
-    console.log("line 33", reservation);
+  post = async (comment) => {
+    //posts the comments
+    console.log("line 33", comment);
     try {
-      const response = await fetch(RESERVATION_CALL, {
+      const response = await fetch(COMMENT_CALL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(reservation),
+        body: JSON.stringify(comment),
       });
       const data = await response.json();
       return data;
@@ -48,9 +50,9 @@ class RESERVATION_API {
   };
 
   delete = async (id) => {
-    //deletes the reservations
+    //deletes the comments
     try {
-      const response = await fetch(RESERVATION_CALL + "/" + id, {
+      const response = await fetch(COMMENT_CALL + "/" + id, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -64,4 +66,4 @@ class RESERVATION_API {
   };
 }
 
-export const Reservation_API = new RESERVATION_API();
+export const Comment_API = new COMMENT_API();
