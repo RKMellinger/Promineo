@@ -20,14 +20,14 @@ export default function Reservations() {
   const [resName, setResName] = useState();
   const [resData, setPageData] = useState([]);
 
-  const handleNewReservation = (event) => {
-    setResName(event.newName.name);
-    setPageData();
-  };
+  // const handleNewReservation = (event) => {
+  //   setResName(event.newName.name);
+  //   setPageData([{ email, quantity, request }]);
+  // };
 
   return (
     <div>
-      <Container className="container-flex container-md-10">
+      <Container className="">
         <Container>
           <Row>
             <Alert
@@ -97,7 +97,7 @@ export default function Reservations() {
                 </Dropdown.Item>
               </DropdownButton>
               <Button
-                onClick={handleNewReservation}
+                // onClick={handleNewReservation}
                 variant="primary"
                 type="submit">
                 Submit
@@ -119,11 +119,11 @@ export default function Reservations() {
             <Col>Contact Email</Col>
             <Col>Seating request:</Col>
           </Row>
-          <Table
+          <Container
             className="striped bordered hover"
             id="newReservationTable">
             <NewReservation />
-          </Table>
+          </Container>
         </Container>
       </Container>
     </div>

@@ -3,8 +3,13 @@ import { CardGroup, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import { useNavigate } from "react-router";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const redirectReservations = () => {
+    navigate("/Reservations");
+  };
   return (
     // Secondary title/header bar for the home page
     <Container
@@ -61,7 +66,7 @@ export default function Home() {
                   the End of the Universe."
                 </Card.Text>
                 <Button
-                  //  onClick={add a redirect link to reservations page.}
+                  onClick={redirectReservations}
                   variant="primary">
                   Reservations
                 </Button>

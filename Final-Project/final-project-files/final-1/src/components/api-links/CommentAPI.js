@@ -65,5 +65,5 @@ class COMMENT_API {
     }
   };
 }
-
 export const Comment_API = new COMMENT_API();
+console.log(Comment_API.name);

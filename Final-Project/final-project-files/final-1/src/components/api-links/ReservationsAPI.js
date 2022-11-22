@@ -1,3 +1,4 @@
+import { data } from "jquery";
 import React from "react";
 
 let RESERVATION_CALL =
@@ -65,5 +66,5 @@ class RESERVATION_API {
     }
   };
 }
-
+console.log(data);
 export const ReservationAPI = new RESERVATION_API();
