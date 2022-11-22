@@ -10,3 +10,25 @@ max-height: fit-content;
     justify-content: center;
     color: black;
 }
+
+.reservations-title{
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+#reservation-title{
+    text-align: center;
+}
+#resForm{
+    margin-top: 3px;
+    color: black;
+}
+#newReservationTable{
+    align-items: center;
+    justify-content:space-between;
+    margin: 5px;
+    padding: 5px;
+    color: white;
+}

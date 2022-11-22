@@ -18,7 +18,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
-.container{
+/* .container{
+  position: absolute;
+} */
+#home{
+  position: absolute
+}
+#homeCards{
   position: absolute;
 }
 .header {

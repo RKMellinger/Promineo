@@ -17,10 +17,10 @@ export default function Home() {
         <h3>The restaurant at the end of the universe</h3>
       </div>
       <br />
-      <Container>
+      <Container className="homeCards">
         <CardGroup>
           <Row>
-            <Card style={{ width: "29rem", margin: "5px" }}>
+            <Card style={{ width: "30rem", margin: "5px" }}>
               <Card.Img
                 className="cardImg"
                 variant="top"
@@ -29,15 +29,14 @@ export default function Home() {
               <Card.Body>
                 <Card.Title>Join us whenever you want!</Card.Title>
                 <Card.Text>
-                  Our restaurant is built on the fragmented remains of a long
-                  forgotten planet which is enclosed in a vast time bubble and
-                  projected forward in time to the precise moment of the End of
-                  the Universe. Many said this would be impossible but here we
-                  are. Shaped like a giant star, you can find the parking
-                  garage, bars, and many of the other facilities in the outter
-                  points but you'll want to be front and center in ourmain
-                  eating area situated in the domed heart for the spectacular
-                  views of the End of the universe!
+                  Our restaurant is enclosed in a vast time bubble and projected
+                  forward in time to the precise moment of the End of the
+                  Universe. Many said this would be impossible but here we are.
+                  Shaped like a giant star, you can find the parking garage,
+                  bars, and many of the other facilities in the outter points
+                  but you'll want to be front and center in ourmain eating area
+                  situated in the domed heart for the spectacular views of the
+                  End of the universe!
                 </Card.Text>
                 <Button
                   href="https://hitchhikers.fandom.com/wiki/Milliways"
@@ -46,7 +45,7 @@ export default function Home() {
                 </Button>
               </Card.Body>
             </Card>
-            <Card style={{ width: "29rem", margin: "5px" }}>
+            <Card style={{ width: "30rem", margin: "5px" }}>
               <Card.Img
                 className="cardImg"
                 variant="top"
@@ -61,7 +60,11 @@ export default function Home() {
                   round it off with breakfast at Milliways, the Restaurant at
                   the End of the Universe."
                 </Card.Text>
-                <Button variant="primary">Reservations</Button>
+                <Button
+                  //  onClick={add a redirect link to reservations page.}
+                  variant="primary">
+                  Reservations
+                </Button>
               </Card.Body>
             </Card>
           </Row>

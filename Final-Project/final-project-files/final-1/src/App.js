@@ -17,7 +17,7 @@ import Header from "./components/display-components/Header";
 
 export default function App() {
   return (
-    <div className="container">
+    <div className="routerContainer">
       <Router>
         <div className="header">
           <ul>
