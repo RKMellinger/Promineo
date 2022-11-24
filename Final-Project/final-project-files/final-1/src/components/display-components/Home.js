@@ -25,7 +25,7 @@ export default function Home() {
       <Container className="homeCards">
         <CardGroup>
           <Row>
-            <Card style={{ width: "30rem", margin: "5px" }}>
+            <Card style={{ width: "30rem", margin: "15px" }}>
               <Card.Img
                 className="cardImg"
                 variant="top"
@@ -34,14 +34,14 @@ export default function Home() {
               <Card.Body>
                 <Card.Title>Join us whenever you want!</Card.Title>
                 <Card.Text>
-                  Our restaurant is enclosed in a vast time bubble and projected
-                  forward in time to the precise moment of the End of the
-                  Universe. Many said this would be impossible but here we are.
-                  Shaped like a giant star, you can find the parking garage,
-                  bars, and many of the other facilities in the outter points
-                  but you'll want to be front and center in ourmain eating area
-                  situated in the domed heart for the spectacular views of the
-                  End of the universe!
+                  “Ladies and gentlemen, the Universe as we know it has now been
+                  in existence for over one hundred and seventy thousand million
+                  billion years and will be ending in a little over half an
+                  hour. So, welcome one and all to Milliways, the Restaurant at
+                  the End of the Universe!” —Max Quordlepleen's introduction at
+                  Milliways
+                  <br />
+                  Click below for more details.
                 </Card.Text>
                 <Button
                   href="https://hitchhikers.fandom.com/wiki/Milliways"
@@ -50,7 +50,7 @@ export default function Home() {
                 </Button>
               </Card.Body>
             </Card>
-            <Card style={{ width: "30rem", margin: "5px" }}>
+            <Card style={{ width: "30rem", margin: "15px" }}>
               <Card.Img
                 className="cardImg"
                 variant="top"

@@ -49,7 +49,10 @@ export default function NewComment() {
       <Row>
         <Col>
           <Alert variant="primary">
-            <Alert.Heading>Add Comment</Alert.Heading>
+            <Alert.Heading>
+              Want to post a comment? Have a concern? Want to compliment the
+              Ameglian Major Cow?
+            </Alert.Heading>
             <Form onSubmit={handleSubmit}>
               <Form.Group>
                 <FormLabel>Name</FormLabel>

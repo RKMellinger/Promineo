@@ -1,16 +1,16 @@
-.cardImg{
-position:relative;
-margin-top: 0%;
-max-width: 480px;
-max-height: fit-content;
-}
+
 .card{
     padding: 5px;
     text-align: center;
     justify-content: center;
     color: black;
 }
-
+.cardImg{
+position:relative;
+margin-top: 0%;
+max-width: 480px;
+max-height: fit-content;
+}
 .reservations-title{
     text-align: center;
     justify-content: center;

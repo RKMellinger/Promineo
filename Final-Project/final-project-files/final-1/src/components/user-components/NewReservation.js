@@ -9,33 +9,35 @@ export default function NewReservation() {
   // NewReservation will display an error message if the data is not sent successfully.
   // NewReservation button will submit data to the Reservation component and the ReservationsAPI component.
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    quantity: "",
-    request: "",
-  });
+  const [name, setName] = useState("");
+  const [details, setDetails] = useState([]);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const { name, email, quantity, request } = formData;
-
-  const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const { email, quantity, request } = details;
+  const selectedValue = request;
+  function onChange(e) {
+    setName({ [e.target.email]: e.target.value });
+    setDetails({
+      ...details,
+      [e.target.email]: e.target.value,
+      [e.target.quantity]: e.target.value,
+      [e.target.request]: e.target.value,
+    });
+  }
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (name && email && quantity && request) {
+    if (name && details) {
       setSuccess(true);
     } else {
       setError(true);
     }
   };
   // function controling radio button selection "Bar, Main Dining, or Outside" on submit
-  const [selectedValue, setSelectedValue] = useState("Bar");
 
   const handleChange = (e) => {
-    setSelectedValue(e.target.value);
+    selectedValue(e.target.value);
   };
 
   // render new reservation form with radio button selection
