@@ -40,6 +40,7 @@ code {
 .footer {
     position: fixed;
     margin: 0;
+    padding-left: 15px;
     display: block;
     flex-direction: column;
     bottom: 0;
