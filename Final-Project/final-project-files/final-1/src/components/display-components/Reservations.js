@@ -14,17 +14,13 @@ import ReservationAPI from "../api-links/ReservationsAPI";
 import NewReservation from "../user-components/NewReservation";
 
 export default function Reservations() {
-  const [name, setName] = useState("");
-  const [details, setDetails] = useState([]);
+  // API data = name, data, quantity, request, id
+  // Reservations are displayed in a list.
+  // states to store api data from ReservationAPI functions
   const [reservations, setReservations] = useState([]);
   const reservationAPI = ReservationAPI();
-  //using the ReservationAPI function to get the data from the api
-  // ReservationAPI function is in the api-links folder
-  // ReservationAPI data is id, name, details [email, quantity, request]
-  // Use NewReservation component to create new post
-  // Reservations are displayed in a table.
 
-  // Get reservations from api updates new reservations
+  // Get reservation data from api and updates on newReservation onSubmit
   useEffect(() => {
     const getReservations = async () => {
       const reservationsFromServer = await reservationAPI.get();
@@ -33,12 +29,17 @@ export default function Reservations() {
     getReservations();
   }, []);
 
-  //function to delete reservation from api
+  // function to delete reservation from api
   const deleteReservation = async (id) => {
     await reservationAPI.delete(id);
     setReservations(
       reservations.filter((reservation) => reservation.id !== id)
     );
+  };
+
+  //using newReservation onSubmit refresh page to get new data from API
+  const refreshPage = () => {
+    window.location.reload(false);
   };
 
   // function to add new reservation to api and update reservations table from NewReservation component
@@ -47,8 +48,14 @@ export default function Reservations() {
     const data = await res.json();
     setReservations([...reservations, data]);
   };
+  // edits the reservation
+  const editReservation = async (reservation) => {
+    const res = await reservationAPI.put(reservation);
+    const data = await res.json();
+    setReservations([...reservations, data]);
+  };
 
-  //renders the reservations table with scroll bar and updates with new reservation submission
+  // renders the reservations table with scroll bar and updates with new reservation submission
   return (
     <Container>
       <Row>
@@ -64,7 +71,7 @@ export default function Reservations() {
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Quantity</th>
+                  <th>Number of Guests</th>
                   <th>Request</th>
                   <th>Delete</th>
                 </tr>
@@ -73,15 +80,21 @@ export default function Reservations() {
                 {reservations.map((reservation) => (
                   <tr key={reservation.id}>
                     <td>{reservation.name}</td>
-                    <td>{reservation.details.email}</td>
-                    <td>{reservation.details.quantity}</td>
-                    <td>{reservation.details.request}</td>
+                    <td>{reservation.email}</td>
+                    <td>{reservation.quantity}</td>
+                    <td>{reservation.request}</td>
                     <td>
                       <Button
                         variant="danger"
                         size="sm"
                         onClick={() => deleteReservation(reservation.id)}>
-                        Delete
+                        Cancel
+                      </Button>
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        onClick={() => editReservation(reservation.id)}>
+                        Edit
                       </Button>
                     </td>
                   </tr>
@@ -93,7 +106,10 @@ export default function Reservations() {
       </Row>
       <Row>
         <Col>
-          <NewReservation onAdd={addReservation} />
+          <NewReservation
+            onSubmit={refreshPage}
+            onAdd={addReservation}
+          />
         </Col>
       </Row>
     </Container>
