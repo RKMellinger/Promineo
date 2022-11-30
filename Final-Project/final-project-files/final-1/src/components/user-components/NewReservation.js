@@ -3,9 +3,8 @@ import { Col, Container, Row, Alert, Form, FormLabel } from "react-bootstrap";
 import ReservationAPI from "../api-links/ReservationsAPI";
 
 export default function NewReservation() {
-  // MockAPI is, _id, name, details [email, quantity, request].
-  // NewReservation is a form that takes in name, and details for details array
-  // details array is, email, quantity, request and will have a radio button for section selection
+  // MockAPI is, id, name, email, quantity, request.
+  // NewReservation is a form that takes in id, name, email, quantity, request.
   // NewReservation will display a success message if the data is sent successfully.
   // NewReservation will display an error message if the data is not sent successfully.
   // NewReservation button will submit data to the Reservation component and the ReservationsAPI component.
@@ -52,84 +51,103 @@ export default function NewReservation() {
   const handleQuantity = (e) => {
     setQuantity(e.target.value);
   };
+  // function using Reservations component's refreshPage() function to refresh page on new reservation submission
+  const refreshPage = () => {
+    window.location.reload(false);
+  };
 
-  // renders the new reservation form with success and error messages
+  // renders the new reservation popup with success and error messages
+  // renders the new reservation form with name, email, quantity, and request inputs
+  // renders the submit button
   return (
-    <Container>
+    <Container className="rounded bg-secondary">
       <Row>
         <Col>
-          <Alert variant="primary">
-            <Alert.Heading>New Reservation</Alert.Heading>
-            <Form onSubmit={submitReservation}>
-              <Form.Group controlId="formName">
-                <FormLabel>Name</FormLabel>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter name"
-                  value={name}
-                  onChange={handleName}
-                />
-              </Form.Group>
-              <Form.Group controlId="formEmail">
-                <FormLabel>Email</FormLabel>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={handleEmail}
-                />
-              </Form.Group>
-              <Form.Group controlId="formQuantity">
-                <FormLabel>Quantity</FormLabel>
-                <Form.Control
-                  type="number"
-                  placeholder="Enter quantity"
-                  value={quantity}
-                  onChange={handleQuantity}
-                />
-              </Form.Group>
-              <Form.Group controlId="formRequest">
-                <FormLabel>Request</FormLabel>
-                <Form.Check
-                  type="radio"
-                  label="Bar"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios1"
-                  value="Bar"
-                  onChange={handleRadio}
-                />
-                <Form.Check
-                  type="radio"
-                  label="Main Dining Room"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios2"
-                  value="Main"
-                  onChange={handleRadio}
-                />
-                <Form.Check
-                  disabled
-                  type="radio"
-                  label="Patio"
-                  name="formHorizontalRadios"
-                  id="formHorizontalRadios3"
-                  value="Patio"
-                  onChange={handleRadio}
-                  onSubmit={refreshPage}
-                />
-              </Form.Group>
-              <button type="submit">Submit</button>
-            </Form>
-            {success && (
-              <Alert variant="success">
-                <p>Reservation submitted successfully!</p>
-              </Alert>
-            )}
-            {error && (
-              <Alert variant="danger">
-                <p>Reservation not submitted. Please fill out all fields.</p>
-              </Alert>
-            )}
-          </Alert>
+          <Form onSubmit={submitReservation}>
+            <FormLabel>Name</FormLabel>
+            <Form.Control
+              type="text"
+              placeholder="Enter name"
+              value={name}
+              onChange={handleName}
+            />
+            <FormLabel>Email</FormLabel>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={handleEmail}
+            />
+            <FormLabel>Number of Guests</FormLabel>
+            <Form.Control
+              type="number"
+              placeholder="Enter Number of Guests"
+              value={quantity}
+              onChange={handleQuantity}
+            />
+            <FormLabel>Request</FormLabel>
+            <Form.Check
+              type="radio"
+              label="Bar"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios1"
+              value="Bar"
+              onChange={handleRadio}
+            />
+            <Form.Check
+              type="radio"
+              label="Main Dining"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios2"
+              value="Main Dining"
+              onChange={handleRadio}
+            />
+            <Form.Check
+              type="radio"
+              label="Private Dining"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios3"
+              value="Private Dining"
+              onChange={handleRadio}
+            />
+            <Form.Check
+              disabled
+              type="radio"
+              label="Patio"
+              name="formHorizontalRadios"
+              id="formHorizontalRadios4"
+              value="Patio"
+              onChange={handleRadio}
+            />
+            <button
+              type="submit"
+              className="btn btn-primary">
+              Submit
+            </button>
+          </Form>
+          {success && (
+            <Alert
+              variant="success"
+              onClose={refreshPage}
+              dismissible>
+              <Alert.Heading>Reservation Sucessful!</Alert.Heading>
+              <p>
+                Thank you for your reservation. We hope you enjoyed your visit.
+              </p>
+            </Alert>
+          )}
+          {error && (
+            <Alert
+              variant="danger"
+              onClose={() => setError(false)}
+              dismissible>
+              <Alert.Heading>Reservation Failed!</Alert.Heading>
+              <p>
+                We do not have a record of your visit. Please come in and speak
+                to the host to be seated.
+              </p>
+            </Alert>
+          )}
         </Col>
       </Row>
     </Container>

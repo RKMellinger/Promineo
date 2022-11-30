@@ -26,8 +26,8 @@ function ReservationsAPI() {
   };
 
   //function to update reservation name and details data to api
-  const update = async (reservation) => {
-    const response = await fetch(`${RESERVATION_CALL}/${reservation.id}`, {
+  const update = async (id, reservation) => {
+    const response = await fetch(`${RESERVATION_CALL}/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

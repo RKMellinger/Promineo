@@ -9,6 +9,7 @@ import {
   DropdownButton,
   Dropdown,
   Table,
+  Modal,
 } from "react-bootstrap";
 import ReservationAPI from "../api-links/ReservationsAPI";
 import NewReservation from "../user-components/NewReservation";
@@ -37,79 +38,78 @@ export default function Reservations() {
     );
   };
 
-  //using newReservation onSubmit refresh page to get new data from API
-  const refreshPage = () => {
-    window.location.reload(false);
+  // function to update reservation from api
+  const updateReservation = async (id) => {
+    await reservationAPI.update(id);
+    setReservations(
+      reservations.filter((reservation) => reservation.id !== id)
+    );
   };
 
-  // function to add new reservation to api and update reservations table from NewReservation component
-  const addReservation = async (reservation) => {
-    const res = await reservationAPI.post(reservation);
-    const data = await res.json();
-    setReservations([...reservations, data]);
-  };
-  // edits the reservation
-  const editReservation = async (reservation) => {
-    const res = await reservationAPI.put(reservation);
-    const data = await res.json();
-    setReservations([...reservations, data]);
+  // edits the reservation with a modal prompt for name, email, quantity, and request then updates the reservation
+  const editReservation = (id) => {
+    const reservation = reservations.find(
+      (reservation) => reservation.id === id
+    );
+    const name = prompt("Name", reservation.name);
+    const email = prompt("Email", reservation.email);
+    const quantity = prompt("Quantity", reservation.quantity);
+    const request = prompt("Request", reservation.request);
+    if (name && email && quantity && request) {
+      updateReservation(id, { name, email, quantity, request });
+    }
   };
 
-  // renders the reservations table with scroll bar and updates with new reservation submission
+  // renders the reservations list with delete and edit buttons
+  // renders the new reservation form
+  // renders scrollbar for pa
   return (
     <Container>
       <Row>
         <Col>
-          <Alert variant="primary">
-            <Alert.Heading>Reservations</Alert.Heading>
-            <Table
-              striped
-              bordered
-              hover
-              size="sm">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Number of Guests</th>
-                  <th>Request</th>
-                  <th>Delete</th>
+          <h1>Reservations</h1>
+          <Table
+            striped
+            bordered
+            hover
+            size="sm">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Quantity</th>
+                <th>Request</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reservations.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>{reservation.name}</td>
+                  <td>{reservation.email}</td>
+                  <td>{reservation.quantity}</td>
+                  <td>{reservation.request}</td>
+                  <td>
+                    <Button
+                      variant="danger"
+                      onClick={() => deleteReservation(reservation.id)}>
+                      Delete
+                    </Button>
+                    <Button
+                      variant="warning"
+                      onClick={() => editReservation(reservation.id)}>
+                      Edit
+                    </Button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {reservations.map((reservation) => (
-                  <tr key={reservation.id}>
-                    <td>{reservation.name}</td>
-                    <td>{reservation.email}</td>
-                    <td>{reservation.quantity}</td>
-                    <td>{reservation.request}</td>
-                    <td>
-                      <Button
-                        variant="danger"
-                        size="sm"
-                        onClick={() => deleteReservation(reservation.id)}>
-                        Cancel
-                      </Button>
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        onClick={() => editReservation(reservation.id)}>
-                        Edit
-                      </Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Alert>
+              ))}
+            </tbody>
+          </Table>
         </Col>
       </Row>
       <Row>
         <Col>
-          <NewReservation
-            onSubmit={refreshPage}
-            onAdd={addReservation}
-          />
+          <NewReservation />
         </Col>
       </Row>
     </Container>
