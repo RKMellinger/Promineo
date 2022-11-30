@@ -35,7 +35,7 @@ export default function Reservations() {
     setReservations(reservationsFromServer);
   };
 
-  // edits the reservation with a modal prompt for name, email, quantity, and request then updates the reservation
+  // edits the reservation with a prompt for name, email, quantity, and request then updates the reservation
   const editReservation = (id) => {
     console.log("line 40", id);
     const reservation = reservations.find((reservation) => {
@@ -54,9 +54,10 @@ export default function Reservations() {
 
   // renders the reservations list with delete and edit buttons
   // renders the new reservation form
-  // renders scrollbar for pa
   return (
-    <Container className="bg-secondary rounded">
+    <Container
+      className="bg-light rounded"
+      id="resTable">
       <Row>
         <Col>
           <h1>Reservations</h1>
@@ -83,12 +84,14 @@ export default function Reservations() {
                   <td>{reservation.request}</td>
                   <td>
                     <Button
+                      className="table-btn"
                       variant="danger"
                       onClick={() => deleteReservation(reservation.id)}>
                       Delete
                     </Button>
                     <Button
-                      variant="warning"
+                      className="table-btn"
+                      variant="secondary"
                       onClick={() => editReservation(reservation.id)}>
                       Edit
                     </Button>

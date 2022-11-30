@@ -11,8 +11,9 @@ import {
 import CommentAPI from "../api-links/CommentAPI";
 
 export default function NewComment(props) {
-  // MockAPI is, id, name, comment.
-  // Create a form with name and comment inputs and a submit button linked to the Comments component.
+  // MockAPI data is: id, name, comment.
+  // Create a form with name and comment inputs.
+  // renders a submit button linked to the Comments component.
 
   // Create state for name and comment
   const [name, setName] = useState("");
@@ -76,6 +77,7 @@ export default function NewComment(props) {
                 />
               </Form.Group>
               <Button
+                id="submit-btn"
                 onSubmit={handleSubmit}
                 variant="primary"
                 type="submit">

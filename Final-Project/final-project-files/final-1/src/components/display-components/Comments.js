@@ -6,11 +6,11 @@ import NewComment from "../user-components/NewComment";
 export default function Comments() {
   //API data = id, name, comment
   //Comments are displayed in a list.
-  //function to get api data from CommentAPI functions
+  //Renders data and new comment form
   const [comments, setComments] = useState([]);
   const commentAPI = CommentAPI();
 
-  // Get comments from api updates new comments
+  // Get comments from api
   useEffect(() => {
     const getComments = async () => {
       const commentsFromServer = await commentAPI.get();
@@ -25,7 +25,7 @@ export default function Comments() {
     setComments(comments.filter((comment) => comment.id !== id));
   };
 
-  // function to add new comment to api and update comments table from NewComment component
+  // function to add new comment to api and update comments table
   const addComment = async (comment) => {
     const data = await commentAPI.post(comment);
     const commentsFromServer = await commentAPI.get();
@@ -59,6 +59,7 @@ export default function Comments() {
                     <td>{comment.comment}</td>
                     <td>
                       <Button
+                        className="table-btn"
                         variant="danger"
                         onClick={() => deleteComment(comment.id)}>
                         Delete

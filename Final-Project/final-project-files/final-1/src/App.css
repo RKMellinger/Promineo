@@ -6,10 +6,10 @@
     color: black;
 }
 .cardImg{
-position:relative;
-margin-top: 0%;
-max-width: 480px;
-max-height: fit-content;
+    position:relative;
+    margin-top: 0%;
+    max-width: 480px;
+    max-height: fit-content;
 }
 .reservations-title{
     text-align: center;
@@ -22,7 +22,10 @@ max-height: fit-content;
     text-align: center;
 }
 #resForm{
-    margin-top: 3px;
+    margin-top: 10px;
+    color: b;
+}
+#resTable{
     color: black;
 }
 #newReservationTable{
@@ -31,4 +34,43 @@ max-height: fit-content;
     margin: 5px;
     padding: 5px;
     color: white;
+}
+.table-btn{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#submit-btn{
+    max-width: 300px;
+    max-height: 50px;
+    margin-top: 75px;
+    margin-bottom: 15px;
+    margin-left: 50%;
+}
+#request-box{
+    padding: auto;
+    margin: 5px;
+    max-width: 150px;
+    margin-top: 25px;
+    margin-left: 100px;
+
+}
+#top-row{
+    padding: 5px;
+    margin-top: 5px;
+}
+#top-row-bits{
+    margin: 5px;
+}
+#middle-row{
+    padding: 5px;
+    margin-top: 5px;
+    margin-left: 3px;
+}
+#bottom-row{
+    padding: 5px;
+    margin-top: 5px;
+}
+#padding{
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
