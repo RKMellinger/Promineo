@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  Alert,
-  Form,
-  Button,
-  DropdownButton,
-  Dropdown,
-  Table,
-  Modal,
-} from "react-bootstrap";
+import { Col, Container, Row, Button, Table } from "react-bootstrap";
 import ReservationAPI from "../api-links/ReservationsAPI";
 import NewReservation from "../user-components/NewReservation";
 
@@ -39,18 +28,21 @@ export default function Reservations() {
   };
 
   // function to update reservation from api
-  const updateReservation = async (id) => {
-    await reservationAPI.update(id);
-    setReservations(
-      reservations.filter((reservation) => reservation.id !== id)
-    );
+  const updateReservation = async (id, reservation) => {
+    console.log("line 32", id);
+    await reservationAPI.update(id, reservation);
+    const reservationsFromServer = await reservationAPI.get();
+    setReservations(reservationsFromServer);
   };
 
   // edits the reservation with a modal prompt for name, email, quantity, and request then updates the reservation
   const editReservation = (id) => {
-    const reservation = reservations.find(
-      (reservation) => reservation.id === id
-    );
+    console.log("line 40", id);
+    const reservation = reservations.find((reservation) => {
+      console.log("line 42", reservation);
+      console.log("line 43", reservation.id === id);
+      return reservation.id === id;
+    });
     const name = prompt("Name", reservation.name);
     const email = prompt("Email", reservation.email);
     const quantity = prompt("Quantity", reservation.quantity);
@@ -64,7 +56,7 @@ export default function Reservations() {
   // renders the new reservation form
   // renders scrollbar for pa
   return (
-    <Container>
+    <Container className="bg-secondary rounded">
       <Row>
         <Col>
           <h1>Reservations</h1>
@@ -109,7 +101,7 @@ export default function Reservations() {
       </Row>
       <Row>
         <Col>
-          <NewReservation />
+          <NewReservation setReservations={setReservations} />
         </Col>
       </Row>
     </Container>

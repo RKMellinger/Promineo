@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import CommentAPI from "../api-links/CommentAPI";
 
-export default function NewComment() {
+export default function NewComment(props) {
   // MockAPI is, id, name, comment.
   // Create a form with name and comment inputs and a submit button linked to the Comments component.
 
@@ -38,6 +38,9 @@ export default function NewComment() {
         comment: comment,
       };
       await commentAPI.post(newComment);
+      const commentsFromServer = await commentAPI.get();
+      console.log(commentsFromServer);
+      props.setComments(commentsFromServer);
       setSuccess("Comment Added");
       setName("");
       setComment("");

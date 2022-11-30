@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Col, Container, Row, Alert, Form, FormLabel } from "react-bootstrap";
 import ReservationAPI from "../api-links/ReservationsAPI";
 
-export default function NewReservation() {
+export default function NewReservation(props) {
+  console.log(props);
   // MockAPI is, id, name, email, quantity, request.
   // NewReservation is a form that takes in id, name, email, quantity, request.
   // NewReservation will display a success message if the data is sent successfully.
@@ -21,8 +22,8 @@ export default function NewReservation() {
     e.preventDefault();
     const reservation = { name, email, quantity, request };
     const reservationAPI = ReservationAPI();
-    const res = await reservationAPI.post(reservation);
-    const data = await res.json();
+    const data = await reservationAPI.post(reservation);
+    // const data = await res.json();
     if (data) {
       setSuccess(true);
       setError(false);
@@ -30,6 +31,8 @@ export default function NewReservation() {
       setSuccess(false);
       setError(true);
     }
+    const reservationsFromServer = await reservationAPI.get();
+    props.setReservations(reservationsFromServer);
   };
 
   // function to submit radio buttons details to state.request
@@ -51,16 +54,12 @@ export default function NewReservation() {
   const handleQuantity = (e) => {
     setQuantity(e.target.value);
   };
-  // function using Reservations component's refreshPage() function to refresh page on new reservation submission
-  const refreshPage = () => {
-    window.location.reload(false);
-  };
 
   // renders the new reservation popup with success and error messages
   // renders the new reservation form with name, email, quantity, and request inputs
   // renders the submit button
   return (
-    <Container className="rounded bg-secondary">
+    <Container>
       <Row>
         <Col>
           <Form onSubmit={submitReservation}>
@@ -128,7 +127,6 @@ export default function NewReservation() {
           {success && (
             <Alert
               variant="success"
-              onClose={refreshPage}
               dismissible>
               <Alert.Heading>Reservation Sucessful!</Alert.Heading>
               <p>

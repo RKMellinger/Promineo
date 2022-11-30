@@ -27,9 +27,10 @@ export default function Comments() {
 
   // function to add new comment to api and update comments table from NewComment component
   const addComment = async (comment) => {
-    const res = await commentAPI.post(comment);
-    const data = await res.json();
-    setComments([...comments, data]);
+    const data = await commentAPI.post(comment);
+    const commentsFromServer = await commentAPI.get();
+    // const data = await res.json();
+    setComments(commentsFromServer);
   };
 
   //renders the comments table with scroll bar and updates with new comment submission
@@ -72,7 +73,11 @@ export default function Comments() {
       </Row>
       <Row>
         <Col>
-          <NewComment onClick={addComment} />
+          <NewComment
+            onClick={addComment}
+            setComments={setComments}
+            comments={comments}
+          />
         </Col>
       </Row>
     </Container>
